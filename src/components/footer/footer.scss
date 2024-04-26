@@ -1,0 +1,126 @@
+@import "../../styles/variables";
+
+.mainFooter{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background-color: $main-footer-background;
+	box-sizing: border-box;
+	padding: 0 32px;
+	.mainFooterTop{
+		padding-top: 200px;
+	}
+	.difText{
+		font-family: 'Playfair Display', sans-serif;
+		font-weight: 400;
+		font-style: italic;
+		font-size: 120px;
+		letter-spacing: -8px;
+	}
+	p{
+		font-size: 120px;
+		letter-spacing: -8px;
+		color: $main-color-text;
+	}
+	.mainFooterP{
+		font-family: 'Inter', sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 16px;
+		letter-spacing: -1px;
+		color: $main-color-text;
+		margin: 0 0 156px 0;
+		transition: 0.5s ease-in-out;
+	}
+	.mainFooterBottom{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		text-decoration: none;
+		letter-spacing: -1px;
+		margin: 120px 0 36px 0;
+		a{
+		color: $main-color-text;
+		text-decoration: none;
+		}
+		.upperText{
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 12px;
+			margin-bottom: 0;
+			opacity: 0.4;
+			letter-spacing: 0;
+		}
+		.footerLink{
+			background: transparent;
+			color: $main-color-text;
+			border: none;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 16px;
+			position: relative;
+			text-decoration: none;
+		}
+		.footerLink:after {
+			display: block;
+			position: absolute;
+			left: 0;
+			width: 0;
+			height: 1px;
+			background-color: $main-color-text;
+			content: "";
+			transition: width 0.3s ease-out;
+		}
+		
+		.footerLink:hover:after,
+		.footerLink:focus:after {
+			width: 100%;
+		}
+		.showLink{
+			display:flex;
+			gap: 32px;
+		}
+		.footerLinkFirst{
+			text-align: start;
+		}
+		.footerLinkSecond{
+			text-align: end;
+			transition: 0.5s ease-in-out;
+		}
+		.footerLinkSecond:hover{
+			color: #0088cc;
+		}
+	}
+}
+.startFooter{
+	display: flex;
+	color: $main-color-text;
+	flex-direction: column;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 0 32px;
+	.startFooterBottom{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		text-decoration: none;
+		letter-spacing: -1px;
+		padding: 0 0 32px 0;
+		p{
+			text-align: start;
+		}
+		a{
+			color: $main-color-text;
+			text-decoration: none;
+			text-align: end;
+		}
+		.navbarTelegram{
+			transition: 0.5s ease-in-out;
+		}
+		.navbarTelegram:hover{
+			color: #0088cc;
+		}
+	}
+}

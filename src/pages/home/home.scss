@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+
+.homeSection{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: $main-color-text;
+	box-sizing: border-box;
+	padding: 0 32px;
+	margin: 72px 0 0 0;
+	p{
+		font-family: 'Inter', sans-serif;
+		font-size: 240px;
+		line-height: 100%;
+		font-weight: 300;
+	}
+	.ligatures{
+		font-variant-ligatures: common-ligatures;
+		letter-spacing: 0;
+	}
+	.owFollowing{
+		margin-left: -22px; // ^_^
+	}
+	.firText{
+		font-family: 'Playfair Display', sans-serif;
+		font-weight: 400;
+		font-style: italic;
+		letter-spacing: -24px;
+	}
+	.secText{
+		letter-spacing: -24px;
+		-webkit-text-stroke: 1px #EBAA84;
+	}
+	.homeText{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		text-transform: uppercase;
+		margin-top: 168px;
+		padding: 0 200px 0 200px;
+		p{
+			font-family: 'Inter', sans-serif;
+			font-size: 16px;
+			line-height: 19.2px;
+			font-weight: 400;
+		}
+	}
+}

@@ -1,0 +1,63 @@
+@import "../../styles/variables";
+
+.navigationSection{
+	position: fixed !important;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) translateZ(0px);
+	width: 100%;
+	z-index: 999;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 32px;
+	color: $main-color-text;
+	div{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.upperText{
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 12px;
+		opacity: 0.4;
+		letter-spacing: 0;
+		margin-bottom: 8px;
+	}
+	.navigationLink{
+		background: transparent;
+		color: $main-color-text;
+		border: none;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 16px;
+		position: relative;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+//	.navigationLink:after {
+//		display: block;
+//		position: absolute;
+//		left: 0;
+//		width: 0;
+//		height: 1px;
+//		background-color: $main-color-text;
+//		content: "";
+//		transition: width 0.3s ease-out;
+//	}
+//
+//	.navigationLink:hover:after,
+//	.navigationLink:focus:after {
+//		width: 100%;
+//	}
+	.navigationText{
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0;
+		position: relative;
+		margin-bottom: -8px;
+	}
+}

@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.navbarSection{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	color: $main-color-text;
+	text-decoration: none;
+	letter-spacing: -1px;
+	box-sizing: border-box;
+	padding: 36px 32px 36px 32px;
+	a{
+		text-decoration: none;
+		color: $main-color-text;
+	}
+	.navbarBtn{
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+	.navbarText{
+		text-align: center;
+	}
+	.navbarTelegram{
+		transition: 0.5s ease-in-out;
+	}
+	.navbarTelegram:hover{
+		color: #0088cc;
+	}
+}

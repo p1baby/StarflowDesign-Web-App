@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+* {
+	scrollbar-width: none; /* Для Firefox */
+	-ms-overflow-style: none; /* Для Internet Explorer и Edge */
+	scroll-behavior: smooth;
+	::-webkit-scrollbar {
+		display: none;
+	}
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+	
+	margin: 0;
+	padding: 0;
+}
+img {
+	pointer-events: none;
+	user-select: none;
+}
+p{
+	margin: 0;
+	padding: 0;
+}
+h1{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	box-sizing: border-box;
+}
+*,*::before, *::after{
+	box-sizing: border-box;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+body {
+	font-family: 'Inter' , sans-serif;
+	font-size: 16px;
+	font-variant-ligatures: common-ligatures discretionary-ligatures;
+	height: 100%;
+	
+//	font-variant-numeric: slashed-zero;
+//	font-variant: lining-nums;
+}
+
+.wrapper{
+//	height: 100%;
+	display: flex;
+	flex-direction: column;
+	z-index: 1;
+	min-height: 100vh;
+}
+
+.navbar {
+	flex: 0 0 auto; /* Make the navbar take up only the space it needs */
+}
+.content {
+	flex: 1 1 auto; /* Make the content take up the remaining space */
+	overflow-y: auto; /* Make the content scrollable */
+}
+.footer {
+	flex: 0 0 auto; /* Make the footer take up only the space it needs */
+}
