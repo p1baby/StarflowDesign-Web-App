@@ -2,11 +2,11 @@ import NavigationButtonsActive from '../../components/navigationButtonsActive/Na
 
 const Services = () => {
 	return(
-		<div>
+		<section>
 			<h1>Мои Услуги</h1>
 			<NavigationButtonsActive />
 			<p>123</p>
-		</div>
+		</section>
 	)
 }
 

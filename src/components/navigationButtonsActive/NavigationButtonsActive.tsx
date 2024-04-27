@@ -24,14 +24,14 @@ function NavigationButtonsActive() {
 			});
 		});
 		
-		const footer = document.querySelector('.footer');
-		if (footer) {
-			observer.observe(footer);
+		const mainFooter = document.querySelector('.mainFooter');
+		if (mainFooter) {
+			observer.observe(mainFooter);
 		}
 		
 		return () => {
-			if (footer) {
-				observer.unobserve(footer);
+			if (mainFooter) {
+				observer.unobserve(mainFooter);
 			}
 		};
 	}, []);
@@ -39,10 +39,10 @@ function NavigationButtonsActive() {
 	return (
 		<section className='navigationSection' style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 0.9s' }}>
 			{linksMain.map((link) => (
-				<div key={link.id}>
+				<article key={link.id}>
 					<p className='upperText'>{link.number}</p>
 					<Link className='navigationLink' to={`${link.link}`}>{link.title}</Link>
-				</div>
+				</article>
 			))}
 			<p className='navigationText'>©2024</p>
 		</section>

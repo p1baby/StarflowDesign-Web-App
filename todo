@@ -1,5 +1,6 @@
 0) оптимизация компонентов (NavigationButtonsStatic, NavigationButtonsActive, ) // +
 1) придумать решение с NavigationButtonsStatic и NavigationButtonsActive // +
-2) перечеркнутый 0 и 1 и прочая залупа
-3) звездочка в startfooter
-4) letter-spacing в navbar/footer
+2) переписать все с div на что-то другое //
+3) перечеркнутый 0 и 1 и прочая залупа
+4) звездочка в startfooter
+5) letter-spacing в navbar/footer

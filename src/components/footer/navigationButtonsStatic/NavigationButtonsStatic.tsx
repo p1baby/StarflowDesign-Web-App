@@ -12,10 +12,10 @@ function NavigationButtonsStatic() {
 	return (
 		<section className='navigationSectionStatic'>
 			{linksMain.map((link) => (
-				<div key={link.id}>
+				<article key={link.id}>
 					<p className='upperText'>{link.number}</p>
 					<Link className='navigationLink' to={`${link.link}`}>{link.title}</Link>
-				</div>
+				</article>
 			))}
 			<p className='navigationText'>©2024</p>
 		</section>

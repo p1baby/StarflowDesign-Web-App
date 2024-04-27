@@ -2,11 +2,11 @@ import NavigationButtonsActive from '../../components/navigationButtonsActive/Na
 
 function Contacts() {
 	return (
-		<div>
+		<section>
 			<h1>Давайте Сотрудничать</h1>
 			<NavigationButtonsActive />
 			<p>123</p>
-		</div>
+		</section>
 	);
 }
 

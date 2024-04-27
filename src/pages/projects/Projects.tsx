@@ -2,7 +2,7 @@ import NavigationButtonsActive from '../../components/navigationButtonsActive/Na
 
 const Projects = () => {
 	return(
-		<div>
+		<section>
 			<h1>Мои Проекты</h1>
 			<NavigationButtonsActive />
 			<p>123</p>
@@ -17,7 +17,7 @@ const Projects = () => {
 			<p>123</p>
 			<p>123</p>
 			<p>123</p>
-		</div>
+		</section>
 	)
 }
 
