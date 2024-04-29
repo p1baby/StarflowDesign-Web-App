@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite | Создание полноценного веб-приложения Портфолио для дизайнера
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание проекта
 
-Currently, two official plugins are available:
+Этот проект - это портфолио для талантливого и эмпатичного дизайнера и просто моего хорошего друга Игоря. Он создан с использованием современных технологий, таких как React, TypeScript и Vite, что обеспечивает высокую производительность и отличное пользовательское взаимодействие.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Особенности
 
-## Expanding the ESLint configuration
+- **МНОЖЕСТВО СТРАНИЦ С РАБОТАМИ**: Портфолио включает в себя множество страниц, каждая из которых представляет отдельную работу дизайнера. Это позволяет пользователям подробно изучить каждый проект и оценить мастерство дизайнера.
+- **ФОРМА ОБРАТНОЙ СВЯЗИ**: Пользователи могут связаться с дизайнером напрямую через форму обратной связи на сайте. Это упрощает процесс обсуждения новых проектов и получения обратной связи.
+- **ЛУЧШИЙ ДИЗАЙН**: Дизайн сайта был тщательно продуман, потрачен не один десяток вечеров. Работа отражать творческий подход дизайнера и его внимание к деталям.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Вклад в проект
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Мы всегда рады видеть вклад в наш проект! Если у вас есть предложения или вы нашли ошибку, не стесняйтесь открывать issue или pull request.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Контакты
+
+Если у вас есть вопросы или вы хотите обсудить проект, свяжитесь с нами через Telegram: [Игорь](https://t.me/StarflowDesign) || [Разработчик](https://t.me/p11baby)
