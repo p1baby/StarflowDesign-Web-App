@@ -18,9 +18,11 @@ const App: FC = () => {
   );
 }
 
+
 const AppContent: FC = () => {
   const location = useLocation();
   const isHomePage: boolean = location.pathname === '/';
+  
   
   let backgroundColor: string = '#0f0f0f';
   if (isHomePage) {

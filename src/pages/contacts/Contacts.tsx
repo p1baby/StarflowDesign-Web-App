@@ -1,11 +1,11 @@
 import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx'
+import './contacts.scss'
 
 function Contacts() {
 	return (
-		<section>
-			<h1>Давайте Сотрудничать</h1>
+		<section className='contactSection'>
+			<h2><span className='firText'>Давайте</span><span className='secText'> Сотрудничать</span></h2>
 			<NavigationButtonsActive />
-			<p>123</p>
 		</section>
 	);
 }

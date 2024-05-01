@@ -7,9 +7,33 @@
 	align-items: center;
 	color: $main-color-text;
 	text-decoration: none;
-	letter-spacing: -1px;
+	letter-spacing: -0.5px;
+	line-height: 1;
 	box-sizing: border-box;
 	padding: 36px 32px 36px 32px;
+	position: fixed;
+	background-color: transparent;
+	z-index: 1000;
+	width: 100%;
+	.welcome{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		.bracket1, .bracket2{
+			font-family: 'Playfair Display' , sans-serif;
+			font-weight: 400;
+			font-style: italic;
+			letter-spacing: -24px;
+			font-size: 32px;
+			opacity: 0.4;
+		}
+		.bracket1{
+			margin: 0 16px 0 0;
+		}
+		.bracket2{
+			margin: 0 0 0 12px;
+		}
+	}
 	a{
 		text-decoration: none;
 		color: $main-color-text;
@@ -23,9 +47,6 @@
 		text-align: center;
 	}
 	.navbarTelegram{
-		transition: 0.5s ease-in-out;
-	}
-	.navbarTelegram:hover{
-		color: #0088cc;
+		text-align: end;
 	}
 }

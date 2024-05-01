@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+
+.projSection{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: $main-color-text;
+	box-sizing: border-box;
+	padding: 0 32px;
+	margin: 96px 0 0 0;
+	.serText{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		p{
+			text-transform: uppercase;
+			font-family: 'Inter', sans-serif;
+			font-size: 16px;
+			line-height: 19.2px;
+			font-weight: 400;
+			letter-spacing: -1px;
+		}
+		h2{
+			font-family: 'Inter', sans-serif;
+			font-size: 160px;
+			line-height: 100%;
+			font-weight: 300;
+		}
+		.firText{
+			font-family: 'Playfair Display', sans-serif;
+			font-weight: 400;
+			font-style: italic;
+			letter-spacing: -16px;
+		}
+		.secText{
+			letter-spacing: -16px;
+			-webkit-text-stroke: 1px #FFBE98;
+		}
+	}
+}

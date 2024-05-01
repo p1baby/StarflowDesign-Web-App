@@ -7,6 +7,8 @@
 	background-color: $main-footer-background;
 	box-sizing: border-box;
 	padding: 0 32px;
+	letter-spacing: -0.5px;
+	line-height: 1;
 	.mainFooterTop{
 		padding-top: 200px;
 	}
@@ -24,7 +26,6 @@
 	}
 	.mainFooterP{
 		font-family: 'Inter', sans-serif;
-		font-weight: 400;
 		font-size: 16px;
 		line-height: 16px;
 		letter-spacing: -1px;
@@ -43,6 +44,7 @@
 		a{
 		color: $main-color-text;
 		text-decoration: none;
+			font-weight: 300;
 		}
 		.upperText{
 			font-weight: 400;
@@ -57,26 +59,26 @@
 			color: $main-color-text;
 			border: none;
 			font-size: 16px;
-			font-weight: 400;
+			font-weight: 300;
 			line-height: 16px;
 			position: relative;
 			text-decoration: none;
 		}
-		.footerLink:after {
-			display: block;
-			position: absolute;
-			left: 0;
-			width: 0;
-			height: 1px;
-			background-color: $main-color-text;
-			content: "";
-			transition: width 0.3s ease-out;
-		}
-		
-		.footerLink:hover:after,
-		.footerLink:focus:after {
-			width: 100%;
-		}
+//		.footerLink:after {
+//			display: block;
+//			position: absolute;
+//			left: 0;
+//			width: 0;
+//			height: 1px;
+//			background-color: $main-color-text;
+//			content: "";
+//			transition: width 0.3s ease-out;
+//		}
+//
+//		.footerLink:hover:after,
+//		.footerLink:focus:after {
+//			width: 100%;
+//		}
 		.showLink{
 			display:flex;
 			gap: 32px;
@@ -86,10 +88,7 @@
 		}
 		.footerLinkSecond{
 			text-align: end;
-			transition: 0.5s ease-in-out;
-		}
-		.footerLinkSecond:hover{
-			color: #0088cc;
+//			transition: 0.5s ease-in-out;
 		}
 	}
 }
@@ -100,13 +99,14 @@
 	text-align: center;
 	box-sizing: border-box;
 	padding: 0 32px;
+	letter-spacing: -0.5px;
+	line-height: 1;
 	.startFooterBottom{
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 		text-decoration: none;
-		letter-spacing: -1px;
 		padding: 0 0 32px 0;
 		p{
 			text-align: start;
@@ -115,12 +115,6 @@
 			color: $main-color-text;
 			text-decoration: none;
 			text-align: end;
-		}
-		.navbarTelegram{
-			transition: 0.5s ease-in-out;
-		}
-		.navbarTelegram:hover{
-			color: #0088cc;
 		}
 	}
 }
