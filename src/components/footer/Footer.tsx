@@ -6,9 +6,9 @@ import './footer.scss'
 
 const Footer = () => {
 	const location = useLocation();
-	const isHomePage = location.pathname === '/';
+	const isHomePageOrContacts = location.pathname === '/' || location.pathname === '/contacts';
 	
-	if (isHomePage) {
+	if (isHomePageOrContacts) {
 		return (
 			<footer className='startFooter'>
 				<article className='startFooterBottom'>
