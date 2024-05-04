@@ -13,7 +13,7 @@ const Footer = () => {
 			<footer className='startFooter'>
 				<article className='startFooterBottom'>
 					<p>В проект вложена<br></br>частичка моей души</p>
-					<Link className='navbarTelegram' to='https://t.me/p11baby' target="_blank" rel="noopener noreferrer">Верстка сайта<br></br>@p11baby</Link>
+					<Link className='navbarTelegram' to='https://github.com/p1baby' target="_blank" rel="noopener noreferrer">Powered by<br></br>@p1baby</Link>
 				</article>
 			</footer>
 		)
@@ -32,8 +32,7 @@ const Footer = () => {
 					<Link className='footerLink' to='https://dprofile.ru/starflowdesign' target="_blank" rel="noopener noreferrer">DPROFILE</Link>
 					<Link className='footerLink' to='https://dribbble.com/StarflowDesign' target="_blank" rel="noopener noreferrer">DRIBBLE</Link>
 				</article>
-				<Link className='footerLinkSecond' to='https://t.me/p11baby' target="_blank" rel="noopener noreferrer">Верстка
-					сайта<br></br>@p11baby</Link>
+				<Link className='footerLinkSecond' to='https://github.com/p1baby' target="_blank" rel="noopener noreferrer">Powered by<br></br>@p1baby</Link>
 			</section>
 		</footer>
 	)

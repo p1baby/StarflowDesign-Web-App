@@ -20,38 +20,29 @@ img {
 	pointer-events: none;
 	user-select: none;
 }
-p{
+p , h1 , h2, h3, h4, h5, h6, {
 	margin: 0;
 	padding: 0;
 }
-h1{
-	margin: 0;
-	padding: 0;
-}
-
 html{
 	box-sizing: border-box;
 }
 *,*::before, *::after{
 	box-sizing: border-box;
 }
-
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
-
 textarea {
 	resize: none; /* Запрещаем изменять размер */
 }
-
 /* Firefox */
 input[type="number"] {
 	-moz-appearance: textfield;
 }
-
 body {
 	font-family: 'Inter' , sans-serif;
 	font-weight: 300;
@@ -61,7 +52,6 @@ body {
 //	font-variant-numeric: slashed-zero;
 //	font-variant: lining-nums;
 }
-
 .wrapper{
 //	height: 100%;
 	display: flex;
@@ -69,14 +59,15 @@ body {
 	z-index: 1;
 	min-height: 100vh;
 }
-
 .navbar {
 	flex: 0 0 auto; /* Make the navbar take up only the space it needs */
+	z-index: 1000;
 }
 .content {
 	flex: 1 1 auto; /* Make the content take up the remaining space */
-	overflow-y: auto; /* Make the content scrollable */
+//	overflow-y: auto; /* Make the content scrollable */
 }
 .footer {
 	flex: 0 0 auto; /* Make the footer take up only the space it needs */
+	z-index: 1;
 }
