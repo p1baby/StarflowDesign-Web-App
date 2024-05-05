@@ -13,7 +13,7 @@ const Footer = () => {
 			<footer className='startFooter'>
 				<article className='startFooterBottom'>
 					<p>В проект вложена<br></br>частичка моей души</p>
-					<Link className='navbarTelegram' to='https://github.com/p1baby' target="_blank" rel="noopener noreferrer">Powered by<br></br>@p1baby</Link>
+					<Link className='footerLinkSecond' to='https://github.com/p1baby' target="_blank" rel="noopener noreferrer">Верстка сайта<br></br>@p1baby</Link>
 				</article>
 			</footer>
 		)
@@ -22,17 +22,16 @@ const Footer = () => {
 	return (
 		<footer className='mainFooter'>
 			<p className='mainFooterTop'><span className='difText'>Обсудим</span> Ваш проект</p>
-			<Link to='https://t.me/StarflowDesign' className='mainFooterP'><img src={arrowLeft} alt='arrow' />НАПИСАТЬ В
-				ТЕЛЕГРАМ<img src={arrowRight} alt='arrow' /></Link>
+			<Link to='https://t.me/StarflowDesign' className='mainFooterP'><img src={arrowLeft} alt='arrow' />написать в телеграм<img src={arrowRight} alt='arrow' /></Link>
 			<NavigationButtonsStatic/>
 			<section className='mainFooterBottom'>
 				<Link className='footerLinkFirst' to='mailto:starflowdesign@gmail.com' target="_blank" rel="noopener noreferrer">Рабочая почта<br></br>starflowdesign@gmail.com</Link>
-				<article className='showLink'>
-					<Link className='footerLink' to='https://www.behance.net/StarflowDesign' target="_blank" rel="noopener noreferrer">BEHANCE</Link>
-					<Link className='footerLink' to='https://dprofile.ru/starflowdesign' target="_blank" rel="noopener noreferrer">DPROFILE</Link>
-					<Link className='footerLink' to='https://dribbble.com/StarflowDesign' target="_blank" rel="noopener noreferrer">DRIBBLE</Link>
-				</article>
-				<Link className='footerLinkSecond' to='https://github.com/p1baby' target="_blank" rel="noopener noreferrer">Powered by<br></br>@p1baby</Link>
+				<ul className='showLink'>
+					<Link className='ul_link' to='https://www.behance.net/StarflowDesign' target="_blank" rel="noopener noreferrer">BEHANCE</Link>
+					<Link className='ul_link' to='https://dprofile.ru/starflowdesign' target="_blank" rel="noopener noreferrer">DPROFILE</Link>
+					<Link className='ul_link' to='https://dribbble.com/StarflowDesign' target="_blank" rel="noopener noreferrer">DRIBBLE</Link>
+				</ul>
+				<Link className='footerLinkSecond' to='https://github.com/p1baby' target="_blank" rel="noopener noreferrer">Верстка сайта<br></br>@p1baby</Link>
 			</section>
 		</footer>
 	)
