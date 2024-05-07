@@ -1,9 +1,31 @@
+import { useEffect, useRef } from 'react';
 import './popupbrif.scss';
+
+export const useOutsideClick = (callback: () => void) => {
+	const ref = useRef<HTMLDivElement | null>(null);
+
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (ref.current && !ref.current.contains(event.target as Node)){
+				callback()
+			}
+		};
+
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside)
+		};
+	}, [callback]);
+	return{ref};
+};
+
 interface Props {
 	onClose: () => void;
 }
 function PopupBrif(props: Props) {
-	
+
+	const { ref } = useOutsideClick(props.onClose);
+
 	const projectButtons = [
 		{ id: '1', title: 'Одностраничный сайт', },
 		{ id: '2', title: 'Корпоративный сайт', },
@@ -20,7 +42,7 @@ function PopupBrif(props: Props) {
 	
 		return (
 			<section className='overlay'>
-				<article className='asideBrif'>
+				<article className='asideBrif' ref={ref}>
 					<header>
 						<hgroup>
 							<h5 className='startText'>Начнём<br></br>Сотрудничество!</h5>

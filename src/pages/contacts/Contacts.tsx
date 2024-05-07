@@ -13,7 +13,7 @@ function Contacts() {
 	
 	return (
 		<section className='contactSection'>
-			{brifOpened? <PopupBrif onClose={() => setBrifOpened(false)} /> : null}
+			{brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} /> }
 			<h2><span className='firText'>Давайте</span><span className='secText'> Сотрудничать</span></h2>
 			<NavigationButtonsActive />
 			<article className='contactText'>
