@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    background-color: $main-color-text;
+    h3{
+    font-family: 'Playfair Display', sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 120px;
+    .procent{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 24px;
+        vertical-align: super;
+     }
+    }
+}

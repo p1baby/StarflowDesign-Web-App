@@ -23,7 +23,6 @@ interface Props {
 	onClose: () => void;
 }
 function PopupBrif(props: Props) {
-
 	const { ref } = useOutsideClick(props.onClose);
 
 	const projectButtons = [
@@ -39,10 +38,10 @@ function PopupBrif(props: Props) {
 		{ id: '3', title: '60к-100к', },
 		{ id: '4', title: 'Более 100к', },
 	];
-	
+
 		return (
 			<section className='overlay'>
-				<article className='asideBrif' ref={ref}>
+				<article className='drawer' ref={ref}>
 					<header>
 						<hgroup>
 							<h5 className='startText'>Начнём<br></br>Сотрудничество!</h5>
