@@ -1,14 +1,15 @@
 import { FC, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import About from './pages/about/About'
+import About from './pages/about/About';
 import Contacts from './pages/contacts/Contacts';
 import Home from './pages/home/Home';
+import Projects from './pages/projects/Projects';
+import Services from './pages/services/Services';
+import Page404 from './pages/404/404';
 import './styles/variables.scss';
-import './styles/default.scss'
+import './styles/default.scss';
 
 import { Navbar, Footer, Loader } from './components';
-import Projects from './pages/projects/Projects'
-import Services from './pages/services/Services'
 
 const App: FC = () => {
   return (
@@ -27,7 +28,7 @@ const AppContent: FC = () => {
   
   let backgroundColor: string = '#0f0f0f';
   if (isHomePage) {
-    backgroundColor = '#5C5DA1';
+    backgroundColor = '#0f0f0f';
   }
   
   useEffect(() => {
@@ -49,6 +50,7 @@ const AppContent: FC = () => {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/404" element={<Page404/>} />
         <Route path="/" element={<Home />} />
       </Routes>
     </section>

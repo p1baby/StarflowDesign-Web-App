@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.homeSection{
+.undefSection{
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -17,40 +17,40 @@
 		font-size: 240px;
 		line-height: 100%;
 		font-weight: 300;
+
+        display: flex;
+        gap: 24px;
 	}
-	.ligatures{
-		font-variant-ligatures: common-ligatures;
-		letter-spacing: 0;
-	}
-	.owFollowing{
-		margin-left: -22px; // sorry
-	}
-	.firText{
+	.four{
 		font-family: 'Playfair Display', sans-serif;
 		font-weight: 400;
 		font-style: italic;
-		letter-spacing: -24px;
+        margin: -46.5px 0 0 0;
 	}
-	.secText{
-		letter-spacing: -24px;
-		-webkit-text-stroke: 1px  #FFBE98;
-	}
-	.homeText{
+	.undefText{
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: space-between;
-		text-transform: uppercase;
-		padding: 0 232px;
 		margin: 0 auto;
-		top: 70%;
+		top: 67%;
 		position: fixed;
 		width: 100%;
 		p{
 			font-family: 'Inter', sans-serif;
-			font-size: 16px;
-			line-height: 120%;
-			letter-spacing: -4%;
-			font-weight: 300;
+			font-size: 48px;
+			line-height: 90%;
+            letter-spacing: -8%;
+			font-weight: 400;
+		}
+		.undefFooterLink{
+		font-family: 'Inter', sans-serif;
+		font-size: 16px;
+		line-height: 16px;
+		letter-spacing: -1px;
+		color: $main-color-text;
+		transition: 0.5s ease-in-out;
+		text-transform: uppercase;
+		margin: 24px 0 0 0;
 		}
 	}
 }

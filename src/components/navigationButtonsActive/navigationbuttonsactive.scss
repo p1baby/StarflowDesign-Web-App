@@ -21,9 +21,9 @@
 	.upperText{
 		font-weight: 400;
 		font-size: 12px;
-		line-height: 12px;
+		line-height: 100%;
 		opacity: 0.4;
-		letter-spacing: 0;
+		letter-spacing: -4%;
 		margin-bottom: 8px;
 	}
 	.navigationLink{
@@ -32,7 +32,8 @@
 		border: none;
 		font-size: 16px;
 		font-weight: 300;
-		line-height: 16px;
+		line-height: 120%;
+		letter-spacing: -4%;
 		position: relative;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -40,8 +41,8 @@
 	.navigationText{
 		font-size: 16px;
 		font-weight: 300;
-		line-height: 16px;
-		letter-spacing: 0;
+		line-height: 120%;
+		letter-spacing: -4%;
 		position: relative;
 		margin-bottom: -20px;
 	}
