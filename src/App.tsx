@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './pages/about/About';
 import Contacts from './pages/contacts/Contacts';
 import Home from './pages/home/Home';
@@ -19,18 +19,9 @@ const App: FC = () => {
   );
 }
 
-
 const AppContent: FC = () => {
   const [loading, setLoading] = useState(false);
-  const location = useLocation();
-  const isHomePage: boolean = location.pathname === '/';
-  
-  
-  let backgroundColor: string = '#0f0f0f';
-  if (isHomePage) {
-    backgroundColor = '#0f0f0f';
-  }
-  
+
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
@@ -40,7 +31,7 @@ const AppContent: FC = () => {
 
   return (
     <>
-    {loading ? <Loader/> : <section className='wrapper' style={{ backgroundColor: backgroundColor }}>
+    {loading ? <Loader/> : <section className='wrapper'>
     <section className="navbar">
       <Navbar />
     </section>
