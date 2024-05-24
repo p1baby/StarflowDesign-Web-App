@@ -26,7 +26,7 @@ const AppContent: FC = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 70000);
   }, [])
 
   return (
