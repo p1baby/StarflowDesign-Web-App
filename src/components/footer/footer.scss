@@ -14,21 +14,57 @@
 		padding-top: 200px;
 		color: $main-color-text;
 	}
+	.nextPage{
+		display: flex;
+		flex-direction: column;
+		margin: 160px 0 0 0;
+		gap:16px;
+		.nextPageLink{
+			font-size: 16px;
+			line-height: 16px;
+			letter-spacing: -1px;
+			color: $main-color-text;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+		img.leftArrow,
+		img.rightArrow {
+			transition: transform 0.3s ease;
+		}
+		
+		.nextPageLink:hover img.leftArrow {
+			transform: translateX(-4px);
+		}
+		
+		.nextPageLink:hover img.rightArrow {
+			transform: translateX(4px);
+		}
+	}
 	p{
 		font-size: 120px;
 		letter-spacing: -8px;
 		color: $main-color-text;
 	}
 	.mainFooterP{
-		font-family: 'Inter', sans-serif;
 		font-size: 16px;
 		line-height: 16px;
 		letter-spacing: -1px;
 		color: $main-color-text;
 		margin: 0 0 156px 0;
-		transition: 0.5s ease-in-out;
 		text-transform: uppercase;
 	}
+	img.leftArrow,
+		img.rightArrow {
+			transition: transform 0.3s ease;
+		}
+		
+		.mainFooterP:hover img.leftArrow {
+			transform: translateX(-4px);
+		}
+		
+		.mainFooterP:hover img.rightArrow {
+			transform: translateX(4px);
+		}
 	.difText{
 		font-family: 'Playfair Display', sans-serif;
 		font-weight: 400;
@@ -43,7 +79,7 @@
 		align-items: center;
 		text-decoration: none;
 		letter-spacing: -1px;
-		margin: 120px 0 36px 0;
+		margin: 150px 0 36px 0;
 		.footerLinkFirst{
 			text-align: start;
 		}

@@ -49,7 +49,7 @@ function PopupBrif(props: Props) {
 						</hgroup>
 						<hgroup className='horizontalText'>
 							<p className='popupText'>Укажите Ваши контакты и<br></br>расскажите немного о проекте</p>
-							<p style={{ color: '#CF9B7D' }} className='popupText'>*Обязательные поля</p>
+							<p style={{ color: '#B4B4B4' }} className='popupText'>*Обязательные поля</p>
 						</hgroup>
 					</header>
 					<form>

@@ -7,12 +7,13 @@
     height: 100vh;
     text-align: center;
     flex-direction: column;
-    background-color: $main-color-text;
+    background-color: $background-light-black;
     h3{
     font-family: 'Playfair Display', sans-serif;
 	  font-weight: 400;
 	  font-style: italic;
 	  font-size: 120px;
+      color: $main-color-text;
     .procent{
         font-family: 'Playfair Display', sans-serif;
         font-weight: 400;

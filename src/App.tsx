@@ -26,7 +26,7 @@ const AppContent: FC = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 70000);
+    }, 7000);
   }, [])
 
   return (
@@ -37,12 +37,12 @@ const AppContent: FC = () => {
     </section>
     <section className="content">
       <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contacts" element={<Contacts />} />
         <Route path="/404" element={<Page404/>} />
-        <Route path="/" element={<Home />} />
       </Routes>
     </section>
     <section className="footer">
