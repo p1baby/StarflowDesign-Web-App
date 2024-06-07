@@ -13,7 +13,7 @@ function Undefpage() {
 			<NavigationButtonsActive/>
 			<article className='undefText'>
 				<p>Похоже, Вас унесло<br></br>звездным потоком</p>
-				<Link to='/' className='undefFooterLink'><img src={arrowLeft} alt='arrow' />вернуться на главную<img src={arrowRight} alt='arrow' /></Link>
+				<Link to='/' className='undefFooterLink'><img className='leftArrow' src={arrowLeft} alt='arrow' />вернуться на главную<img className='rightArrow' src={arrowRight} alt='arrow' /></Link>
 			</article>
 		</section>
         </>

@@ -1,5 +1,13 @@
 @import "../../../styles/variables";
 
+$font-size-small: 12px;
+$font-size-medium: 16px;
+$line-height-small: 12px;
+$line-height-medium: 16px;
+$opacity-level: 0.4;
+$margin-bottom: 8px;
+$negative-margin-bottom: -20px;
+
 .navigationSectionStatic{
 	width: 100%;
 	display: flex;
@@ -15,44 +23,29 @@
 	.upperText{
 		font-family: 'Inter', sans-serif;
 		font-weight: 400;
-		font-size: 12px;
-		line-height: 12px;
-		opacity: 0.4;
+		font-size: $font-size-small;
+		line-height: $line-height-small;
+		opacity: $opacity-level;
 		letter-spacing: 0;
-		margin-bottom: 8px;
+		margin-bottom: $margin-bottom;
 	}
 	.navigationLink{
 		background: transparent;
 		color: $main-color-text;
 		border: none;
-		font-size: 16px;
+		font-size: $font-size-medium;
 		font-weight: 300;
-		line-height: 16px;
+		line-height: $line-height-medium;
 		position: relative;
 		text-decoration: none;
 		text-transform: uppercase;
 	}
-//		.navigationLink:after {
-//			display: block;
-//			position: absolute;
-//			left: 0;
-//			width: 0;
-//			height: 1px;
-//			background-color: $main-color-text;
-//			content: "";
-//			transition: width 0.3s ease-out;
-//		}
-//
-//		.navigationLink:hover:after,
-//		.navigationLink:focus:after {
-//			width: 100%;
-//		}
 	.navigationText{
-		font-size: 16px;
+		font-size: $font-size-medium;
 		font-weight: 300;
-		line-height: 16px;
+		line-height: $line-height-medium;
 		letter-spacing: 0;
 		position: relative;
-		margin-bottom: -20px;
+		margin-bottom: $negative-margin-bottom;
 	}
 }
