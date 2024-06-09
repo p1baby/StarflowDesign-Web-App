@@ -26,7 +26,7 @@ const AppContent: FC = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 7000);
+    }, 100);
   }, [])
 
   return (
@@ -48,7 +48,8 @@ const AppContent: FC = () => {
     <section className="footer">
       <Footer />
     </section>
-  </section>}
+  </section>
+  }
     </>
   );
 }

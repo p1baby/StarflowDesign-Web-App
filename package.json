@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/core": "7.10.1",
+    "@mantine/form": "^7.10.1",
+    "@mantine/hooks": "7.10.1",
+    "@mantine/notifications": "^7.10.1",
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
