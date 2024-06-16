@@ -1,41 +1,24 @@
 @import "../../styles/variables";
 
-.projSection{
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	color: $main-color-text;
-	box-sizing: border-box;
-	padding: 0 32px;
-	margin: 120px 0 0 0;
-	.serText{
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		p{
-			text-transform: uppercase;
-			font-family: 'Inter', sans-serif;
-			font-size: 16px;
-			line-height: 19.2px;
-			font-weight: 400;
-			letter-spacing: -1px;
-		}
-		h2{
-			font-family: 'Inter', sans-serif;
-			font-size: 160px;
-			line-height: 100%;
-			font-weight: 300;
-		}
-		.firText{
-			font-family: 'Playfair Display', sans-serif;
-			font-weight: 400;
-			font-style: italic;
-			letter-spacing: -16px;
-		}
-		.secText{
-			letter-spacing: -16px;
-			-webkit-text-stroke: 1px  #FAFAFA;
-		}
-	}
+.main{
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+.panel {
+  height: 100vh; // Заставьте каждый section занимать весь экран
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .bg {
+    position: absolute; // Позиционируйте изображения абсолютно
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Используйте object-fit, чтобы изображения растягивались на весь экран
+    z-index: -1;
+  }
 }

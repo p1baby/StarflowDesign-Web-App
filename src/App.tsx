@@ -9,7 +9,17 @@ import Page404 from './pages/404/404';
 import './styles/variables.scss';
 import './styles/default.scss';
 
+import gsap from 'gsap'; // Добавьте эту строку
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { useGSAP } from '@gsap/react';
+
+import { TransitionProvider } from './components/contextGsap/TransitionContext';
+import Transition from './components/transitionGsap/TransitionComponent'; 
+
 import { Navbar, Footer, Loader } from './components';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, useGSAP);
 
 const App: FC = () => {
   return (
@@ -30,27 +40,31 @@ const AppContent: FC = () => {
   }, [])
 
   return (
-    <>
-    {loading ? <Loader/> : <section className='wrapper'>
-    <section className="navbar">
-      <Navbar />
-    </section>
-    <section className="content">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/404" element={<Page404/>} />
-      </Routes>
-    </section>
-    <section className="footer">
-      <Footer />
-    </section>
-  </section>
-  }
-    </>
+    <TransitionProvider>
+        <>
+        {loading ? <Loader/> : <section className='wrapper'>
+          <section className="navbar">
+            <Navbar />
+          </section>
+          <section className="content">
+          <Transition>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/404" element={<Page404/>} />
+            </Routes>
+          </Transition>
+          </section>
+          <section className="footer">
+            <Footer />
+          </section>
+          </section>
+        }
+        </>
+    </TransitionProvider>
   );
 }
 
