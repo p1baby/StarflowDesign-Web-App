@@ -15,7 +15,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { useGSAP } from '@gsap/react';
 
 import { TransitionProvider } from './components/contextGsap/TransitionContext';
-import Transition from './components/transitionGsap/TransitionComponent'; 
+{/*import Transition from './components/transitionGsap/TransitionComponent'; */} 
 
 import { Navbar, Footer, Loader } from './components';
 
@@ -36,7 +36,7 @@ const AppContent: FC = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 100);
+    }, 7000);
   }, [])
 
   return (
@@ -47,7 +47,7 @@ const AppContent: FC = () => {
             <Navbar />
           </section>
           <section className="content">
-          <Transition>
+          {/* <Transition> */} 
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
@@ -56,7 +56,7 @@ const AppContent: FC = () => {
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/404" element={<Page404/>} />
             </Routes>
-          </Transition>
+          {/*</Transition>*/} 
           </section>
           <section className="footer">
             <Footer />
