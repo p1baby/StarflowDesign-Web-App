@@ -70,18 +70,21 @@ const Footer = () => {
     }
 
     return (
-      <article className='nextPage'>
+      <Link to={getNextPage()} className='nextPage'>
         <p>{getNextPageTitle()}</p>
-        <Link to={getNextPage()} className='nextPageLink'><img className='leftArrow' src={arrowLeft} alt='arrow' />Следующая страница<img className='rightArrow' src={arrowRight} alt='arrow' /></Link>
-      </article>
+        <section className='nextPageLink'><img className='leftArrow' src={arrowLeft} alt='arrow' />Следующая страница<img className='rightArrow' src={arrowRight} alt='arrow' /></section>
+      </Link>
     );
   }
+
 
   // footer on other pages
 	return (
 		<footer className='mainFooter'>
-			<p className='mainFooterTop'><span className='difText'>Обсудим</span> Ваш проект</p>
-			<Link to='https://t.me/StarflowDesign' className='mainFooterP'><img className='leftArrow' src={arrowLeft} alt='arrow' />написать в телеграм<img className='rightArrow' src={arrowRight} alt='arrow' /></Link>
+      <Link to='https://t.me/StarflowDesign' className='goConversation'>
+        <p className='mainFooterTop'><span className='difText'>Обсудим</span> <span className='secText'>Ваш проект</span></p>
+        <div className='mainFooterP'><img className='leftArrow' src={arrowLeft} alt='arrow' />написать в телеграм<img className='rightArrow' src={arrowRight} alt='arrow' /></div>
+      </Link>
 			<NavigationButtonsStatic/>
 			<NextPage />
 			<section className='mainFooterBottom'>

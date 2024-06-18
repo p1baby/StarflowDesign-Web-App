@@ -12,12 +12,14 @@
 	align-items: center;
 }
 
-@mixin text-style($font-family, $font-size, $line-height, $letter-spacing, $font-weight: 400) {
+@mixin text-style($font-family, $font-size, $line-height, $letter-spacing, $font-weight: 400, $text-decoration: none, $color: white,) {
 	font-family: $font-family;
 	font-size: $font-size;
 	line-height: $line-height;
 	letter-spacing: $letter-spacing;
 	font-weight: $font-weight;
+	text-decoration: $text-decoration;
+	color: $color;
 }
 
 .undefSection{
@@ -39,31 +41,41 @@
 		margin: -46.5px 0 0 0;
 	}
 	.undefText{
-		@include flex-center;
+		display: flex;
+		width: fit-content;
 		flex-direction: column;
-		margin: 0 auto;
-		top: 67%;
 		position: fixed;
-		width: 100%;
+		top: 67%;
+		cursor: pointer;
+		margin: 0 auto;
+		text-decoration: none !important;
 		p{
-			@include text-style('Inter', 48px, 90%, -8%);
+			@include text-style('Inter', 48px, 90%, 0);
 		}
+	}
 		.undefFooterLink{
-			@include text-style('Inter', 16px, 16px, -1px);
+			@include text-style('Inter', 16px, 16px, 0);
 			color: $main-color-text;
 			transition: 0.5s ease-in-out;
 			text-transform: uppercase;
-			margin: 24px 0 0 0;
+			margin: 16px 0 0 0;
+		}
+		img.leftArrow {
+			margin-right: 14px;
+			transition: transform 0.3s ease;
+		}
+		img.rightArrow {
+			margin-left: 14px;
+			transition: transform 0.3s ease;
 		}
 		img.leftArrow,
 		img.rightArrow {
 			transition: transform 0.3s ease;
 		}
-		.undefFooterLink:hover img.leftArrow {
-			@include transform(translateX(-4px));
-		}
-		.undefFooterLink:hover img.rightArrow {
+		.undefText:hover img.leftArrow {
 			@include transform(translateX(4px));
 		}
-	}
+		.undefText:hover img.rightArrow {
+			@include transform(translateX(-4px));
+		}
 }

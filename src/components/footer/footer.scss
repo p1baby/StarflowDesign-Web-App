@@ -13,39 +13,60 @@
 	  text-align: center;
 	  background-color: $main-footer-background;
 	  box-sizing: border-box;
-	  padding: 0 32px;
+	  padding: 0 32px 32px 32px;
 	  letter-spacing: -0.5px;
 	  line-height: 1;
+	  .goConversation{
+		display: flex;
+		width: fit-content;
+		flex-direction: column;
+		align-self: center;
+		cursor: pointer;
+		margin: 131.02px 0 160px 0;
+		text-decoration: none;
+	  }
 	  .mainFooterTop{
-		  padding-top: 200px;
 		  color: $main-color-text;
 	  }
 	  .nextPage{
-		  display: flex;
-		  flex-direction: column;
-		  margin: 160px 0 0 0;
-		  gap:16px;
-		  .nextPageLink{
-			  font-size: 16px;
-			  line-height: 16px;
-			  letter-spacing: -1px;
-			  color: $main-color-text;
-			  text-decoration: none;
-			  text-transform: uppercase;
-		  }
+		width: fit-content;
+		align-self: center;
+		cursor: pointer;
+		margin: 160px 0 0 0;
+		text-decoration: none;
+		p{
+			font-weight: 400;
+		}
+	  }
+		.nextPageLink{
+			font-size: 16px;
+			line-height: 16px;
+			color: $main-color-text;
+			text-transform: uppercase;
+			display: flex;
+			align-items: baseline;
+			justify-content: center;
+		}
+		img.leftArrow {
+			margin-right: 14px;
+			transition: transform 0.3s ease;
+		}
+		img.rightArrow {
+			margin-left: 14px;
+			transition: transform 0.3s ease;
+		}
 		  img.leftArrow,
 		  img.rightArrow {
 			  transition: transform 0.3s ease;
 		  }
 		  
-		  .nextPageLink:hover img.leftArrow {
-			  @include transform(translateX(-4px));
-		  }
-		  
-		  .nextPageLink:hover img.rightArrow {
+		  .nextPage:hover img.leftArrow {
 			  @include transform(translateX(4px));
 		  }
-	  }
+		  
+		  .nextPage:hover img.rightArrow {
+			  @include transform(translateX(-4px));
+		  }
 	  p{
 		  font-size: 120px;
 		  letter-spacing: -8px;
@@ -54,23 +75,33 @@
 	  .mainFooterP{
 		  font-size: 16px;
 		  line-height: 16px;
-		  letter-spacing: -1px;
 		  color: $main-color-text;
-		  margin: 0 0 156px 0;
 		  text-transform: uppercase;
+		  text-decoration: none;
+		  display: flex;
+		  align-items: baseline;
+		  justify-content: center;
 	  }
+	  img.leftArrow {
+		margin-right: 14px;
+		transition: transform 0.3s ease;
+	}
+	img.rightArrow {
+		margin-left: 14px;
+		transition: transform 0.3s ease;
+	}
 	  img.leftArrow,
-		  img.rightArrow {
-			  transition: transform 0.3s ease;
-		  }
-		  
-		  .mainFooterP:hover img.leftArrow {
-			  @include transform(translateX(-4px));
-		  }
-		  
-		  .mainFooterP:hover img.rightArrow {
-			  @include transform(translateX(4px));
-		  }
+	  img.rightArrow {
+		  transition: transform 0.3s ease;
+	  }
+	  
+	  .goConversation:hover img.leftArrow {
+		  @include transform(translateX(4px));
+	  }
+	  
+	  .goConversation:hover img.rightArrow {
+		  @include transform(translateX(-4px));
+	  }
 	  .difText{
 		  font-family: 'Playfair Display', sans-serif;
 		  font-weight: 400;
@@ -78,6 +109,9 @@
 		  font-size: 120px;
 		  letter-spacing: -8px;
 	  }
+	  .secText{
+		font-weight: 400;
+	}
 	  .mainFooterBottom {
 		  display: flex;
 		  flex-direction: row;
@@ -85,7 +119,7 @@
 		  align-items: center;
 		  text-decoration: none;
 		  letter-spacing: -1px;
-		  margin: 150px 0 36px 0;
+		  margin: 150px 0 0 0;
 		  .footerLinkFirst{
 			  text-align: start;
 		  }
@@ -261,4 +295,3 @@
 		  }
 	  }
   }
-  

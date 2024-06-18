@@ -11,10 +11,10 @@ function Undefpage() {
         <section className='undefSection'>
 			<h1><span className='four'>4</span><img alt='star404' src={star404}/><span className='four'>4</span></h1>
 			<NavigationButtonsActive/>
-			<article className='undefText'>
+			<Link to='/' className='undefText'>
 				<p>Похоже, Вас унесло<br></br>звездным потоком</p>
-				<Link to='/' className='undefFooterLink'><img className='leftArrow' src={arrowLeft} alt='arrow' />вернуться на главную<img className='rightArrow' src={arrowRight} alt='arrow' /></Link>
-			</article>
+				<section className='undefFooterLink'><img className='leftArrow' src={arrowLeft} alt='arrow' />вернуться на главную<img className='rightArrow' src={arrowRight} alt='arrow' /></section>
+			</Link>
 		</section>
         </>
 	);
