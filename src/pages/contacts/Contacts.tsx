@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx'
 import './contacts.scss'
+import starContacts from '/starContacts.svg';
 import PopupBrif from '../../components/popupbrif/PopupBrif.tsx'
 
 function Contacts() {
@@ -28,6 +29,12 @@ function Contacts() {
 					<img className='contactLight' alt='light' src='/contactLight.svg' />
 				</a>
 			</article>
+			<div className='portfolio'>
+					<Link className='portfolio_link' to='https://www.behance.net/StarflowDesign' target="_blank" rel="noopener noreferrer">BEHANCE</Link>
+					<Link className='portfolio_link' to='https://dprofile.ru/starflowdesign' target="_blank" rel="noopener noreferrer">DPROFILE</Link>
+					<Link className='portfolio_link' to='https://dribbble.com/StarflowDesign' target="_blank" rel="noopener noreferrer">DRIBBLE</Link>
+			</div>
+			<img className='starContacts' alt='starContacts' src={starContacts}/>
 		</section>
 	);
 }

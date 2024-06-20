@@ -50,7 +50,7 @@
 		margin: 0 auto;
 		text-decoration: none !important;
 		p{
-			@include text-style('Inter', 48px, 90%, 0);
+			@include text-style('Inter', 48px, 90%, -3px);
 		}
 	}
 		.undefFooterLink{
