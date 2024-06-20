@@ -11,12 +11,13 @@
 	color: $main-color-text;
 	box-sizing: border-box;
 	padding: 0 32px;
-	margin: 120px 0 0 0;
 	h1{
 		font-family: 'Inter', sans-serif;
 		font-size: 240px;
 		line-height: 100%;
 		font-weight: 300;
+		position: fixed;
+  		top: 15%;
 	}
 	.ligatures{
 		font-variant-ligatures: common-ligatures;
@@ -33,7 +34,7 @@
 	}
 	.secText{
 		letter-spacing: -24px;
-		-webkit-text-stroke: 1px  #FAFAFA;
+		-webkit-text-stroke: 3px  #FAFAFA;
 	}
 	.homeText{
 		display: flex;

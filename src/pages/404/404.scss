@@ -29,11 +29,12 @@
 	color: $main-color-text;
 	box-sizing: border-box;
 	padding: 0 32px;
-	margin: 120px 0 0 0;
 	h1{
 		@include text-style('Inter', 240px, 100%, 0);
 		display: flex;
 		gap: 24px;
+		position: fixed;
+  		top: 15%;
 	}
 	.four{
 		@include text-style('Playfair Display', 240px, 100%, 0, 400);

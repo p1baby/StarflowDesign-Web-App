@@ -53,14 +53,14 @@ function PopupBrif(props: Props) {
 		{ id: '1', title: 'Одностраничный сайт', value: 'Одностраничный сайт' },
 		{ id: '2', title: 'Корпоративный сайт', value: 'Корпоративный сайт'},
 		{ id: '3', title: 'Интернет-магазин', value: 'Интернет-магазин'},
-		{ id: '4', title: 'Другое',  value: 'другое'},
+		{ id: '4', title: 'Дизайн в Figma',  value: 'Дизайн в Figma'},
 	];
 	
 	const projectBudget = [
-		{ id: '1', title: 'Менее 30к', value: 'Менее 30к' },
-		{ id: '2', title: '30к-60к', value: '30-60к' },
-		{ id: '3', title: '60к-100к', value: '60-100к' },
-		{ id: '4', title: 'Более 100к', value: 'Более 100к'},
+		{ id: '1', title: 'Менее 50к', value: 'Менее 50к' },
+		{ id: '2', title: '50к-80к', value: '50-80к' },
+		{ id: '3', title: '80к-120к', value: '80к-120к' },
+		{ id: '4', title: 'Более 120к', value: 'Более 120к'},
 	];
 
 	const handleFormSubmit = async ({ name, contacts, projectType, projectBudget, projectDetails, projectLink }: typeof form.values) => {
@@ -83,8 +83,10 @@ function PopupBrif(props: Props) {
 		  const message = `⚠️ НОВЫЙ ЗАКАЗ от ${formattedTime}⚠️\n\nИмя клиента: ${name},\nКонтакт: ${contacts},\nТип проекта: ${projectType},\nБюджет проекта: ${projectBudget},\nДетали проекта:\n${projectDetails}\nСсылка на редизайн: ${projectLink}`;
 	  
 		  await sendMessage(message);
+		  console.log('Success');
 		} catch (e) {
 		  form.setFieldError('projectLink', e as string);
+		  console.error('Error', e);
 		}
 	  }
 	
