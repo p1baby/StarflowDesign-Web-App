@@ -2,7 +2,10 @@
 import {useOutsideClick} from '../popupbrif/outsideClick/useOutsideClick'
 import { useForm } from '@mantine/form';
 import { sendMessage } from '../../api/telegram';
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
+
+import arrowLeft from '/arrowBlackL.svg';
+import arrowRight from '/arrowBlackR.svg';
 
 import './popupbrif.scss';
 
@@ -14,6 +17,8 @@ function PopupBrif(props: Props) {
 
 	const [selectedProjectType, setSelectedProjectType] = useState<string | null>(null);
 	const [selectedProjectBudget, setSelectedProjectBudget] = useState<string | null>(null);
+
+	const [showDefaultContent, setShowDefaultContent] = useState(true);
 
 
 	const form = useForm({
@@ -83,15 +88,27 @@ function PopupBrif(props: Props) {
 		  const message = `⚠️ НОВЫЙ ЗАКАЗ от ${formattedTime}⚠️\n\nИмя клиента: ${name},\nКонтакт: ${contacts},\nТип проекта: ${projectType},\nБюджет проекта: ${projectBudget},\nДетали проекта:\n${projectDetails}\nСсылка на редизайн: ${projectLink}`;
 	  
 		  await sendMessage(message);
-		  console.log('Success');
+		  //console.log('Success');
+		  setShowDefaultContent(false); // Hide default form
 		} catch (e) {
 		  form.setFieldError('projectLink', e as string);
 		  console.error('Error', e);
 		}
 	  }
+
+	  useEffect(() => {
+		if (!showDefaultContent) {
+		  const timeoutId = setTimeout(() => {
+			setShowDefaultContent(true); // Show default content after timeout
+		  }, 25 * 60 * 1000); // 5 minutes in milliseconds
+		  return () => clearTimeout(timeoutId); // Clear the timeout when the component unmounts
+		}
+	  }, [showDefaultContent]);
 	
 		return (
 			<section className='overlay'>
+				{showDefaultContent ?
+				<>
 				<article className='drawer' ref={ref}>
 					<header>
 						<hgroup>
@@ -163,6 +180,21 @@ function PopupBrif(props: Props) {
 						<button type='submit' className='submitButton'>Отправить</button>
 					</form>
 				</article>
+				</>
+				: 
+				<article className='drawerSecond'>
+				<header>
+					<p className='popupTextSecond'>Вместе мы сделаем что-то<br></br>по истине крутое</p>
+				</header>
+				<main>
+					<h6 className='successMessage'>Спасибо! Ваша заявка<br></br>получена!</h6>
+				</main>
+				<footer>
+					<p className='footerFormText'>Я изучу бриф и свяжусь с Вами<br></br>в ближайшее время</p>
+					<button onClick={props.onClose} className='closeButton2'><img className='leftArrow' src={arrowLeft} alt='arrow' />Закрыть<img className='rightArrow' src={arrowRight} alt='arrow' /></button>
+				</footer>
+				</article>
+				}
 			</section>
 		);
 }
