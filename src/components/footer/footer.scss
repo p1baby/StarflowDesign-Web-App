@@ -184,35 +184,8 @@
 		  }
 	  }
   }
-  // footer on pages Home, Contacts
-  .startFooter{
-	  display: flex;
-	  color: $main-color-text;
-	  flex-direction: column;
-	  text-align: center;
-	  box-sizing: border-box;
-	  padding: 0 32px;
-	  letter-spacing: -0.5px;
-	  line-height: 1;
-	  .startFooterBottom{
-		  display: flex;
-		  flex-direction: row;
-		  justify-content: space-between;
-		  align-items: center;
-		  text-decoration: none;
-		  padding: 0 0 32px 0;
-		  p{
-			  text-align: start;
-		  }
-		  a{
-			  color: $main-color-text;
-			  text-decoration: none;
-			  text-align: end;
-		  }
-	  }
-  }
   
-  // footer 404
+  // footer on pages Home, Contacts, 404
   .undefFooter{
 	  display: flex;
 	  color: $main-color-text;

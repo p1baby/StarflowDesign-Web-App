@@ -7,23 +7,10 @@ import './footer.scss';
 
 const Footer = () => {
   const location = useLocation();
-  const isHomePageOrContacts = location.pathname === '/' || location.pathname === '/contacts';
-  const is404 = location.pathname === '/404';
+  const isHomePageOrContactsOr404 = location.pathname === '/' || location.pathname === '/contacts' || location.pathname === '/404';
 
   // footer /contacts and  /
-  if (isHomePageOrContacts) {
-    return (
-      <footer className='startFooter'>
-        <article className='startFooterBottom'>
-          <p>В проект вложена<br />частичка моей души</p>
-          <Link className='footerLinkSecond' to='https://github.com/p1baby' target="_blank" rel="noopener noreferrer">Верстка сайта<br />@p1baby</Link>
-        </article>
-      </footer>
-    );
-  }
-
-  // footer 404
-  if (is404) {
+  if (isHomePageOrContactsOr404) {
     return (
       <footer className='undefFooter'>
         <section className='undefFooterBottom'>

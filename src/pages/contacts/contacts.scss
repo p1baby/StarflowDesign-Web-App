@@ -70,31 +70,4 @@
 			}
 		}
 	}
-	.portfolio{
-		display: flex;
-  		position: absolute;
-  		bottom: 330px;
-		gap: 250px;
-	}
-	.portfolio_link {
-		position: relative;
-		font-size: 16px;
-		font-weight: 300;
-		line-height: 16px;
-		color: $main-color-text;
-		text-decoration: none;
-		width: 72px;
-	}
-	.portfolio a:nth-child(1) {
-		bottom: -177px;
-  		position: relative;
-	}
-	.portfolio a:nth-child(3) {
-		bottom: -177px;
-  		position: relative;
-	}
-	.starContacts{
-		position: absolute;
-		bottom: 0;
-	}
 }

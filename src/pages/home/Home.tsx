@@ -1,6 +1,5 @@
-import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx'
-import starHome from '/starHome.svg';
-import './home.scss'
+import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx';
+import './home.scss';
 
 function Home() {
 	return (
@@ -11,7 +10,6 @@ function Home() {
 				<p>Эмпатичный дизайнер, стремлюсь<br></br>сделать ваш бренд понятным<br></br>и выделяющимся</p>
 				<p>Моя цель — объединить эстетику,<br></br>функциональность и значимость<br></br>в единое целое</p>
 			</article>
-			<img className='starHome' alt='starHome' src={starHome}/>
 		</section>
 	);
 }
