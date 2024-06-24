@@ -93,6 +93,88 @@
 					}
 				}
 			}
+			// timer
+			.drawerThird{
+				display: flex;
+				flex-direction: column;
+				position: fixed;
+				width: 783px;
+				height: 100%;
+				right: 0;
+				background: $main-color-text;
+				z-index: 2000;
+				padding: 32px;
+				justify-content: space-between;
+				header{
+					.popupTextThird{
+						color: $black-text;
+						font-family: 'Inter', sans-serif;
+						font-size: 16px;
+						line-height: 100%;
+						font-weight: 400;
+						letter-spacing: -1px;
+						text-align: center;
+					}
+				}
+				footer{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+				.footerFormText{
+					color: $black-text;
+					font-family: 'Inter', sans-serif;
+					font-size: 16px;
+					line-height: 100%;
+					font-weight: 400;
+					letter-spacing: -1px;
+					text-align: start;
+				}
+				.closeButton2 {
+					background: transparent;
+					border: none;
+					cursor: pointer;
+					text-transform: uppercase;
+					color: $black-text;
+					font-size: 16px;
+					line-height: 16px;
+					text-decoration: none;
+					display: flex;
+					align-items: baseline;
+					justify-content: center;
+				}
+				  img.leftArrow {
+					  margin-right: 14px;
+					  transition: transform 0.3s ease;
+				  }
+				  img.rightArrow {
+					  margin-left: 14px;
+					  transition: transform 0.3s ease;
+				  }
+				img.leftArrow,
+				img.rightArrow {
+					transition: transform 0.3s ease;
+				}
+				
+				.closeButton2:hover img.leftArrow {
+					transform: translateX(4px);
+				}
+				
+				.closeButton2:hover img.rightArrow {
+					transform: translateX(-4px);
+				}
+				}
+				main{
+					.timer{
+						font-family: 'Playfair Display', sans-serif;
+						font-weight: 400;
+						font-style: italic;
+						font-size: 64px;
+						line-height: 50px;
+						letter-spacing: -5px;
+						color: $black-text;
+					}
+				}
+			}
 			// default form for all users
 			.drawer {
 				display: flex;
