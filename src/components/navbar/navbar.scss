@@ -49,4 +49,31 @@
 	.navbarTelegram{
 		text-align: end;
 	}
+	.burger{
+		display: none;
+		flex-direction: column;
+		height: 2.5rem;
+		gap: 6px;
+		justify-content: center;
+		right: 32px;
+		position: absolute;
+		cursor: pointer;
+		z-index: 3001;
+		span{
+			width: 56px;
+			height: 1px;
+			background-color: #FAFAFA;
+		}
+	}
+	.closeBurger {
+		display: none;
+	}
+	@media screen and (max-width: 1024px) {
+		.burger{
+			display: flex;
+		}
+		.welcome , .navbarTelegram{
+			display: none;
+		}
+	}
 }

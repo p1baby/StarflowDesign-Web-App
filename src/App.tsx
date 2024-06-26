@@ -9,7 +9,7 @@ import Page404 from './pages/404/404';
 import './styles/variables.scss';
 import './styles/default.scss';
 
-import gsap from 'gsap'; // Добавьте эту строку
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { useGSAP } from '@gsap/react';
@@ -36,7 +36,7 @@ const AppContent: FC = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 7000);
+    }, 10);
   }, [])
 
   return (
