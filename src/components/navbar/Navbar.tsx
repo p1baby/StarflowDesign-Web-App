@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '/logoSV.svg';
 import './navbar.scss';
 
 import OpenBurger from './openBurger/openBurger';
+
+export const BurgerContext = createContext<React.Dispatch<React.SetStateAction<boolean>> | undefined>(undefined);
 
 const Navbar = () => {
 	const [isBrugerOpen, setIsBurgerOpen] = useState(false);
@@ -19,7 +21,7 @@ const Navbar = () => {
                 <span></span>
             </section>
             <section className={isBrugerOpen ? "openBurger" : "closeBurger"}>
-                {isBrugerOpen ? <OpenBurger /> : null}
+                {isBrugerOpen ? <BurgerContext.Provider value={setIsBurgerOpen}><OpenBurger /></BurgerContext.Provider> : null}
             </section>
                 <section className='welcome'>
                     <span className='bracket1'>(</span>

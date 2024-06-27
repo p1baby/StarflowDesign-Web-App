@@ -1,19 +1,39 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '/logoSV.svg';
 import './openBurger.scss'
 
+import { useContext } from 'react';
+import { BurgerContext } from '../Navbar';
+
+import PopupBrif from '../../popupbrif/PopupBrif';
+
 const openBurger = () => {
+    const setIsBurgerOpen = useContext(BurgerContext);
+    const [brifOpened, setBrifOpened] = React.useState(false);
+
+    const contextClick = () => {
+        if (setIsBurgerOpen) {
+            setIsBurgerOpen(false);
+        }
+    };
+	
+	const handleOpenPopup = () => {
+		setBrifOpened(true);
+	};
+
 	return(
 		<>
+        {brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} /> }
         <header className='headerMenu'>
             <p className='headerBtn'> <img src={logo} alt='logo' />Starflow<br></br>Design</p>
         </header>
         <section className='burgerContent'>
             <nav>
-                <Link className='navLink' to='/projects'>Проекты</Link>
-                <Link className='navLink' to='/services'>Услуги</Link>
-                <Link className='navLink' to='/about'>Обо мне</Link>
-                <Link className='navLink' to='/contacts'>Контакты</Link>
+                <Link onClick={contextClick} className='navLink' to='/projects'>Проекты</Link>
+                <Link onClick={contextClick} className='navLink' to='/services'>Услуги</Link>
+                <Link onClick={contextClick} className='navLink' to='/about'>Обо мне</Link>
+                <Link onClick={contextClick} className='navLink' to='/contacts'>Контакты</Link>
             </nav>
             <article>
 				<Link to='https://t.me/StarflowDesign' target='_blank' rel='noopener noreferrer' className='contactButtons'>
@@ -21,7 +41,7 @@ const openBurger = () => {
 					<span className='discription'>( телеграм )</span>
 					<img className='contactLight' alt='light' src='/contactLight.svg' />
 				</Link>
-				<a className='contactButtons'>
+				<a onClick={handleOpenPopup} className='contactButtons'>
 					<p>ЗАПОЛНИТЬ<br></br>БРИФ</p>
 					<span className='discription'>( небольшой )</span>
 					<img className='contactLight' alt='light' src='/contactLight.svg' />

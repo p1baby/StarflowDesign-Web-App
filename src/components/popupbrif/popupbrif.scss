@@ -116,6 +116,18 @@
 						text-align: center;
 					}
 				}
+				main{
+					.timer{
+						font-family: 'Playfair Display', sans-serif;
+						font-weight: 400;
+						font-style: italic;
+						font-size: 64px;
+						line-height: 50px;
+						letter-spacing: -5px;
+						color: $black-text;
+						text-align: center;
+					}
+				}
 				footer{
 					display: flex;
 					flex-direction: row;
@@ -162,17 +174,6 @@
 				.closeButton2:hover img.rightArrow {
 					transform: translateX(-4px);
 				}
-				}
-				main{
-					.timer{
-						font-family: 'Playfair Display', sans-serif;
-						font-weight: 400;
-						font-style: italic;
-						font-size: 64px;
-						line-height: 50px;
-						letter-spacing: -5px;
-						color: $black-text;
-					}
 				}
 			}
 			// default form for all users
