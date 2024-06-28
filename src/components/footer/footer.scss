@@ -185,7 +185,7 @@
 	  }
   }
   
-  // footer on pages Home, Contacts, 404
+  // footer /contacts /404 /Home
   .undefFooter{
 	  display: flex;
 	  color: $main-color-text;
@@ -195,11 +195,52 @@
 	  padding: 0 32px;
 	  letter-spacing: -0.5px;
 	  line-height: 1;
+	  .contactMeMain{
+		display: flex;
+		width: fit-content;
+		flex-direction: column;
+		align-self: center;
+		cursor: pointer;
+		text-decoration: none;
+		align-items: end;
+
+		display: none;
+	  }
+	  .mainFooterP{
+		font-size: 16px;
+		line-height: 16px;
+		color: $main-color-text;
+		text-transform: uppercase;
+		text-decoration: none;
+		display: flex;
+		align-items: baseline;
+		justify-content: center;
+	}
+  	img.leftArrow {
+	  	margin-right: 14px;
+	  	transition: transform 0.3s ease;
+  	}
+  	img.rightArrow {
+	  	margin-left: 14px;
+	  	transition: transform 0.3s ease;
+  	}
+	img.leftArrow,
+	img.rightArrow {
+		transition: transform 0.3s ease;
+	}
+	
+	.contactMeMain:hover img.leftArrow {
+		@include transform(translateX(4px));
+	}
+	
+	.contactMeMain:hover img.rightArrow {
+		@include transform(translateX(-4px));
+	}
 	  .undefFooterBottom{
 		  display: flex;
 		  flex-direction: row;
 		  justify-content: space-between;
-		  align-items: center;
+		  align-items: end;
 		  padding: 0 0 32px 0;
 		  p{
 			  text-align: start;
@@ -266,5 +307,21 @@
 			  transition: transform 0.55s;
 			  transition: transform 0.55s, -webkit-transform 0.55s;
 		  }
+	  }
+	  @media screen and (max-width: 1366px) {
+		.undefFooterBottom , .ul_link {
+			font-size: 14px !important;
+		}
+	  }
+	  @media screen and (max-width: 1024px) {
+		.contactMeMain{
+			display: block;
+		}
+		.showLink , .undefLinkFirst , .undefLinkSecond{
+			display:none;
+		}
+		.undefFooterBottom {
+			justify-content: center;
+		}
 	  }
   }

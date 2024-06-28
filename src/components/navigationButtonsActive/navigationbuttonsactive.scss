@@ -46,4 +46,13 @@
 		position: relative;
 		margin-bottom: -20px;
 	}
+
+	@media screen and (max-width: 1366px) {
+		.upperText{
+			font-size: 12px;
+		}
+		.navigationLink , .navigationText{
+			font-size: 14px;
+		}
+	}
 }

@@ -4,10 +4,8 @@
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	
-	justify-content: center; // выравнивание по вертикали
+	justify-content: center;
 	align-items: center;
-	
 	color: $main-color-text;
 	box-sizing: border-box;
 	padding: 0 32px;
@@ -36,6 +34,26 @@
 		letter-spacing: -24px;
 		-webkit-text-stroke: 3px  #FAFAFA;
 	}
+	.welcomeUnder{
+		display: none;
+		margin-top: 273px;
+		flex-direction: row;
+		align-items: center;
+		.bracket1, .bracket2{
+			font-family: 'Playfair Display' , sans-serif;
+			font-weight: 400;
+			font-style: italic;
+			letter-spacing: -24px;
+			font-size: 32px;
+			opacity: 0.4;
+		}
+		.bracket1{
+			margin: 0 16px 0 0;
+		}
+		.bracket2{
+			margin: 0 0 0 12px;
+		}
+	}
 	.homeText{
 		display: flex;
 		flex-direction: row;
@@ -52,6 +70,90 @@
 			line-height: 120%;
 			letter-spacing: -4%;
 			font-weight: 300;
+		}
+	}
+	@media screen and (max-width: 1440px) {
+		h1{
+			font-size: 200px;
+		}
+		.firText , .secText {
+			letter-spacing: -19px;
+		}
+		.homeText {
+			padding: 0 140px;
+		}
+	}
+	@media screen and (max-width: 1366px) {
+		h1{
+			font-size: 184px;
+		}
+		.firText , .secText {
+			letter-spacing: -17px;
+		}
+		.homeText {
+			padding: 0 145px;
+		}
+		.homeText p {
+			font-size: 14px;
+		}
+	}
+	@media screen and (max-width: 1280px) {
+		h1{
+			font-size: 160px;
+		}
+		.firText, .secText {
+			letter-spacing: -15px;
+		}
+		.homeText {
+			padding: 0 175px;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		.navigationSection{
+			display: none;
+		}
+		h1{
+			font-size: 144px;
+		}
+		.firText, .secText {
+			letter-spacing: -13px;
+		}
+		.homeText {
+			padding: 0 95px;
+		}
+		.welcomeUnder{
+			display: flex;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		h1 {
+			line-height: 116px;
+		}
+		.homeText {
+			flex-direction: column;
+			gap: 16px;
+			//bottom: 136px;
+			margin: 0;
+			padding: 0;
+			top: unset;
+		}
+	}
+	@media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+		h1{
+			font-size: 96px;
+			line-height: 80px;
+		}
+		.owFollowing {
+			margin-left: -10px;
+		}
+		.firText, .secText {
+			letter-spacing: -8px;
+		}
+		.welcomeUnder{
+			padding:48px 0 0 0;
+		}
+		.homeText {
+			margin-top:890px;
 		}
 	}
 }

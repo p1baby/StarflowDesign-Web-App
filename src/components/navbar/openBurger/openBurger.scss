@@ -12,14 +12,15 @@
 	flex-direction: column;
 	color: $main-color-text;
 	text-decoration: none;
-	padding: 0 24px 24px 24px;
+	padding: 0 32px 32px 32px;
     .headerMenu{
-        padding: 36px 32px 0 32px;
+        padding: 36px 0px 0 0px;
     }
     .headerBtn{
 		display: flex;
 		align-items: center;
 		gap: 8px;
+        font-size: 14px;
 	}
     .burgerContent{
         display: flex;
@@ -204,12 +205,18 @@
             }
         }
         @media screen and (max-width: 428px) {
+            .openBurger {
+                padding: 0 24px 32px 24px;
+            }
             nav{
                 top: 20%;
                 gap: 8px;
             }
         }
         @media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+            .openBurger {
+                padding: 0 24px 32px 24px;
+            }
             nav{
                 gap: 8px;
             }
