@@ -29,6 +29,12 @@
 27) адаптив burger решение с content, footer на заднем фоне (юзал display none чтобы не было траблов)
 28) loader 
 29) useTimer
+30) адаптивы home // +
+31) адаптивы projects
+32) адаптивы contacts
+33) адаптивы about
+34) components adaptive
+
 
 Актальные:
 1) !!!!!!!!!!!!!!!!!!!!!!!!! придумать решение с NavigationButtonsStatic и NavigationButtonsActive !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -40,3 +46,4 @@
 20) при наведение на navigationbuttom должно быть на весь блок
 23) обработчик отправки сообщения бриф // +-
 24) оптимизация компонента popupBrif //
+29) useTimer
