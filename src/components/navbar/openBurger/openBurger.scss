@@ -2,7 +2,7 @@
 
 .openBurger {
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: 3000;
     top: 0;
@@ -27,12 +27,13 @@
         justify-content: space-between;
         color: $main-color-text;
         text-decoration: none;
-        padding: 64px 0 0 0;
         height: 100%;
         nav{
             display: flex;
             flex-direction: column;
             align-items: center;
+            top: 15%;
+            position: relative;
             .navLink{
                 font-family: 'Inter', sans-serif;
                 font-size: 88px;
@@ -54,15 +55,14 @@
                 .contactLight{
                     z-index: 0;
                     position: relative;
-                    top: -250%;
+                    top: -200%;
                     filter: blur(40px);
                 }
                 p{
                     font-family: 'Inter', sans-serif;
-                    font-size: 48px;
-                    letter-spacing: -4px;
+                    font-size: 32px;
+                    letter-spacing: -2px;
                     font-weight: 400;
-                    line-height: 48px;
                     z-index: 1000;
                     cursor: pointer;
                     color: $main-color-text;
@@ -78,66 +78,164 @@
                 }
             }
         }
-        ul{
+        .lowerSection{
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: inline-flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            .portfolioLink{
-                position: relative;
-                font-size: 16px;
-                font-weight: 300;
-                line-height: 16px;
-            }
-            .portfolioLink:hover:before {
-                -webkit-transform: scaleX(1);
-                -ms-transform: scaleX(1);
-                transform: scaleX(1);
-                -webkit-transform-origin: left;
-                -ms-transform-origin: left;
-                transform-origin: left;
-                -webkit-transition: -webkit-transform 0.55s;
-                transition: -webkit-transform 0.55s;
-                -o-transition: transform 0.55s;
-                transition: transform 0.55s;
-                transition: transform 0.55s, -webkit-transform 0.55s;
-            }
-            .portfolioLink:before {
-                content: '';
-                width: 100%;
-                height: 1px;
-                background-color: $main-color-text;
-                position: absolute;
-                left: 0; bottom: -2px;
-                -webkit-transform: scaleX(0);
-                -ms-transform: scaleX(0);
-                transform: scaleX(0);
-                -webkit-transform-origin: right;
-                -ms-transform-origin: right;
-                transform-origin: right;
-                -webkit-transition: -webkit-transform 0.55s;
-                transition: -webkit-transform 0.55s;
-                -o-transition: transform 0.55s;
-                transition: transform 0.55s;
-                transition: transform 0.55s, -webkit-transform 0.55s;
+            flex-direction: column;
+            gap: 64px;
+            footer{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+                align-items: end;
+                .footerLinkFirst{
+                    text-align: start;
+                }
+                ul{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: inline-flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    gap: 24px;
+                    .portfolioLink{
+                        position: relative;
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 16px;
+                    }
+                    .portfolioLink:hover:before {
+                        -webkit-transform: scaleX(1);
+                        -ms-transform: scaleX(1);
+                        transform: scaleX(1);
+                        -webkit-transform-origin: left;
+                        -ms-transform-origin: left;
+                        transform-origin: left;
+                        -webkit-transition: -webkit-transform 0.55s;
+                        transition: -webkit-transform 0.55s;
+                        -o-transition: transform 0.55s;
+                        transition: transform 0.55s;
+                        transition: transform 0.55s, -webkit-transform 0.55s;
+                    }
+                    .portfolioLink:before {
+                        content: '';
+                        width: 100%;
+                        height: 1px;
+                        background-color: $main-color-text;
+                        position: absolute;
+                        left: 0; bottom: -2px;
+                        -webkit-transform: scaleX(0);
+                        -ms-transform: scaleX(0);
+                        transform: scaleX(0);
+                        -webkit-transform-origin: right;
+                        -ms-transform-origin: right;
+                        transform-origin: right;
+                        -webkit-transition: -webkit-transform 0.55s;
+                        transition: -webkit-transform 0.55s;
+                        -o-transition: transform 0.55s;
+                        transition: transform 0.55s;
+                        transition: transform 0.55s, -webkit-transform 0.55s;
+                    }
+                }
+                .footerLinkSecond{
+                    text-align: end;
+                    width: 177px;
+                }
             }
         }
-        footer{
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-            .footerLinkFirst{
-                text-align: start;
+        .ulPortfolio{
+            display: none;
+        }
+        @media screen and (max-width: 768px) {
+            .lowerSection footer ul{
+                display: none;
             }
-            .footerLinkSecond{
-                text-align: end;
-                width: 177px;
+            .ulPortfolio{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: inline-flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                .portfolioLink{
+                    position: relative;
+                    font-size: 16px;
+                    font-weight: 300;
+                    line-height: 16px;
+                }
+                .portfolioLink:hover:before {
+                    -webkit-transform: scaleX(1);
+                    -ms-transform: scaleX(1);
+                    transform: scaleX(1);
+                    -webkit-transform-origin: left;
+                    -ms-transform-origin: left;
+                    transform-origin: left;
+                    -webkit-transition: -webkit-transform 0.55s;
+                    transition: -webkit-transform 0.55s;
+                    -o-transition: transform 0.55s;
+                    transition: transform 0.55s;
+                    transition: transform 0.55s, -webkit-transform 0.55s;
+                }
+                .portfolioLink:before {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background-color: $main-color-text;
+                    position: absolute;
+                    left: 0; bottom: -2px;
+                    -webkit-transform: scaleX(0);
+                    -ms-transform: scaleX(0);
+                    transform: scaleX(0);
+                    -webkit-transform-origin: right;
+                    -ms-transform-origin: right;
+                    transform-origin: right;
+                    -webkit-transition: -webkit-transform 0.55s;
+                    transition: -webkit-transform 0.55s;
+                    -o-transition: transform 0.55s;
+                    transition: transform 0.55s;
+                    transition: transform 0.55s, -webkit-transform 0.55s;
+                }
+            }
+        }
+        @media screen and (max-width: 428px) {
+            nav{
+                top: 20%;
+                gap: 8px;
+            }
+        }
+        @media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+            nav{
+                gap: 8px;
+            }
+            nav .navLink{
+                font-size: 56px;
+                letter-spacing: -6px;
+            }
+            article .contactButtons{
+                height: 73px;
+                width: 148px;
+            }
+            article .contactButtons p{
+                font-size: 24px;
+            }
+            article .contactButtons .contactLight {
+                top: -160%;
+            }
+            .portfolioLink , .footerLinkFirst , .footerLinkSecond {
+                font-size: 14px;
             }
         }
     }
+    @media screen and (max-width: 375px) , (max-width: 390px) , (max-width: 428px) {
+        .headerMenu{
+            padding: 32px 0 0 0;
+        }
+    }
+    
 }

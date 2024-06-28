@@ -35,27 +35,34 @@ const openBurger = () => {
                 <Link onClick={contextClick} className='navLink' to='/about'>Обо мне</Link>
                 <Link onClick={contextClick} className='navLink' to='/contacts'>Контакты</Link>
             </nav>
-            <article>
-				<Link to='https://t.me/StarflowDesign' target='_blank' rel='noopener noreferrer' className='contactButtons'>
-					<p>СВЯЗАТЬСЯ<br></br>СО МНОЙ</p>
-					<span className='discription'>( телеграм )</span>
-					<img className='contactLight' alt='light' src='/contactLight.svg' />
-				</Link>
-				<a onClick={handleOpenPopup} className='contactButtons'>
-					<p>ЗАПОЛНИТЬ<br></br>БРИФ</p>
-					<span className='discription'>( небольшой )</span>
-					<img className='contactLight' alt='light' src='/contactLight.svg' />
-				</a>
-			</article>
-            <ul>
-                <Link className='portfolioLink' to='https://www.behance.net/StarflowDesign' target="_blank" rel="noopener noreferrer">BEHANCE</Link>
-                <Link className='portfolioLink' to='https://dprofile.ru/starflowdesign' target="_blank" rel="noopener noreferrer">DPROFILE</Link>
-                <Link className='portfolioLink' to='https://dribbble.com/StarflowDesign' target="_blank" rel="noopener noreferrer">DRIBBLE</Link>
-            </ul>
-            <footer>
-                <Link className='footerLinkFirst' to='mailto:starflowdesign@gmail.com' target="_blank" rel="noopener noreferrer">Рабочая почта<br />starflowdesign@gmail.com</Link>
-                <Link className='footerLinkSecond' to='https://github.com/p1baby' target="_blank" rel="noopener noreferrer">Верстка сайта<br />@p1baby</Link>
-            </footer>
+            <section className='lowerSection'>
+                <article>
+                    <Link to='https://t.me/StarflowDesign' target='_blank' rel='noopener noreferrer' className='contactButtons'>
+                        <p>СВЯЗАТЬСЯ<br></br>СО МНОЙ</p>
+                        <span className='discription'>( телеграм )</span>
+                        <img className='contactLight' alt='light' src='/burgerLight.svg' />
+                    </Link>
+                    <a onClick={handleOpenPopup} className='contactButtons'>
+                        <p>ЗАПОЛНИТЬ<br></br>БРИФ</p>
+                        <span className='discription'>( небольшой )</span>
+                        <img className='contactLight' alt='light' src='/burgerLight.svg' />
+                    </a>
+                </article>
+                <ul className='ulPortfolio'>
+                    <Link className='portfolioLink' to='https://www.behance.net/StarflowDesign' target="_blank" rel="noopener noreferrer">BEHANCE</Link>
+                    <Link className='portfolioLink' to='https://dprofile.ru/starflowdesign' target="_blank" rel="noopener noreferrer">DPROFILE</Link>
+                    <Link className='portfolioLink' to='https://dribbble.com/StarflowDesign' target="_blank" rel="noopener noreferrer">DRIBBLE</Link>
+                </ul>
+                <footer>
+                    <Link className='footerLinkFirst' to='mailto:starflowdesign@gmail.com' target="_blank" rel="noopener noreferrer">Рабочая почта<br />starflowdesign@gmail.com</Link>
+                    <ul>
+                        <Link className='portfolioLink' to='https://www.behance.net/StarflowDesign' target="_blank" rel="noopener noreferrer">BEHANCE</Link>
+                        <Link className='portfolioLink' to='https://dprofile.ru/starflowdesign' target="_blank" rel="noopener noreferrer">DPROFILE</Link>
+                        <Link className='portfolioLink' to='https://dribbble.com/StarflowDesign' target="_blank" rel="noopener noreferrer">DRIBBLE</Link>
+                    </ul>
+                    <Link className='footerLinkSecond' to='https://github.com/p1baby' target="_blank" rel="noopener noreferrer">Верстка сайта<br />@p1baby</Link>
+                </footer>
+            </section>
         </section>
 		</>
 	)
