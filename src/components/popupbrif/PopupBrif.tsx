@@ -119,11 +119,12 @@ const form = useForm({
   const handleDrawerClose = () => {
     if (showSuccessContent) {
       setShowSuccessContent(false);
-      setShowThirdContent(true);
+      setShowThirdContent(false);
       localStorage.setItem('showThirdContent', 'true');
       startTimer();
     } else if (showThirdContent) {
       setShowThirdContent(false);
+      stopTimer();
       props.onClose(); // Close the drawer when the button is clicked
     }
   };
@@ -136,6 +137,7 @@ const form = useForm({
             <header>
               <hgroup>
                 <h5 className='startText'>Начнём<br />Сотрудничество!</h5>
+                <h5 className='startTextSecond'>Начнём Сотрудничество!</h5>
                 <button onClick={props.onClose} className='closeButton'><img alt='close' src='/close.svg' /></button>
               </hgroup>
               <hgroup className='horizontalText'>
@@ -159,7 +161,7 @@ const form = useForm({
               </fieldset>
               <fieldset className='horizontalGround'>
                 <p className='popupText'>Тип проекта</p>
-                <div className='buttonsMain'>
+                <div className='buttonsMainT'>
                   {projectButtons.map((project) => (
                     <button
                       key={project.id}
@@ -176,7 +178,7 @@ const form = useForm({
               </fieldset>
               <fieldset className='horizontalGround'>
                 <p className='popupText'>Бюджет проекта (в рублях)*</p>
-                <section className='buttonsMain'>
+                <section className='buttonsMainB'>
                   {projectBudget.map((project) => (
                     <button
                       key={project.id}

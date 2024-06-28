@@ -186,7 +186,7 @@
 				right: 0;
 				background: $main-color-text;
 				z-index: 1000;
-				padding: 48px 32px 32px 32px;
+				padding: 64px 32px 32px 32px;
 				gap: 40px;
 				.popupText{
 					color: $black-text;
@@ -269,7 +269,7 @@
 					display: flex;
 					position: relative;
 					flex-direction: column;
-					.startText {
+					.startText , .startTextSecond {
 						font-family: 'Playfair Display', sans-serif;
 						font-weight: 300;
 						font-style: italic;
@@ -278,6 +278,9 @@
 						font-size: 64px;
 						text-align: start;
 						color: $black-text;
+					}
+					.startTextSecond{
+						display: none;
 					}
 					.closeButton {
 						background: transparent;
@@ -292,7 +295,7 @@
 						flex-direction: row;
 						justify-content: space-between;
 						text-align: start;
-						padding: 56px 0 0 0;
+						padding: 64px 0 0 0;
 					}
 				}
 				form{
@@ -328,7 +331,7 @@
 							flex-direction: row;
 							gap: 8px;
 						}
-						.buttonsMain{
+						.buttonsMainT , .buttonsMainB{
 							display: flex;
 							flex-direction: row;
 							gap: 8px;
@@ -368,7 +371,7 @@
 						letter-spacing: -1px;
 						cursor: pointer;
 						transition: 0.5s;
-						margin-top: 32px;
+						margin-top: 16px;
 					}
 					.submitButton:hover{
 						border: $black-text 1px solid;
@@ -378,4 +381,76 @@
 					}
 				}
 			}
+			@media screen and (max-width: 1366px) {
+				.drawer, .drawerSecond, .drawerThird{
+					width: 714px;
+				}
+				// drawer
+				.drawer header .startText{
+					display: none;
+				}
+				.drawer header .startTextSecond{
+					display: block;
+					font-size: 56px;
+				}
+				.drawer .popupText , .drawer .ownInput , .drawer .mainButtonB, .drawer .mainButtonT, .drawer .ownInputSpecial, .drawer form .verticalGroundLast .ownTextarea , .drawer form .submitButton{
+					font-size: 14px;
+				}
+			}
+			@media screen and (max-width: 1024px) {
+				.drawer, .drawerSecond, .drawerThird{
+					width: 100%;
+				}
+			}
+			@media screen and (max-width: 768px) {
+				// drawer
+				.drawer header .startText{
+					display: none;
+				}
+				.drawer header .startTextSecond{
+					display: block;
+					font-size: 56px;
+				}
+				.drawer form .verticalGroundLast .ownTextarea {
+					height: 272px;
+				}
+			}
+			@media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+				// drawer
+				.drawer {
+					padding: 84px 24px 32px 24px;
+				}
+				.drawer header .startText{
+					display: block;
+					font-size: 48px;
+				}
+				.drawer header .startTextSecond{
+					display: none;
+				}
+				.drawer header .horizontalText{
+					padding: 48px 0 0 0;
+					flex-direction: column;
+					gap: 16px;
+				}
+				.drawer .popupText , .drawer .ownInput , .drawer .mainButtonB, .drawer .mainButtonT, .drawer .ownInputSpecial, .drawer form .verticalGroundLast .ownTextarea , .drawer form .submitButton{
+					font-size: 14px;
+				}
+				.drawer form .verticalGroundLast .ownTextarea {
+					height: 286px;
+				}
+				.drawer form .horizontalGround .inputContact{
+					flex-direction: column;
+				}
+				.drawer form .horizontalGround .buttonsMainT{
+					flex-direction: column;
+				}
+				.drawer form .horizontalGround .buttonsMainB{
+					flex-direction: revert;
+    				flex-wrap: wrap;
+				}
+				.drawer form .verticalGroundLast .ownTextarea {
+					height: 124px;
+				}
+			}
+			
 }
