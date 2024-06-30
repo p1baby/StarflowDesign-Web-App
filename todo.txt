@@ -31,7 +31,7 @@
 29) useTimer
 30) адаптивы home // +
 31) адаптивы projects
-32) адаптивы contacts
+32) адаптивы contacts // +
 33) адаптивы about
 34) components adaptive
 

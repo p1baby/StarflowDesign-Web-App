@@ -18,6 +18,14 @@
 		position: fixed;
   		top: 15%;
 	}
+	.second{
+		display: none;
+		font-size: 160px;
+		line-height: 100%;
+		font-weight: 300;
+		position: fixed;
+  		top: 20%;	
+	}
 	.firText{
 		font-family: 'Playfair Display', sans-serif;
 		font-weight: 400;
@@ -32,7 +40,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		padding: 0 160px;
+		padding: 0 270px;
 		margin: 0 auto;
 		top: 66%;
 		position: fixed;
@@ -68,6 +76,67 @@
 				cursor: pointer;
 				color: $main-color-text;
 			}
+		}
+	}
+	@media screen and (max-width: 1440px) {
+		h2{
+			font-size: 120px;
+			top: 20%;
+		}
+		.firText , .secText {
+			letter-spacing: -10px;
+		}
+		.contactText {
+			padding: 0 160px;
+		}
+	}
+	@media screen and (max-width: 1366px), (max-width: 1280px) {
+		h2{
+			font-size: 104px;
+		}
+		.firText , .secText {
+			letter-spacing: -8px;
+		}
+		.contactText {
+			padding: 0 190px;
+		}
+		.contactText .contactButtons p {
+			font-size: 32px;
+			letter-spacing: -2px;
+			line-height: 34px;
+		}
+		.contactText .contactButtons .contactLight {
+			top: -154%;
+		}
+		.contactText .contactButtons {
+			width: 200px;
+		  }
+	}
+	@media screen and (max-width: 1024px) {
+		h2, .navigationSection{
+			display: none;
+		}
+		.second{
+			display: block;
+			font-size: 88px;
+			line-height: 72px;
+		}
+		.contactSection .contactText {
+			padding: 0 170px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.contactText{
+			display: none;
+		}
+	}
+	@media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+		.second{
+			font-size: 56px;
+			line-height: 50px;
+		}
+		.firText , .secText {
+			letter-spacing: -4px;
 		}
 	}
 }

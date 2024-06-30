@@ -15,6 +15,7 @@ function Contacts() {
 		<section className='contactSection'>
 			{brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} /> }
 			<h2><span className='firText'>Давайте</span><span className='secText'> Сотрудничать</span></h2>
+			<h2 className='second'><span className='firText'>Давайте</span><br></br><span className='secText'>Сотрудничать</span></h2>
 			<NavigationButtonsActive />
 			<article className='contactText'>
 				<Link to='https://t.me/StarflowDesign' target='_blank' rel='noopener noreferrer' className='contactButtons'>

@@ -237,11 +237,14 @@
             .portfolioLink , .footerLinkFirst , .footerLinkSecond {
                 font-size: 14px;
             }
+            .ulPortfolio .portfolioLink{
+                font-size: 14px;
+            }
         }
     }
     @media screen and (max-width: 375px) , (max-width: 390px) , (max-width: 428px) {
         .headerMenu{
-            padding: 32px 0 0 0;
+            padding: 36px 0 0 0;
         }
     }
     
