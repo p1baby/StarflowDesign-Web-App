@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
 import arrowLeft from '/arrowLeft.svg';
 import arrowRight from '/arrowRight.svg';
 import NavigationButtonsStatic from './navigationButtonsStatic/NavigationButtonsStatic.tsx';
@@ -8,6 +7,8 @@ import './footer.scss';
 import Footer404 from './footer404/Footer404.tsx';
 import FooterContacts from './footerContacts/FooterContacts.tsx';
 import FooterHome from './footerHome/FooterHome.tsx';
+
+import NextPage from './nextPage/NextPage.tsx';
 
 const Footer = () => {
   const location = useLocation();
@@ -31,45 +32,6 @@ const Footer = () => {
   if (Page404) {
     return (
       <Footer404/>
-    );
-  }
-
-
-  function NextPage() {
-    const location = useLocation();
-    const [currentPage] = useState(location.pathname);
-
-    function getNextPage() {
-      switch (currentPage) {
-        case '/projects':
-          return '/services';
-        case '/services':
-          return '/about';
-        case '/about':
-          return '/projects';
-        default:
-          return '/'; // If the current page does not match the expected ones, we will go to the main page
-      }
-    }
-
-    function getNextPageTitle() {
-      switch (getNextPage()) {
-        case '/services':
-          return 'Услуги';
-        case '/about':
-          return 'Обо мне';
-        case '/projects':
-          return 'Проекты';
-        default:
-          return '';
-      }
-    }
-
-    return (
-      <Link to={getNextPage()} className='nextPage'>
-        <p>{getNextPageTitle()}</p>
-        <section className='nextPageLink'><img className='leftArrow' src={arrowLeft} alt='arrow' />Следующая страница<img className='rightArrow' src={arrowRight} alt='arrow' /></section>
-      </Link>
     );
   }
 
