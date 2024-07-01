@@ -48,4 +48,9 @@ $negative-margin-bottom: -20px;
 		position: relative;
 		margin-bottom: $negative-margin-bottom;
 	}
+	@media screen and (max-width: 1366px) {
+		.navigationLink{
+			font-size: 14px;
+	  }
+	}
 }
