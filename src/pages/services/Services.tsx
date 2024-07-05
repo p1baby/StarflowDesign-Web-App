@@ -1,9 +1,17 @@
 {/* import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx';*/} 
+import React from 'react';
 import arrowLeft from '/arrowLeft.svg';
 import arrowRight from '/arrowRight.svg';
 import './services.scss';
 
+import PopupBrif from '../../components/popupbrif/PopupBrif';
+
 const Services = () => {
+	const [brifOpened, setBrifOpened] = React.useState(false);
+
+	const handleOpenPopup = () => {
+		setBrifOpened(true);
+	};
 		const myServices = [
 			{ id: '1', number: '01', title: 'Одностраничный сайт', description: 'Этот формат подойдет для презентации компании, продажи одного товара или услуги.', price: '50 000', deadlines: '5' },
 			{ id: '2', number: '02', title: 'Корпоротивный сайт', description: 'Сайт, состоящий из нескольких страниц — отличный вариант для подробной презентации компании в интернете.', price: '65 000', deadlines: '14' },
@@ -12,6 +20,8 @@ const Services = () => {
 		];
 
 		return(
+			<>
+			{brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} /> }
 			<section className='servicesSection'>
 				<article className='servicesText'>
 					<p>Эмпатичный дизайнер, стремлюсь<br></br>сделать ваш бренд понятным и<br></br>выделяющимся</p>
@@ -26,7 +36,7 @@ const Services = () => {
 									<p className='number'>({services.number})</p>
 									<h3 className='title'>{services.title}</h3>
 								</section>
-								<button className='serviceButton'>
+								<button onClick={handleOpenPopup} className='serviceButton'>
 									<section className='insideButton'><img className='leftArrow' src={arrowLeft} alt='arrow' />заказать<img className='rightArrow' src={arrowRight} alt='arrow' /></section>
 								</button>
 								<section className='bottom'>
@@ -40,6 +50,7 @@ const Services = () => {
 				))}
 				</main>
 			</section>
+			</>
 		)
 	}
 export default Services;

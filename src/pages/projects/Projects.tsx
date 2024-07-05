@@ -1,4 +1,4 @@
-import { useEffect, useRef, useContext } from 'react';
+import { useEffect, useRef, useContext, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './projects.scss';
@@ -8,6 +8,8 @@ import TransitionContext from '../../components/contextGsap/TransitionContext';
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects: React.FC = () => {
+
+
   const main = useRef<HTMLElement | null>(null);
   const context = useContext(TransitionContext);
   const scrollTween = useRef<gsap.core.Tween | null>(null);
@@ -36,7 +38,7 @@ const Projects: React.FC = () => {
       type: 'wheel,touch',
       onChangeY(self) {
         if (!scrollTween.current) {
-          const direction = self.deltaY > 0 ? 0.1 : -0.1; // Уменьшите значение deltaY
+          const direction = self.deltaY > 0 ? 0.1 : -1; // Уменьшите значение deltaY
           const scroll = snapScroll(self.scrollY(), direction * Math.abs(self.deltaY));
           goToSection(scrollStarts.indexOf(scroll));
         }
