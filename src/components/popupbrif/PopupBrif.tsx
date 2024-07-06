@@ -12,6 +12,7 @@ import './popupbrif.scss';
 
 interface Props {
   onClose: () => void;
+  selectedService: string | null;
 }
 
 function PopupBrif(props: Props) {
@@ -22,6 +23,10 @@ function PopupBrif(props: Props) {
   const [showSuccessContent, setShowSuccessContent] = useState(false);
   const [showThirdContent, setShowThirdContent] = useState(false);
   const { elapsedTime, startTimer, stopTimer, timerActive } = useTimer(0);
+
+  useEffect(() => {
+    setSelectedProjectType(projectButtons.find(button => button.id === props.selectedService)?.value || null);
+}, [props.selectedService]);
 
   useEffect(() => {
     const storedShowThirdContent = localStorage.getItem('showThirdContent');
