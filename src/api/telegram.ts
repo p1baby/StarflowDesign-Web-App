@@ -1,7 +1,7 @@
-const baseUrl = 'https://api.telegram.org/bot7131284650:AAFXziYO3vXkPANtIKP5J5e1MdhXxAVYRqc';
+const baseUrl = 'https://api.telegram.org/YOURTOKEN';
 
 export const sendMessage = async(message:string): Promise<void> => {
-    const url = `${baseUrl}/sendMessage?chat_id=-1002214466986&text=${encodeURIComponent(message)}`;
+    const url = `${baseUrl}/sendMessage?chat_id=YOURCHATID=${encodeURIComponent(message)}`;
 
     const response = await fetch(url);
 
