@@ -1,10 +1,10 @@
-import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx'
+{/* import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx'*/}
 
 const About = () => {
 	return(
-		<section>
+		<section className='aboutSection'>
 			<h2>Привет, я Игорь</h2>
-			<NavigationButtonsActive/>
+			{/*<NavigationButtonsActive/>*/}
 			<p>123</p>
 		</section>
 	)
