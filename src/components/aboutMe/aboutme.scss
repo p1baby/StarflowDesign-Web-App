@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+
+.aboutMeSection{
+    display: flex;
+    flex-direction: column;
+    padding: 112px 32px 112px 32px;
+    background-color: $main-color-text;
+    color: $black-text;
+    margin: 0 0 160px 0;
+    .textTop, .textBottom{
+		font-size: 16px;
+		line-height: 19.2px;
+		font-weight: 400;
+		letter-spacing: -1px;
+    }
+    .textTop{
+        text-align: start;
+    }
+    .textBottom{
+        text-align: end;
+    }
+    .textMain{
+        padding: 154.4px 0 154.4px 0;
+        p{
+            font-size: 16px;
+			line-height: 19.2px;
+			font-weight: 400;
+			letter-spacing: -1px;
+			color: #686868;
+            padding-bottom: 24px;
+        }
+        h1{
+            font-family: 'Playfair Display', sans-serif;
+			font-weight: 400;
+			font-style: italic;
+			letter-spacing: -4px;
+            font-size: 80px;
+            line-height: 90%;
+        }
+    }
+}
