@@ -6,13 +6,13 @@
 	text-align: center;
 	color: $main-color-text;
 	box-sizing: border-box;
-	padding: 0 32px;
 	margin: 120px 0 0 0;
 	.servicesText{
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		padding: 0 32px;
 		p{
 			text-transform: uppercase;
 			font-size: 16px;
@@ -41,6 +41,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		gap: 24px;
+		padding: 0 32px;
 		.service{
 			display: flex;
 			flex-direction: column;
@@ -131,9 +132,9 @@
 			}
 		}
 		.service:hover{
-			border-left: 1px solid #FFFFFF;
+			border-left: 1px solid $main-color-text;;
 			.number, .description , div .deadlines , div .price  {
-				color: #FFFFFF;
+				color: $main-color-text;
 			}
 			.serviceButton{
 				display: flex;
@@ -144,4 +145,63 @@
 			visibility: visible;
 		}
 	}
+	.serviceStages{
+		display: flex;
+		flex-direction: column;
+		margin: 0 0 160px 0;
+		padding: 0 32px;
+		p{
+			font-size: 16px;
+			line-height: 19.2px;
+			font-weight: 400;
+			letter-spacing: -1px;
+			color: #686868;
+		}
+		#accordion{
+			width: 100%;
+		}
+		#accordion li{
+			width: 100%;
+			list-style: none;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			border-bottom: 1px solid #686868;
+			input[type='radio']{
+				display: none;
+			}
+			label{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				cursor: pointer;
+				font-size: 48px;
+				line-height: 100%;
+				font-weight: 400;
+				letter-spacing: -3px;
+				width: 100%;
+				margin-top: 32px;
+			}
+			.accordionContent{
+				overflow: hidden;
+				transition: max-height 0.5s ease-in-out;
+				max-height: 0;
+				margin-top: 32px;
+				display: flex;
+				flex-direction: column;
+				p{
+					color: $main-color-text;
+				}
+				.time{
+					padding-top: 16px;
+				}
+			}
+			input[type='radio']:checked + .accordionContent{
+				max-height: 100%;
+				padding: 0 0 32px 0;
+			}
+		}
+	}
+
 }

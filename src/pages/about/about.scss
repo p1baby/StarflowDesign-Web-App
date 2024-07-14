@@ -1,5 +1,36 @@
 @import "../../styles/variables";
 
 .aboutSection{
-    
+    display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: $main-color-text;
+	box-sizing: border-box;
+    .aboutIntro{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: $main-color-text;
+        box-sizing: border-box;
+        padding: 0 32px;
+        h1{
+            font-size: 240px;
+            line-height: 100%;
+            font-weight: 300;
+            position: fixed;
+            top: 15%;
+        }
+        .firText{
+            font-family: 'Playfair Display', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: -24px;
+        }
+        .secText{
+            letter-spacing: -24px;
+            -webkit-text-stroke: 3px  #FAFAFA;
+        }
+    }
 }
