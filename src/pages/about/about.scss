@@ -10,17 +10,28 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
         color: $main-color-text;
         box-sizing: border-box;
-        padding: 0 32px;
+        padding: 0 32px 32px 32px;
+        height: 1080px;
+        background-image: url(public/aboutIntro.svg);
+        background-repeat: no-repeat;
+       // background-attachment: fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         h1{
             font-size: 240px;
             line-height: 100%;
             font-weight: 300;
-            position: fixed;
+            width: 96%;
+            justify-content: space-between;
+            display: flex;
             top: 15%;
+            position: absolute;
         }
         .firText{
             font-family: 'Playfair Display', sans-serif;
@@ -32,5 +43,82 @@
             letter-spacing: -24px;
             -webkit-text-stroke: 3px  #FAFAFA;
         }
+        .welcomeUnder{
+            display: none;
+            margin-top: 273px;
+            flex-direction: row;
+            align-items: center;
+            .bracket1, .bracket2{
+                font-family: 'Playfair Display' , sans-serif;
+                font-weight: 400;
+                font-style: italic;
+                letter-spacing: -24px;
+                font-size: 32px;
+                opacity: 0.4;
+            }
+            .bracket1{
+                margin: 0 16px 0 0;
+            }
+            .bracket2{
+                margin: 0 0 0 12px;
+            }
+        }
+        .homeText{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            text-transform: uppercase;
+            padding: 0 270px;
+            margin: 0 auto;
+            top: 60%;
+            position: absolute;
+            width: 100%;
+            p{
+                font-size: 16px;
+                line-height: 120%;
+                letter-spacing: -4%;
+                font-weight: 300;
+            }
+        }
+        .aboutFooter{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
+            a{
+                color: $main-color-text;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
     }
+    .trump{
+        display: flex;
+        flex-direction: column;
+        height: 1080px;
+        justify-content: space-between;
+        .textMain{
+          margin: auto;
+          h2{
+            font-family: 'Playfair Display', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: -4px;
+            font-size: 120px;
+            line-height: 90%;
+          }
+        }
+        .textBottom{
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          padding: 0 32px 32px 32px;
+          .textBfirst{
+            text-align: start;
+          }
+          .textBsecond{
+            text-align: end;
+          }
+        }
+      }
 }
