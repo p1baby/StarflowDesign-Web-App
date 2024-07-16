@@ -6,7 +6,8 @@
     padding: 112px 32px 112px 32px;
     background-color: $main-color-text;
     color: $black-text;
-    margin: 0 0 160px 0;
+    height: 1080px;
+    justify-content: space-between;
     .textTop, .textBottom{
 		font-size: 16px;
 		line-height: 19.2px;
@@ -20,7 +21,7 @@
         text-align: end;
     }
     .textMain{
-        padding: 204.8px 0 204.8px 0;
+        margin: auto;
         p{
             font-size: 16px;
 			line-height: 19.2px;
