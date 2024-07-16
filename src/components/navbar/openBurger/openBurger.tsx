@@ -24,7 +24,7 @@ const openBurger = () => {
 
 	return(
 		<>
-        {brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} /> }
+        {brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} selectedService={null} /> }
         <header className='headerMenu'>
             <p className='headerBtn'> <img src={logo} alt='logo' />Starflow<br></br>Design</p>
         </header>
