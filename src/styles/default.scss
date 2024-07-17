@@ -3,9 +3,6 @@
 	scrollbar-width: none; /* For Firefox */
 	-ms-overflow-style: none; /* For Internet Explorer & Edge */
 	scroll-behavior: smooth;
-	::-webkit-scrollbar {
-		display: none;
-	}
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
 	-khtml-user-select: none; /* Konqueror HTML */
@@ -15,6 +12,10 @@
 	
 	margin: 0;
 	padding: 0;
+	
+	::-webkit-scrollbar {
+		display: none;
+	}
 }
 img {
 	pointer-events: none;
@@ -41,7 +42,9 @@ textarea {
 }
 /* Firefox */
 input[type="number"] {
-	-moz-appearance: textfield;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 body {
 	font-family: 'Inter' , sans-serif;
