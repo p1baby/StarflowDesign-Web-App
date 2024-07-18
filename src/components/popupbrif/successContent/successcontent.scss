@@ -1,0 +1,110 @@
+@import "../../../styles/variables.scss";
+
+.drawerSecond{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 783px;
+    height: 100%;
+    right: 0;
+    background: $main-color-text;
+    z-index: 2000;
+    padding: 32px;
+    justify-content: space-between;
+    header{
+        .popupTextSecond{
+            color: $black-text;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 100%;
+            font-weight: 400;
+            letter-spacing: -1px;
+            text-align: center;
+        }
+    }
+    main{
+        .successMessage{
+            font-family: 'Playfair Display', sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 64px;
+            line-height: 80%;
+            letter-spacing: -5px;
+            color: $black-text;
+        }
+    }
+    footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    .footerFormText{
+        color: $black-text;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        line-height: 100%;
+        font-weight: 400;
+        letter-spacing: -1px;
+        text-align: start;
+    }
+    .closeButton2 {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        color: $black-text;
+        font-size: 16px;
+        line-height: 16px;
+        text-decoration: none;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+    }
+      img.leftArrow {
+          margin-right: 14px;
+          transition: transform 0.3s ease;
+      }
+      img.rightArrow {
+          margin-left: 14px;
+          transition: transform 0.3s ease;
+      }
+    img.leftArrow,
+    img.rightArrow {
+        transition: transform 0.3s ease;
+    }
+    
+    .closeButton2:hover img.leftArrow {
+        transform: translateX(4px);
+    }
+    
+    .closeButton2:hover img.rightArrow {
+        transform: translateX(-4px);
+    }
+    }
+}
+@media screen and (max-width: 1366px) {
+    .drawerSecond{
+        width: 714px;
+    }
+    .drawerSecond main .successMessage{
+        font-size: 56px;
+    }
+    .drawerSecond header .popupTextSecond,  .drawerSecond footer .footerFormText,  .drawerSecond footer .closeButton2 {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .drawerSecond{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+    .drawerSecond{
+        padding: 24px;
+    }
+    .drawerSecond main .successMessage{
+        font-size: 48px;
+    }
+    .drawerSecond footer .footerFormText{
+        white-space: normal;
+    }
+}
