@@ -35,7 +35,7 @@ function NextPage() {
     
 	return (
         <Link to={getNextPage()} className='nextPage'>
-        <p>{getNextPageTitle()}</p>
+        <p style={{ fontSize: '80px' }}>{getNextPageTitle()}</p>
         <section className='nextPageLink'><img className='leftArrow' src={arrowLeft} alt='arrow' />Следующая страница<img className='rightArrow' src={arrowRight} alt='arrow' /></section>
       </Link>
 	);

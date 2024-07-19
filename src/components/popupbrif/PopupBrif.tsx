@@ -1,14 +1,15 @@
 import { useOutsideClick } from '../popupbrif/outsideClick/useOutsideClick';
-import { useForm } from '@mantine/form';
+
 import { sendMessage } from '../../api/telegram';
-import { useState, useEffect } from 'react';
-
-import arrowLeft from '/arrowBlackL.svg';
-import arrowRight from '/arrowBlackR.svg';
-
+import { form } from './validation/Validation';
 import useTimer from '../hooks/useTimer';
 
+import { useState, useEffect } from 'react';
+
+
 import './popupbrif.scss';
+import SuccessContent from './successContent/SuccessContent';
+import TimerContent from './timerContent/TimerContent';
 
 interface Props {
   onClose: () => void;
@@ -19,8 +20,8 @@ function PopupBrif(props: Props) {
   const { ref } = useOutsideClick(props.onClose);
   const [selectedProjectType, setSelectedProjectType] = useState<string | null>(null);
   const [selectedProjectBudget, setSelectedProjectBudget] = useState<string | null>(null);
-  const [showDefaultContent, setShowDefaultContent] = useState(true);
-  const [showSuccessContent, setShowSuccessContent] = useState(false);
+  const [showDefaultContent, setShowDefaultContent] = useState(false);
+  const [showSuccessContent, setShowSuccessContent] = useState(true);
   const [showThirdContent, setShowThirdContent] = useState(false);
   const { elapsedTime, startTimer, stopTimer, timerActive } = useTimer(0);
 
@@ -45,39 +46,6 @@ function PopupBrif(props: Props) {
       stopTimer();
     }
   }, [showThirdContent, startTimer, stopTimer]);
-
-const form = useForm({
-		mode: 'uncontrolled',
-		initialValues: {
-		  name: '',
-		  contacts: '',
-		  projectType: '',
-		  projectBudget: '',
-		  projectDetails: '',
-		  projectLink: '',
-		},
-
-		validate: {
-			name: (value) => {
-				if (!value || value.trim() === '') return 'Введите ваше имя';
-				return /^[\p{L} ]{1,32}$/u.test(value) ? null : 'Только буквы и не длиннее 32 символов';
-			},
-			contacts: (value) => {
-				if (!value || value.trim() === '') return 'Введите ваши контакты';
-				if (/^@?[a-zA-Z0-9_]{5,32}$/.test(value)) return null;
-				if (/^[a-zA-Z0-9._%+-]+@(gmail\.com|vk\.com|mail\.ru|rambler\.ru|yandex\.ru|outlook\.com|yahoo\.com|mailfence\.com|protonmail\.com)$/.test(value)) return null;
-				return 'Введите действительный адрес эл. почты или имя пользователя в Telegram';
-			},
-			projectBudget: (value) => {
-				if (!value) return 'Выберите бюджет проекта';
-				return null;
-			},
-			projectDetails: (value) => {
-				if (!value) return 'Заполните данные проекта';
-				return null;
-			},
-		  },
-		});
 
 		const projectButtons = [
 			{ id: '1', title: 'Одностраничный сайт', value: 'Одностраничный сайт' },
@@ -212,35 +180,9 @@ const form = useForm({
           </article>
         </>
       ) : showSuccessContent ? (
-        <article className='drawerSecond' ref={ref}>
-          <header>
-            <p className='popupTextSecond'>Вместе мы сделаем что-то<br />по истине крутое</p>
-          </header>
-          <main>
-            <h6 className='successMessage'>Спасибо! Ваша заявка<br />получена!</h6>
-          </main>
-          <footer>
-            <p className='footerFormText'>Я изучу бриф и свяжусь с Вами<br />в ближайшее время</p>
-            <button onClick={handleDrawerClose} className='closeButton2'><img className='leftArrow' src={arrowLeft} alt='arrow' />Закрыть<img className='rightArrow' src={arrowRight} alt='arrow' /></button>
-          </footer>
-        </article>
+        <SuccessContent ref={ref} handleDrawerClose={handleDrawerClose} />
       ) : (
-        <article className='drawerThird'>
-          <header>
-            <p className='popupTextThird'>Пожалуйста, подождите,<br />пока закончится таймер</p>
-          </header>
-          <main>
-            {timerActive && (
-              <p className='timer'>
-                {`${String(Math.floor((5 * 60 - elapsedTime / 1000) / 60)).padStart(2, '0')}:${String(Math.floor((5 * 60 - elapsedTime / 1000) % 60)).padStart(2, '0')}`}
-              </p>
-            )}
-          </main>
-          <footer>
-            <p className='footerFormText'>После завершения отсчета, Вы<br />снова сможете заполнить бриф</p>
-            <button onClick={handleDrawerClose} className='closeButton2'><img className='leftArrow' src={arrowLeft} alt='arrow' />Закрыть<img className='rightArrow' src={arrowRight} alt='arrow' /></button>
-          </footer>
-        </article>
+        <TimerContent ref={ref} handleDrawerClose={handleDrawerClose} />
       )}
     </section>
   );
