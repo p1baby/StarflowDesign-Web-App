@@ -149,63 +149,124 @@
 			visibility: visible;
 		}
 	}
+	//  .serviceStages{
+	//  	display: flex;
+	//  	flex-direction: column;
+	//  	margin: 160px 0 160px 0;
+	//  	padding: 0 32px;
+	//  	p{
+	//  		font-size: 16px;
+	//  		line-height: 19.2px;
+	//  		font-weight: 400;
+	//  		letter-spacing: -1px;
+	//  		color: #686868;
+	//  	}
+ 	// 	.accordion{
+	//  		width: 100%;
+	//  	}
+	// 	input[type='radio']{
+	// 		display: none;
+	// 	}
+	//  	.accordion li{
+	//  		width: 100%;
+	//  		list-style: none;
+	//  		display: flex;
+	//  		justify-content: center;
+	//  		flex-direction: column;
+	//  		align-items: center;
+	//  		border-bottom: 1px solid #1F1F1F;
+	//  		label{
+	//  			display: flex;
+	//  			align-items: center;
+	//  			justify-content: space-between;
+	//  			cursor: pointer;
+	//  			font-size: 48px;
+	//  			line-height: 100%;
+	//  			font-weight: 400;
+	//  			letter-spacing: -3px;
+	//  			width: 100%;
+	//  			margin-top: 32px;
+	//  		}
+	//  		.accordion .maincontent{
+	//  			overflow: hidden;
+	//  			max-height: 0;
+	//  			margin-top: 32px;
+	//  			display: flex;
+	//  			flex-direction: column;
+
+	// 			padding: 0 10px;
+	// 			transition: max-height 1s, padding 1s;	
+	//  			p{
+	//  				color: $main-color-text;
+	//  			}
+	//  			.time{
+	//  				padding-top: 16px;
+	//  			}
+	//  		}
+	//  		.accordion input[type='radio']:checked + label + .maincontent{
+	//  			max-height: 100%;
+	//  			padding: 0 0 32px 0;
+	//  		}
+	//  	}
+	// }
 	.serviceStages{
+  	display: flex;
+  	flex-direction: column;
+  	margin: 160px 0 160px 0;
+  	padding: 0 32px;
+  	p{
+  		font-size: 16px;
+  		line-height: 19.2px;
+  		font-weight: 400;
+  		letter-spacing: -1px;
+  		color: #686868;
+  	}
+	.accordion{
+		width: 100%;
+	}
+	.accordion li{
+		width: 100%;
+		list-style: none;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		border-bottom: 1px solid #1F1F1F;
+	}
+	
+	.accordion li label{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+		font-size: 48px;
+		line-height: 100%;
+		font-weight: 400;
+		letter-spacing: -3px;
+		width: 100%;
+		margin-top: 32px;
+	}
+	input[type='radio']{
+	 	display: none;
+	}
+	.accordion .content{
+	 	padding: 32px 0 0 0;
 		display: flex;
 		flex-direction: column;
-		margin: 160px 0 160px 0;
-		padding: 0 32px;
+	 	max-height: 0;
+	 	overflow: hidden;
+	 	transition: max-height 0.8s, padding 1s;
 		p{
-			font-size: 16px;
-			line-height: 19.2px;
-			font-weight: 400;
-			letter-spacing: -1px;
-			color: #686868;
+			color: $main-color-text;
 		}
-		#accordion{
-			width: 100%;
-		}
-		#accordion li{
-			width: 100%;
-			list-style: none;
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			align-items: center;
-			border-bottom: 1px solid #686868;
-			input[type='radio']{
-				display: none;
-			}
-			label{
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				cursor: pointer;
-				font-size: 48px;
-				line-height: 100%;
-				font-weight: 400;
-				letter-spacing: -3px;
-				width: 100%;
-				margin-top: 32px;
-			}
-			.accordionContent{
-				overflow: hidden;
-				transition: max-height 0.5s ease-in-out;
-				max-height: 0;
-				margin-top: 32px;
-				display: flex;
-				flex-direction: column;
-				p{
-					color: $main-color-text;
-				}
-				.time{
-					padding-top: 16px;
-				}
-			}
-			input[type='radio']:checked + .accordionContent{
-				max-height: 100%;
-				padding: 0 0 32px 0;
-			}
+		.time{
+			padding-top: 16px;
 		}
 	}
 
+	.accordion input[type='radio']:checked + label + .content{
+	 	max-height: 200px;
+	 	padding: 32px 0 32px 0;
+	}
+  }
 }
