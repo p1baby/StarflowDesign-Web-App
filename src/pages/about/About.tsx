@@ -29,7 +29,7 @@ const About = () => {
 			<AboutMe/>
 			<section className='trump'>
 				<section className='textMain'>
-					<h2>Дизайн - это моя жизнь<br></br>Ваш успех - это моя задача</h2> 
+					<h2>Дизайн - это моя жизнь<br></br>Ваш успех - это моя цель</h2> 
 				</section>
 				<section className='textBottom'>
 					<p className='textBfirst'>Горю своим делом, вдохновляюсь<br></br>возможностью улучшения жизни других<br></br>людей с помощью дизайна и получаю<br></br>от этого безграничное удовольствие.</p>

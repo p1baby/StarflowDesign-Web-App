@@ -16,7 +16,7 @@
         box-sizing: border-box;
         padding: 0 32px 32px 32px;
         height: 1080px;
-        background-image: url(public/aboutIntro.svg);
+        background-image: url(/aboutIntro.svg);
         background-repeat: no-repeat;
        // background-attachment: fixed;
         -webkit-background-size: cover;
@@ -121,4 +121,13 @@
           }
         }
       }
+      @media screen and (max-width: 1440px) {
+        h1{
+            font-size: 120px;
+            top: 20%;
+        }
+        .firText , .secText {
+            letter-spacing: -10px;
+        }
+    }
 }
