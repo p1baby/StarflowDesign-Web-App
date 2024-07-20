@@ -28,7 +28,7 @@ const Services = () => {
 		setTimeout(() => {
 		  updatedStates[index] = false;
 		  setAccordionStates(updatedStates);
-		}, 100); // toggle back to "plus" state after 500ms
+		}, 100); // time for swaping + and -
 	  };
 	  
 	  
@@ -90,12 +90,13 @@ const Services = () => {
 			<p style={{ marginBottom: '32px' }}>( Этапы сотрудничества )</p>
 				<ul className='accordion'>
 					{stages.map((stage, index) => (
-					<li>
+					<li key={stage.id} style={{ borderBottom: accordionStates[index] ? '1px solid white' : '1px solid #1F1F1F' }}>
 						<input type='radio' name='accordion' id={stage.id} onChange={() => handleToggleAccordion(index)}/>
 						<label htmlFor={stage.id}>
 							<p>({stage.number})</p>
 							{stage.title}
-							<img src={accordionStates[index] ? accordionMinus : accordionPlus} alt='toggle'/>						</label>
+							<img src={accordionStates[index] ? accordionMinus : accordionPlus} alt='toggle'/>
+							</label>
 						<div className='content'>
 						{stage.description.map((line, index) => (
 							<p key={index} className='description'>

@@ -14,9 +14,9 @@ function NextPage() {
         case '/services':
           return '/about';
         case '/about':
-          return '/projects';
+          return '/contacts';
         default:
-          return '/'; // If the current page does not match the expected ones, we will go to the main page
+          return '/'; // Если текущая страница не соответствует ожидаемым, переходим на главную страницу
       }
     }
 
@@ -26,12 +26,13 @@ function NextPage() {
           return 'Услуги';
         case '/about':
           return 'Обо мне';
-        case '/projects':
-          return 'Проекты';
+        case '/contacts':
+          return 'Контакты';
         default:
           return '';
       }
     }
+    
     
 	return (
         <Link to={getNextPage()} className='nextPage'>
