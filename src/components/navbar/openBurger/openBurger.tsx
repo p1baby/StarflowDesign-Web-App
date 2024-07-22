@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '/logoSV.svg';
 import './openBurger.scss'
 
@@ -11,6 +11,7 @@ import PopupBrif from '../../popupbrif/PopupBrif';
 const openBurger = () => {
     const setIsBurgerOpen = useContext(BurgerContext);
     const [brifOpened, setBrifOpened] = React.useState(false);
+    const location = useLocation();
 
     const contextClick = () => {
         if (setIsBurgerOpen) {
@@ -22,6 +23,13 @@ const openBurger = () => {
 		setBrifOpened(true);
 	};
 
+    const pageText = {
+        '/projects': 'Проекты',
+        '/services': 'Услуги',
+        '/about': 'Обо мне',
+        '/contacts': 'Контакты',
+    };
+
 	return(
 		<>
         {brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} selectedService={null} /> }
@@ -30,11 +38,23 @@ const openBurger = () => {
         </header>
         <section className='burgerContent'>
             <nav>
-                <Link onClick={contextClick} className='navLink' to='/projects'>Проекты</Link>
-                <Link onClick={contextClick} className='navLink' to='/services'>Услуги</Link>
-                <Link onClick={contextClick} className='navLink' to='/about'>Обо мне</Link>
-                <Link onClick={contextClick} className='navLink' to='/contacts'>Контакты</Link>
-            </nav>
+                    {Object.entries(pageText).map(([path, text]) => (
+                        <Link
+                            key={path}
+                            onClick={contextClick}
+                            className={`navLink ${location.pathname === path ? 'italicText' : ''}`}
+                            to={path}
+                        >
+                            {text}
+                            {location.pathname === path && (
+                                <>
+                                    <img src={`/arrowLeft.svg`} alt='Left Image' />
+                                    <img src={`/arrowRight.svg`} alt='Right Image' />
+                                </>
+                            )}
+                        </Link>
+                    ))}
+                </nav>
             <section className='lowerSection'>
                 <article>
                     <Link to='https://t.me/StarflowDesign' target='_blank' rel='noopener noreferrer' className='contactButtons'>
