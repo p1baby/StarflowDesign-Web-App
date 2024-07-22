@@ -189,6 +189,9 @@
 		.goConversation {
 			margin: 108.5px 0 112px 0;
 		}
+		.mainFooterP{
+			font-size: 14px;
+		}
 	  }
 	  @media screen and (max-width: 1280px) {
 		.nextPage , .mainFooterBottom {
@@ -244,7 +247,7 @@
 			justify-content: space-between;
 			align-items: center;
 			text-decoration: none;
-			letter-spacing: -1px;
+			letter-spacing: -0.5px;
 			gap: 64px;
 			margin: 243px 0 0 0;
 			a{

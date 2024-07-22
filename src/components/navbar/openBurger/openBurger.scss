@@ -56,7 +56,6 @@
                 gap: 4px;
                 flex-direction: column;
                 text-decoration: none;
-                height: 100px;
                 text-align: center;
                 .contactLight{
                     z-index: 0;
@@ -209,15 +208,6 @@
                 }
             }
         }
-        @media screen and (max-width: 428px) {
-            .openBurger {
-                padding: 0 24px 32px 24px;
-            }
-            nav{
-                top: 20%;
-                gap: 8px;
-            }
-        }
         @media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
             .openBurger {
                 padding: 0 24px 32px 24px;
@@ -230,7 +220,6 @@
                 letter-spacing: -6px;
             }
             article .contactButtons{
-                height: 73px;
                 width: 148px;
             }
             article .contactButtons p{
@@ -245,11 +234,9 @@
             .ulPortfolio .portfolioLink{
                 font-size: 14px;
             }
-        }
-    }
-    @media screen and (max-width: 375px) , (max-width: 390px) , (max-width: 428px) {
-        .headerMenu{
-            padding: 36px 0 0 0;
+            .headerMenu{
+                padding: 36px 0 0 0;
+            }
         }
     }
     

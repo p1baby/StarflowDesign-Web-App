@@ -66,7 +66,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		text-transform: uppercase;
-		padding: 0 270px;
+		padding: 0 288px;
 		margin: 0 auto;
 		top: 70%;
 		position: fixed;
@@ -146,7 +146,6 @@
 		.homeText {
 			flex-direction: column;
 			gap: 16px;
-			//bottom: 136px;
 			margin: 0;
 			padding: 0;
 			top: unset;
@@ -156,9 +155,13 @@
 		h1{
 			font-size: 96px;
 			line-height: 80px;
+			margin-top: 80px;
 		}
 		.owFollowing {
 			margin-left: -10px;
+		}
+		.secText{
+			-webkit-text-stroke: 1px  #FAFAFA;
 		}
 		.firText, .secText {
 			letter-spacing: -8px;
