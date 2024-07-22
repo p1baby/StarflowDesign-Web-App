@@ -4,6 +4,7 @@ import AboutMe from '../../components/aboutMe/AboutMe';
 import './about.scss';
 
 import PopupBrif from '../../components/popupbrif/PopupBrif';
+import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive';
 
 const About = () => {
 	const [brifOpened, setBrifOpened] = React.useState(false);
@@ -18,11 +19,12 @@ const About = () => {
 			<section className='aboutIntro'>
 				<h1><span className='firText'>Привет,</span><span className='secText'>Я Игорь</span></h1>
 				<article className='homeText'>
-					<p>Эмпатичный дизайнер, стремлюсь<br></br>сделать ваш бренд понятным<br></br>и выделяющимся</p>
+					<p>Эмпатичный дизайнер с искренним<br></br>подходом, страстно увлеченный<br></br>своим любимым делом</p>
 					<p>Моя цель — объединить эстетику,<br></br>функциональность и значимость<br></br>в единое целое</p>
 				</article>
+				<NavigationButtonsActive />
 				<section className='aboutFooter'>
-					<Link to='mailto:starflowdesign@gmail.com' target="_blank" rel="noopener noreferrer">Резюме CV</Link>
+					<Link to='https://dprofile.ru/starflowdesign/cv' target="_blank" rel="noopener noreferrer">Резюме CV</Link>
 					<a onClick={handleOpenPopup}>Принципы</a>
 				</section>
 			</section>

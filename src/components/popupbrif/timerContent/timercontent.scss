@@ -57,15 +57,15 @@
         line-height: 16px;
         text-decoration: none;
         display: flex;
-        align-items: baseline;
+        align-items: end;
         justify-content: center;
     }
       img.leftArrow {
-          margin-right: 14px;
+          margin-right: 8px;
           transition: transform 0.3s ease;
       }
       img.rightArrow {
-          margin-left: 14px;
+          margin-left: 8px;
           transition: transform 0.3s ease;
       }
     img.leftArrow,

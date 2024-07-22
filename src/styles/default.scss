@@ -59,7 +59,7 @@ body {
 	z-index: 1;
 	min-width: 100vw;
 	min-height: 100vh;
-	background-color: #0f0f0f;
+	background-color: #070707;
 }
 .navbar {
 	flex: 0 0 auto; /* Make the navbar take up only the space it needs */
@@ -71,4 +71,6 @@ body {
 .footer {
 	flex: 0 0 auto; /* Make the footer take up only the space it needs */
 	z-index: 1;
+	position: relative;
+	height: 100%;
 }

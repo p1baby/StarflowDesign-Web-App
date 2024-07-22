@@ -20,8 +20,8 @@ function PopupBrif(props: Props) {
   const { ref } = useOutsideClick(props.onClose);
   const [selectedProjectType, setSelectedProjectType] = useState<string | null>(null);
   const [selectedProjectBudget, setSelectedProjectBudget] = useState<string | null>(null);
-  const [showDefaultContent, setShowDefaultContent] = useState(false);
-  const [showSuccessContent, setShowSuccessContent] = useState(true);
+  const [showDefaultContent, setShowDefaultContent] = useState(true);
+  const [showSuccessContent, setShowSuccessContent] = useState(false);
   const [showThirdContent, setShowThirdContent] = useState(false);
   const { elapsedTime, startTimer, stopTimer, timerActive } = useTimer(0);
 
@@ -147,8 +147,8 @@ const form = useForm({
                 <button onClick={props.onClose} className='closeButton'><img alt='close' src='/close.svg' /></button>
               </hgroup>
               <hgroup className='horizontalText'>
-                <p className='popupText'>Укажите Ваши контакты и<br />расскажите немного о проекте</p>
-                <p style={{ color: '#B4B4B4' }} className='popupText'>*Обязательные поля</p>
+                <p className='popupText'>Укажите Ваши контакты<br />и расскажите немного о проекте</p>
+                <p style={{ color: '#B4B4B4', fontWeight: '400' }} className='popupText'>*Обязательные поля</p>
               </hgroup>
             </header>
             <form onSubmit={form.onSubmit(handleFormSubmit)}>
@@ -183,7 +183,7 @@ const form = useForm({
                 </div>
               </fieldset>
               <fieldset className='horizontalGround'>
-                <p className='popupText'>Бюджет проекта (в рублях)*</p>
+                <p className='popupText'>Бюджет проекта (₽)*</p>
                 <section className='buttonsMainB'>
                   {projectBudget.map((project) => (
                     <button
@@ -201,10 +201,10 @@ const form = useForm({
                 {form.errors.projectBudget && <p className='errorText2'>{form.errors.projectBudget}</p>}
               </fieldset>
               <fieldset className='verticalGroundLast'>
-                <p className='popupText'>Детали проекта</p>
+                <p style={{ marginBottom: '8px'}} className='popupText'>Детали проекта</p>
                 <div style={{ gap: '8px', display: 'flex', flexDirection: 'column' }}>
                   <input {...form.getInputProps('projectLink')} className='ownInputSpecial' maxLength={1000} type='text' placeholder='Ссылка на сайт (если нужен редизайн)' />
-                  <textarea {...form.getInputProps('projectDetails')} className={`ownTextarea ${form.errors.projectDetails ? 'error' : ''}`} maxLength={3000} placeholder='Напишите, что ещё важно знать о Вашем проекте, цели, задачи**' />
+                  <textarea {...form.getInputProps('projectDetails')} className={`ownTextarea ${form.errors.projectDetails ? 'error' : ''}`} maxLength={3000} placeholder='Напишите, что ещё важно знать о Вашем проекте, цели, задачи*' />
                 </div>
                 {form.errors.projectDetails && <p className='errorText'>{form.errors.projectDetails}</p>}
               </fieldset>

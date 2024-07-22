@@ -16,7 +16,7 @@
 				display: flex;
 				flex-direction: column;
 				position: fixed;
-				width: 783px;
+				width: 802px;
 				height: 100%;
 				right: 0;
 				background: $main-color-text;
@@ -28,8 +28,8 @@
 					font-family: 'Inter', sans-serif;
 					font-size: 16px;
 					line-height: 100%;
-					font-weight: 400;
-					letter-spacing: -1px;
+					font-weight: 450;
+					letter-spacing: -0.5px;
 				}
 				.ownInput, .ownInputSpecial, .ownTextarea {
 					&:hover, &:focus, &:active {
@@ -47,12 +47,12 @@
 					font-family: 'Inter', sans-serif;
 					font-size: 16px;
 					line-height: 100%;
-					font-weight: 400;
-					letter-spacing: -1px;
+					font-weight: 450;
+					letter-spacing: -0.5px;
 					width: 100%;
 					transition: 0.5s;
 					.ownInput::placeholder {
-						color: $pop-text ;
+						color: #B1B1B1;
 					}
 				}
 				.ownInputSpecial{
@@ -65,8 +65,8 @@
 					font-family: 'Inter', sans-serif;
 					font-size: 16px;
 					line-height: 100%;
-					font-weight: 400;
-					letter-spacing: -1px;
+					font-weight: 450;
+					letter-spacing: -0.5px;
 					width: 100%;
 					margin: 8px 0 0 0;
 					transition: 0.5s;
@@ -83,8 +83,8 @@
 					font-family: 'Inter', sans-serif;
 					font-size: 16px;
 					line-height: 100%;
-					font-weight: 400;
-					letter-spacing: -1px;
+					font-weight: 450;
+					letter-spacing: -0.5px;
 					cursor: pointer;
 					transition: 0.5s;
 				}
@@ -152,6 +152,8 @@
 						color: red;
 						font-size: 14px;
 						height: 0px;
+						font-weight: 400;
+						letter-spacing: -0.5px;
 					}
 					.errorText2{
 						margin: -16px 0 0 0;
@@ -171,6 +173,10 @@
 							flex-direction: row;
 							gap: 8px;
 							align-items: flex-start;
+							letter-spacing: -0.5px;
+						}
+						.buttonsMainT{
+							justify-content: space-between;
 						}
 					}
 					.verticalGroundLast{
@@ -187,8 +193,8 @@
 							font-family: 'Inter', sans-serif;
 							font-size: 16px;
 							line-height: 100%;
-							font-weight: 400;
-							letter-spacing: -1px;
+							font-weight: 450;
+							letter-spacing: -0.5px;
 							width: 100%;
 							height: 145px;
 						}
@@ -197,16 +203,16 @@
 						background: transparent;
 						padding: 16px;
 						color: $black-text;
-						border: $pop-text 1px solid;
+						border: $black-text 1px solid;
 						border-radius: 8px;
 						font-family: 'Inter', sans-serif;
 						font-size: 16px;
 						line-height: 100%;
-						font-weight: 400;
-						letter-spacing: -1px;
+						font-weight: 450;
+						letter-spacing: -0.5px;
 						cursor: pointer;
 						transition: 0.5s;
-						margin-top: 16px;
+						margin: auto 0 16px 0;
 					}
 					.submitButton:hover{
 						border: $black-text 1px solid;

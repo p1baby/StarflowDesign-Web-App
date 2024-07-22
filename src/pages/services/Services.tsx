@@ -31,9 +31,6 @@ const Services = () => {
 		}, 100); // time for swaping + and -
 	  };
 	  
-	  
-	  
-
 	const myServices = [
 		{ id: '1', number: '01', title: 'Одностраничный сайт', description: 'Сайт для компаний, которым нужно протестировать гипотезу, продукт или создать сайт-визитку. ', price: '50 000', deadlines: '5' },
 		{ id: '2', number: '02', title: 'Корпоротивный сайт', description: 'Сайт для бизнесов, которым нужно более подробно рассказать о себе, продукте, услугах, команде.', price: '65 000', deadlines: '14' },
@@ -97,14 +94,14 @@ const Services = () => {
 							{stage.title}
 							<img src={accordionStates[index] ? accordionMinus : accordionPlus} alt='toggle'/>
 							</label>
-						<div className='content'>
+						<section className='content'>
 						{stage.description.map((line, index) => (
 							<p key={index} className='description'>
 							{line}
 							</p>
 						))}
 							<p className='time'>{stage.time}</p>
-						</div>
+						</section>
 					</li>
 					))}
 				</ul>

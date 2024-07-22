@@ -7,7 +7,7 @@ function FooterHome() {
 	return (
         <footer className='undefFooter'>
         <section className='undefFooterBottom'>
-          <Link className='undefLinkFirst' to='mailto:starflowdesign@gmail.com' target="_blank" rel="noopener noreferrer">Рабочая почта<br />starflowdesign@gmail.com</Link>
+          <p className='undefLinkFirst'>В проект вложена<br />частичка моей души</p>
           <Link to='https://t.me/StarflowDesign' className='contactMeMain'>
             <section className='mainFooterP'><img className='leftArrow' src={arrowLeft} alt='arrow' />написать в телеграм<img className='rightArrow' src={arrowRight} alt='arrow' /></section>
           </Link>

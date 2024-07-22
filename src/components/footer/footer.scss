@@ -35,7 +35,8 @@
 	.nextPage {
 		margin: 160px 0 0;
 		p {
-			font-weight: 400;
+			font-weight: 350;
+			letter-spacing: -7px;
 		}
 	}
 	.nextPageLink, .mainFooterP {
@@ -44,11 +45,11 @@
 		color: $main-color-text;
 		text-transform: uppercase;
 		display: flex;
-		align-items: baseline;
+		align-items: end;
 		justify-content: center;
 	}
 	img.leftArrow, img.rightArrow {
-		margin: 0 14px;
+		margin: 0 8px;
 		transition: transform 0.3s ease;
 	}
 	.nextPage:hover img.leftArrow, .goConversation:hover img.leftArrow {
@@ -81,7 +82,7 @@
 		justify-content: space-between;
 		align-items: center;
 		text-decoration: none;
-		letter-spacing: -1px;
+		letter-spacing: -0.5px;
 		margin: 150px 0 0;
 		align-items: end;
 
@@ -204,7 +205,7 @@
 		.mainFooterTop , .difText{
 			font-size: 72px;
 		}
-		.nextPageLink , .mainFooterP {
+		.nextPageLink{
 			font-size: 14px;
 		}
 		.nextPage {

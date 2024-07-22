@@ -15,33 +15,34 @@
         color: $main-color-text;
         box-sizing: border-box;
         padding: 0 32px 32px 32px;
-        height: 1080px;
+        height: 100vh;
         background-image: url(/aboutIntro.svg);
         background-repeat: no-repeat;
-       // background-attachment: fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
         h1{
-            font-size: 240px;
+            font-size: 160px;
             line-height: 100%;
             font-weight: 300;
             width: 96%;
             justify-content: space-between;
             display: flex;
-            top: 15%;
+            top: 17%;
             position: absolute;
         }
         .firText{
             font-family: 'Playfair Display', sans-serif;
             font-weight: 400;
             font-style: italic;
-            letter-spacing: -24px;
+            letter-spacing: -16px;
+            padding-left: 176px;
         }
         .secText{
-            letter-spacing: -24px;
-            -webkit-text-stroke: 3px  #FAFAFA;
+            letter-spacing: -16px;
+            -webkit-text-stroke: 2px  #FAFAFA;
+            padding-right: 176px;
         }
         .welcomeUnder{
             display: none;
@@ -70,7 +71,7 @@
             text-transform: uppercase;
             padding: 0 270px;
             margin: 0 auto;
-            top: 60%;
+            top: 70%;
             position: absolute;
             width: 100%;
             p{
@@ -97,6 +98,12 @@
         flex-direction: column;
         height: 1080px;
         justify-content: space-between;
+        background-image: url(/3dstar.svg);
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
         .textMain{
           margin: auto;
           h2{

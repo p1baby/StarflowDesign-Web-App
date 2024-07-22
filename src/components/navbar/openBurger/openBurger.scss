@@ -36,10 +36,15 @@
             top: 15%;
             position: relative;
             .navLink{
-                font-family: 'Inter', sans-serif;
                 font-size: 88px;
                 font-weight: 400;
                 letter-spacing: -7px;
+            }
+            .italicText{
+                font-size: 88px;
+                font-weight: 400;
+                letter-spacing: -7px;
+                font-style: italic;
             }
         }
         article{

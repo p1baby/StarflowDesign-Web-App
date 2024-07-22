@@ -33,7 +33,7 @@ const useTimer = (initialTime: number) => {
   };
 
   useEffect(() => {
-    if (elapsedTime >= 5 * 60 * 1000) {  // 5 minutes timer
+    if (elapsedTime >= 5 * 60 * 1) {  // 5 minutes timer
       stopTimer();
       localStorage.removeItem('elapsedTime');
       localStorage.removeItem('showThirdContent');

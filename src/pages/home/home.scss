@@ -1,5 +1,13 @@
 @import "../../styles/variables";
 
+// div{
+// 	background-image: url(/3dstar.svg);
+// 		  background-repeat: no-repeat;
+// 		  -webkit-background-size: cover;
+// 		  -moz-background-size: cover;
+// 		  -o-background-size: cover;
+// 		  background-size: cover;
+// }
 .homeSection{
 	display: flex;
 	flex-direction: column;
@@ -10,11 +18,11 @@
 	box-sizing: border-box;
 	padding: 0 32px;
 	h1{
-		font-size: 240px;
+		font-size: 264px;
 		line-height: 100%;
 		font-weight: 300;
 		position: fixed;
-  		top: 15%;
+  		top: 10%;
 	}
 	.ligatures{
 		font-variant-ligatures: common-ligatures;
@@ -27,10 +35,10 @@
 		font-family: 'Playfair Display', sans-serif;
 		font-weight: 400;
 		font-style: italic;
-		letter-spacing: -24px;
+		letter-spacing: -28px;
 	}
 	.secText{
-		letter-spacing: -24px;
+		letter-spacing: -28px;
 		-webkit-text-stroke: 3px  #FAFAFA;
 	}
 	.welcomeUnder{
@@ -73,9 +81,10 @@
 	@media screen and (max-width: 1440px) {
 		h1{
 			font-size: 200px;
+			top: 15%;
 		}
 		.firText , .secText {
-			letter-spacing: -19px;
+			letter-spacing: -20px;
 		}
 		.homeText {
 			padding: 0 140px;
@@ -84,6 +93,7 @@
 	@media screen and (max-width: 1366px) {
 		h1{
 			font-size: 184px;
+			top: 13%;
 		}
 		.firText , .secText {
 			letter-spacing: -17px;
@@ -116,11 +126,17 @@
 		.firText, .secText {
 			letter-spacing: -13px;
 		}
+		.secText{
+			-webkit-text-stroke: 2px  #FAFAFA;
+		}
 		.homeText {
 			padding: 0 95px;
 		}
 		.welcomeUnder{
 			display: flex;
+		}
+		.navbarText{
+			font-size: 14px;
 		}
 	}
 	@media screen and (max-width: 768px) {
