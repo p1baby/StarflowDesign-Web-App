@@ -13,8 +13,8 @@
 	background-color: $main-footer-background;
 	box-sizing: border-box;
 	padding: 0 32px 32px;
-	letter-spacing: -0.5px;
 	line-height: 1;
+	height: 100vh;
 	.goConversation, .nextPage {
 		display: flex;
 		width: fit-content;
@@ -24,7 +24,7 @@
 		text-decoration: none;
 	}
 	.goConversation {
-		margin: 172.5px 0 160px;
+		margin: 218px 0 160px;
 	}
 	.mainFooterTop, .mainFooterTopSecond {
 		color: $main-color-text;
@@ -82,9 +82,11 @@
 		justify-content: space-between;
 		align-items: center;
 		text-decoration: none;
-		letter-spacing: -0.5px;
-		margin: 150px 0 0;
 		align-items: end;
+		bottom: 32px;
+		position: absolute;
+		left: 32px;
+		right: 32px;
 
 		.footerLinkFirst {
 			text-align: start;
@@ -166,8 +168,8 @@
 			margin: 140px 0 0 0;
 		}
 		.goConversation {
-			margin: 128.5px 0 140px 0;
-		  }
+			margin: 118px 0 140px 0;
+		}
 	  }
 	  @media screen and (max-width: 1366px) {
 		.mainFooterTop, .difText {
@@ -247,7 +249,7 @@
 			justify-content: space-between;
 			align-items: center;
 			text-decoration: none;
-			letter-spacing: -0.5px;
+			
 			gap: 64px;
 			margin: 243px 0 0 0;
 			a{

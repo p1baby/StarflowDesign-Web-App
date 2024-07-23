@@ -25,6 +25,9 @@ p , h1 , h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
 }
+p, a{
+	letter-spacing: -0.5px;
+}
 html{
 	box-sizing: border-box;
 }
@@ -51,7 +54,6 @@ body {
 	font-weight: 300;
 	font-size: 16px;
 	font-variant-ligatures: common-ligatures discretionary-ligatures;
-	height: 100%;
 }
 .wrapper{
 	display: flex;
@@ -72,5 +74,4 @@ body {
 	flex: 0 0 auto; /* Make the footer take up only the space it needs */
 	z-index: 1;
 	position: relative;
-	height: 100%;
 }

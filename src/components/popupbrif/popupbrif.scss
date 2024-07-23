@@ -29,7 +29,6 @@
 					font-size: 16px;
 					line-height: 100%;
 					font-weight: 450;
-					letter-spacing: -0.5px;
 				}
 				.ownInput, .ownInputSpecial, .ownTextarea {
 					&:hover, &:focus, &:active {
@@ -48,7 +47,6 @@
 					font-size: 16px;
 					line-height: 100%;
 					font-weight: 450;
-					letter-spacing: -0.5px;
 					width: 100%;
 					transition: 0.5s;
 					.ownInput::placeholder {
@@ -66,7 +64,6 @@
 					font-size: 16px;
 					line-height: 100%;
 					font-weight: 450;
-					letter-spacing: -0.5px;
 					width: 100%;
 					margin: 8px 0 0 0;
 					transition: 0.5s;
@@ -84,7 +81,6 @@
 					font-size: 16px;
 					line-height: 100%;
 					font-weight: 450;
-					letter-spacing: -0.5px;
 					cursor: pointer;
 					transition: 0.5s;
 				}
@@ -153,7 +149,6 @@
 						font-size: 14px;
 						height: 0px;
 						font-weight: 400;
-						letter-spacing: -0.5px;
 					}
 					.errorText2{
 						margin: -16px 0 0 0;
@@ -173,7 +168,6 @@
 							flex-direction: row;
 							gap: 8px;
 							align-items: flex-start;
-							letter-spacing: -0.5px;
 						}
 						.buttonsMainT{
 							justify-content: space-between;
@@ -183,6 +177,7 @@
 						display: flex;
 						flex-direction: column;
 						text-align: start;
+						height: 100%;
 						.ownTextarea{
 							background: transparent;
 							outline: none;
@@ -194,9 +189,10 @@
 							font-size: 16px;
 							line-height: 100%;
 							font-weight: 450;
-							letter-spacing: -0.5px;
 							width: 100%;
-							height: 145px;
+							resize: vertical;
+							height: 100%;
+							min-height: 120px;
 						}
 					}
 					.submitButton{
@@ -209,10 +205,9 @@
 						font-size: 16px;
 						line-height: 100%;
 						font-weight: 450;
-						letter-spacing: -0.5px;
 						cursor: pointer;
 						transition: 0.5s;
-						margin: auto 0 16px 0;
+						margin: auto 0 0 0;
 					}
 					.submitButton:hover{
 						border: $black-text 1px solid;

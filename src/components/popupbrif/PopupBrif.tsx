@@ -183,22 +183,22 @@ const form = useForm({
                 </div>
               </fieldset>
               <fieldset className='horizontalGround'>
-                <p className='popupText'>Бюджет проекта (₽)*</p>
-                <section className='buttonsMainB'>
-                  {projectBudget.map((project) => (
-                    <button
-                      key={project.id}
-                      className={`mainButtonB ${selectedProjectBudget === project.value ? 'selected' : ''}`}
-                      type='button'
-                      onClick={() => {
-                        form.setFieldValue('projectBudget', project.value);
-                        setSelectedProjectBudget(project.value);
-                      }}>
-                      {project.title}
-                    </button>
-                  ))}
-                </section>
-                {form.errors.projectBudget && <p className='errorText2'>{form.errors.projectBudget}</p>}
+                  <p className='popupText'>Бюджет проекта (₽)*</p>
+                  <section className='buttonsMainB'>
+                    {projectBudget.map((project) => (
+                      <button
+                        key={project.id}
+                        className={`mainButtonB ${selectedProjectBudget === project.value ? 'selected' : ''} ${form.errors.projectBudget ? 'error' : ''}`}
+                        type='button'
+                        onClick={() => {
+                          form.setFieldValue('projectBudget', project.value);
+                          setSelectedProjectBudget(project.value);
+                        }}>
+                        {project.title}
+                      </button>
+                    ))}
+                  </section>
+                  {form.errors.projectBudget && <p className='errorText2'>{form.errors.projectBudget}</p>}
               </fieldset>
               <fieldset className='verticalGroundLast'>
                 <p style={{ marginBottom: '8px'}} className='popupText'>Детали проекта</p>

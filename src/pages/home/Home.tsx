@@ -5,7 +5,6 @@ function Home() {
 	return (
 		<section className='homeSection'>
 			<h1><span className='firText'>Star<span className='ligatures'>fl</span><span className='owFollowing'>ow</span></span><span className='secText'> Design</span></h1>
-			<NavigationButtonsActive/>
 			<section className='welcomeUnder'>
                     <span className='bracket1'>(</span>
                         <p className='navbarText'>
@@ -13,6 +12,7 @@ function Home() {
                         </p>
                     <span className='bracket2'>)</span>
             </section>
+			<NavigationButtonsActive/>
 			<article className='homeText'>
 				<p>Эмпатичный дизайнер, стремлюсь<br></br>сделать ваш бренд понятным<br></br>и выделяющимся</p>
 				<p>Моя цель —  создание эффектных,<br></br>и эффективных решений<br></br>для вашего бизнеса</p>
