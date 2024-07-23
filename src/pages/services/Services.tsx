@@ -15,7 +15,6 @@ const Services = () => {
 	const [brifOpened, setBrifOpened] = useState(false);
 	const [selectedService, setSelectedService] = useState<string | null>(null);
 	  
-
 	const handleOpenPopup = (id: string) => {
 		setSelectedService(id);
 		setBrifOpened(true);
