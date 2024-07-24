@@ -67,11 +67,6 @@
 	.closeBurger {
 		display: none;
 	}
-	@media screen and (max-width: 1366px) {
-		.navbarBtn , .navbarText , .navbarTelegram{
-			font-size: 14px;
-		}
-	}
 	@media screen and (max-width: 1024px) {
 		.burger{
 			display: flex;

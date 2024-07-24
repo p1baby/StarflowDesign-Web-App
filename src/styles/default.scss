@@ -28,6 +28,11 @@ p , h1 , h2, h3, h4, h5, h6 {
 p, a{
 	letter-spacing: -0.5px;
 }
+@media screen and (max-width: 1366px) {
+  p, a {
+    font-size: 14px;
+  }
+}
 html{
 	box-sizing: border-box;
 }
@@ -63,11 +68,12 @@ body {
 	min-height: 100vh;
 	background-color: #070707;
 	background-image: url(/3dstar.svg);
-		background-repeat: no-repeat;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center;
 }
 .navbar {
 	flex: 0 0 auto; /* Make the navbar take up only the space it needs */

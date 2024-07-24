@@ -4,29 +4,24 @@ import './navigationbuttonsactive.scss'
 
 function NavigationButtonsActive() {
   const [isHidden, setIsHidden] = useState(false);
-  const [scrolling, setScrolling] = useState(false);
+  const [prevScrollY, setPrevScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolling(true);
-      setTimeout(() => {
-        setScrolling(false);
-      }, 3000);
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > prevScrollY) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+      setPrevScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    if (scrolling) {
-      setIsHidden(true);
-    } else {
-      setIsHidden(false);
-    }
-  }, [scrolling]);
+  }, [prevScrollY]);
 
   const linksMain = [
     { id: '1', number: '00-1', title: 'Проекты', link: '/projects' },

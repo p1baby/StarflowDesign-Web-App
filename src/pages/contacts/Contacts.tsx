@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx';
-import './contacts.scss';
-import PopupBrif from '../../components/popupbrif/PopupBrif.tsx';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx'
+import PopupBrif from '../../components/popupbrif/PopupBrif.tsx'
+import './contacts.scss'
 
 function Contacts() {
 	const [brifOpened, setBrifOpened] = React.useState(false);
@@ -13,7 +13,7 @@ function Contacts() {
 	
 	return (
 		<section className='contactSection'>
-			{brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} /> }
+			{brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} selectedService={null} /> }
 			<h2><span className='firText'>Давайте</span><span className='secText'> Сотрудничать</span></h2>
 			<h2 className='second'><span className='firText'>Давайте</span><br></br><span className='secText'>Сотрудничать</span></h2>
 			<NavigationButtonsActive />

@@ -8,8 +8,8 @@ import arrowRight from '/arrowRight.svg'
 import './services.scss'
 
 import AboutMe from '../../components/aboutMe/AboutMe'
+import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive'
 import PopupBrif from '../../components/popupbrif/PopupBrif'
-// import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive';
 
 const Services = () => {
 	const [brifOpened, setBrifOpened] = useState(false);
@@ -28,7 +28,7 @@ const Services = () => {
 		setTimeout(() => {
 		  updatedStates[index] = false;
 		  setAccordionStates(updatedStates);
-		}, 100); // time for swaping + and -
+		}, 100);
 	  };
 	  
 	const myServices = [
@@ -61,7 +61,7 @@ const Services = () => {
 				<h2><span className='firText'>Мои</span><span className='secText'> Услуги</span></h2>
 				<p>К каждому проекту подхожу<br></br>как к собственному, всегда<br></br>выкладываюсь на  максимум</p>
 			</article>
-			{/* <NavigationButtonsActive /> */}
+			<NavigationButtonsActive />
 			<main className='mainServices'>
 			{myServices.map((services) => (
 				<section className='service service-hover'>

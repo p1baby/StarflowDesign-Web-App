@@ -24,7 +24,8 @@
 		text-decoration: none;
 	}
 	.goConversation {
-		margin: 218px 0 160px;
+		// margin: 218px 0 160px;
+		margin: 218px 0 auto 0;
 	}
 	.mainFooterTop, .mainFooterTopSecond {
 		color: $main-color-text;
@@ -33,7 +34,7 @@
 		display: none;
 	}
 	.nextPage {
-		margin: 160px 0 0;
+		margin: auto 0 153px 0;
 		p {
 			font-weight: 350;
 			letter-spacing: -7px;
@@ -168,7 +169,7 @@
 			margin: 140px 0 0 0;
 		}
 		.goConversation {
-			margin: 118px 0 140px 0;
+			margin: 188px 0 140px 0;
 		}
 	  }
 	  @media screen and (max-width: 1366px) {
@@ -178,31 +179,32 @@
 		.difText {
 			letter-spacing: -5px;
 		}
+		.nextPage{
+			margin: auto 0 113px 0;
+		}
 		.nextPage p {
-			font-size: 56px;
+			font-size: 56px !important;
 			letter-spacing: -2px;
 		}
-		.nextPageLink , .mainFooterBottom .footerLinkFirst, .mainFooterBottom .showLink .ul_link, .mainFooterBottom .footerLinkSecond {
+		.nextPageLink{
 			font-size: 14px;
-		}
-		.nextPage , .mainFooterBottom {
-			margin: 113px 0 0 0;
+			margin-top: 12px;
 		}
 		.goConversation {
-			margin: 108.5px 0 112px 0;
+			margin: 151px 0 auto 0;
 		}
-		.mainFooterP{
-			font-size: 14px;
+		.undefFooterBottom , .ul_link , .mainFooterP {
+			font-size: 14px !important;
 		}
-	  }
+	}
 	  @media screen and (max-width: 1280px) {
-		.nextPage , .mainFooterBottom {
-			margin: 101px 0 0 0;
-		}
+			.nextPage{
+				margin: auto 0 100px 0;
+			}
 		.goConversation {
-			margin: 100.5px 0 96px 0;
+			margin: 143px 0 auto 0;
 		}
-	  }
+	}
 	  @media screen and (max-width: 1024px) {
 		.navigationSectionStatic {
 			display: none;
@@ -213,16 +215,16 @@
 		.nextPageLink{
 			font-size: 14px;
 		}
-		.nextPage {
-			margin: 160px 0 0 0;
+		.nextPage{
+			margin: auto 0 160px 0;
 		}
 		.mainFooterBottom {
 			margin: 163.5px 0 0 0;
 		}
 		.goConversation {
-			margin: 188.5px 0 0 0;
+			margin: 200px 0 auto 0;
 		}
-	  }
+	}
 	  @media screen and (max-width: 768px) {
 		.mainFooterTop , .mainFooterBottom{
 			display: none;

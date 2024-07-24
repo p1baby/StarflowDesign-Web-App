@@ -75,7 +75,7 @@
 			width: 446px;
 			height: 720px;
 			text-align: left;
-			margin: 550px 0 160px 0;
+			margin: 580px 0 160px 0;
 			transition: 0.3s ease-in-out;
 			.top , .bottom{
 				display: flex;
@@ -222,10 +222,12 @@
 			padding-top: 16px;
 		}
 	}
-
 	.accordion input[type='radio']:checked + label + .content{
 	 	max-height: 200px;
 	 	padding: 32px 0 32px 0;
-	}
+		}
   }
+	@media screen and (max-width: 1440px) {
+		
+	}
 }
