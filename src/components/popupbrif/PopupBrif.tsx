@@ -202,7 +202,7 @@ const form = useForm({
               </fieldset>
               <fieldset className='verticalGroundLast'>
                 <p style={{ marginBottom: '8px'}} className='popupText'>Детали проекта</p>
-                <div style={{ gap: '8px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ gap: '8px', display: 'flex', flexDirection: 'column', height: '100%' }}>
                   <input {...form.getInputProps('projectLink')} className='ownInputSpecial' maxLength={1000} type='text' placeholder='Ссылка на сайт (если нужен редизайн)' />
                   <textarea {...form.getInputProps('projectDetails')} className={`ownTextarea ${form.errors.projectDetails ? 'error' : ''}`} maxLength={3000} placeholder='Напишите, что ещё важно знать о Вашем проекте, цели, задачи*' />
                 </div>

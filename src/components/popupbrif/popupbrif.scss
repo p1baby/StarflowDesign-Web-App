@@ -11,12 +11,18 @@
 	fieldset{
 		border: none;
 	}
+	input::placeholder {
+		color: #B1B1B1;
+	}
+	textarea::placeholder {
+		color: #B1B1B1;
+	}
 			// form
 			.drawer {
 				display: flex;
 				flex-direction: column;
 				position: fixed;
-				width: 802px;
+				width: 834px;
 				height: 100%;
 				right: 0;
 				background: $main-color-text;
@@ -49,9 +55,6 @@
 					font-weight: 450;
 					width: 100%;
 					transition: 0.5s;
-					.ownInput::placeholder {
-						color: #B1B1B1;
-					}
 				}
 				.ownInputSpecial{
 					background: transparent;
@@ -219,7 +222,8 @@
 			}
 			@media screen and (max-width: 1366px) {
 				.drawer{
-					width: 714px;
+					width: 758px;
+					top: 0;
 				}
 				.drawer header .startText{
 					display: none;
@@ -236,6 +240,9 @@
 				.drawer, .drawerSecond, .drawerThird{
 					width: 100%;
 				}
+				.drawer form .horizontalGround .buttonsMainT {
+					justify-content: start;
+				  }
 			}
 			@media screen and (max-width: 768px) {
 				.drawer header .startText{
@@ -245,14 +252,14 @@
 					display: block;
 					font-size: 56px;
 				}
-				.drawer form .verticalGroundLast .ownTextarea {
-					height: 272px;
-				}
 			}
 			@media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
 				.drawer {
 					padding: 84px 24px 32px 24px;
 				}
+				.overlay .drawer form {
+					overflow-y: unset;
+				  }
 				.drawer header .startText{
 					display: block;
 					font-size: 48px;

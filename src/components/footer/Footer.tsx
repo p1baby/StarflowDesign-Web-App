@@ -1,14 +1,13 @@
-import { Link, useLocation } from 'react-router-dom';
-import arrowLeft from '/arrowLeft.svg';
-import arrowRight from '/arrowRight.svg';
-import NavigationButtonsStatic from './navigationButtonsStatic/NavigationButtonsStatic.tsx';
-import './footer.scss';
+import { Link, useLocation } from 'react-router-dom'
+import './footer.scss'
+import arrowLeft from '/arrowLeft.svg'
+import arrowRight from '/arrowRight.svg'
 
-import Footer404 from './footer404/Footer404.tsx';
-import FooterContacts from './footerContacts/FooterContacts.tsx';
-import FooterHome from './footerHome/FooterHome.tsx';
+import Footer404 from './footer404/Footer404.tsx'
+import FooterContacts from './footerContacts/FooterContacts.tsx'
+import FooterHome from './footerHome/FooterHome.tsx'
 
-import NextPage from './nextPage/NextPage.tsx';
+import NextPage from './nextPage/NextPage.tsx'
 
 const Footer = () => {
   const location = useLocation();
@@ -43,7 +42,7 @@ const Footer = () => {
         <p className='mainFooterTopSecond'><span className='difText'>Обсудим</span><br></br><span className='secText'>Ваш проект</span></p>
         <div className='mainFooterP'><img className='leftArrow' src={arrowLeft} alt='arrow' />написать в телеграм<img className='rightArrow' src={arrowRight} alt='arrow' /></div>
       </Link>
-			<NavigationButtonsStatic/>
+			{/* <NavigationButtonsStatic/> */}
 			<NextPage />
       <section className='mainFooterBottomSecond'>
         <ul className='showLink'>

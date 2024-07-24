@@ -62,6 +62,12 @@ body {
 	min-width: 100vw;
 	min-height: 100vh;
 	background-color: #070707;
+	background-image: url(/3dstar.svg);
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 }
 .navbar {
 	flex: 0 0 auto; /* Make the navbar take up only the space it needs */

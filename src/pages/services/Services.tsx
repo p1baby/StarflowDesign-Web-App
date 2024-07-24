@@ -1,20 +1,21 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import arrowLeft from '/arrowLeft.svg';
-import arrowRight from '/arrowRight.svg';
-import accordionMinus from '/accordionMinus.svg';
-import accordionPlus from '/accordionPlus.svg';
+import accordionMinus from '/accordionMinus.svg'
+import accordionPlus from '/accordionPlus.svg'
+import arrowLeft from '/arrowLeft.svg'
+import arrowRight from '/arrowRight.svg'
 
-import './services.scss';
+import './services.scss'
 
-import PopupBrif from '../../components/popupbrif/PopupBrif';
-import AboutMe from '../../components/aboutMe/AboutMe';
+import AboutMe from '../../components/aboutMe/AboutMe'
+import PopupBrif from '../../components/popupbrif/PopupBrif'
 // import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive';
 
 const Services = () => {
 	const [brifOpened, setBrifOpened] = useState(false);
 	const [selectedService, setSelectedService] = useState<string | null>(null);
 	  
+
 	const handleOpenPopup = (id: string) => {
 		setSelectedService(id);
 		setBrifOpened(true);
@@ -63,7 +64,7 @@ const Services = () => {
 			{/* <NavigationButtonsActive /> */}
 			<main className='mainServices'>
 			{myServices.map((services) => (
-				<section className='service'>
+				<section className='service service-hover'>
 							<section className='top'>
 								<p className='number'>({services.number})</p>
 								<h3 className='title'>{services.title}</h3>

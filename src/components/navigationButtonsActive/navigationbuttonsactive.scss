@@ -1,5 +1,8 @@
 @import "../../styles/variables";
 
+.navigationSection.hidden {
+	opacity: 0;
+}
 .navigationSection{
 	position: fixed !important;
 	top: 50%;
@@ -13,6 +16,8 @@
 	align-items: center;
 	padding: 0 32px;
 	color: $main-color-text;
+	opacity: 1;
+  transition: opacity 0.3s ease;
 	article{
 		display: flex;
 		flex-direction: column;
