@@ -64,8 +64,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	z-index: 1;
-	min-width: 100vw;
-	min-height: 100vh;
+	width: 100vw;
+	height: 100vh;
+	max-width: 100%;
 	background-color: #070707;
 	background-image: url(/3dstar.svg);
 	background-repeat: no-repeat;
@@ -74,6 +75,9 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	background-position: center;
+
+	// position: relative;
+  // max-width: 100%;
 }
 .navbar {
 	flex: 0 0 auto; /* Make the navbar take up only the space it needs */

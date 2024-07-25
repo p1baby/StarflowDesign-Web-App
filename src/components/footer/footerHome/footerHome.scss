@@ -27,7 +27,7 @@
       text-transform: uppercase;
       text-decoration: none;
       display: flex;
-      align-items: baseline;
+      align-items: end;
       justify-content: center;
   }
     img.leftArrow {
@@ -122,7 +122,7 @@
         }
     }
     @media screen and (max-width: 1366px) {
-      .undefFooterBottom , .ul_link {
+      .undefFooterBottom , .ul_link , .mainFooterP {
           font-size: 14px !important;
       }
     }

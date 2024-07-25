@@ -1,17 +1,15 @@
-import arrowLeft from '/arrowBlackL.svg';
-import arrowRight from '/arrowBlackR.svg';
-import './successcontent.scss';
-import { RefObject } from 'react';
+import './successcontent.scss'
+import arrowLeft from '/arrowBlackL.svg'
+import arrowRight from '/arrowBlackR.svg'
 
 interface SuccessContentProps {
-    ref: RefObject<HTMLElement>; // Specify the type for 'ref'
     handleDrawerClose: () => void; // Specify the type for 'handleDrawerClose'
   }
 
-  function SuccessContent({ ref, handleDrawerClose }: SuccessContentProps) {
+  function SuccessContent({ handleDrawerClose }: SuccessContentProps) {
 
 	return (
-      <article className='drawerSecond' ref={ref}>
+      <article className='drawerSecond'>
           <header>
             <p className='popupTextSecond'>Вместе мы сделаем что-то<br />по истине крутое</p>
           </header>
