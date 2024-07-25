@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import AboutMe from '../../components/aboutMe/AboutMe';
-import './about.scss';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import AboutMe from '../../components/aboutMe/AboutMe'
+import './about.scss'
 
-import PopupBrif from '../../components/popupbrif/PopupBrif';
-import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive';
+import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive'
+import PopupBrif from '../../components/popupbrif/PopupBrif'
 
 const About = () => {
 	const [brifOpened, setBrifOpened] = React.useState(false);
@@ -31,11 +31,15 @@ const About = () => {
 			<AboutMe/>
 			<section className='trump'>
 				<section className='textMain'>
-					<h2>Дизайн - это моя жизнь<br></br>Ваш успех - это моя цель</h2> 
+					<h2>Дизайн — это моя жизнь<br></br>Ваш успех — это моя цель</h2> 
 				</section>
 				<section className='textBottom'>
 					<p className='textBfirst'>Горю своим делом, вдохновляюсь<br></br>возможностью улучшения жизни других<br></br>людей с помощью дизайна и получаю<br></br>от этого безграничное удовольствие.</p>
 					<p className='textBsecond'>Сочетаю эстетичный дизайн с удобством,<br></br>постоянно совершенствую свои навыки,<br></br>чтобы ваш бизнес засиял также ярко,<br></br>как звёзды в ночном небе.</p>
+				</section>
+				<section className='textBottomMobile'>
+					<p className='textBfirst'>Горю своим делом, вдохновляюсь возможностью<br></br>улучшения жизни других людей с помощью дизайна<br></br> и получаю от этого безграничное удовольствие.</p>
+					<p className='textBsecond'>Сочетаю эстетичный дизайн с удобством постоянно<br></br>совершенствую свои навыки, чтобы ваш бизнес <br></br>засиял также ярко, как звёзды в ночном небе.</p>
 				</section>
 			</section>
 		</section>
