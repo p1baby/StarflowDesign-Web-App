@@ -1,13 +1,5 @@
 @import "../../styles/variables";
 
-// div{
-// 	background-image: url(/3dstar.svg);
-// 		  background-repeat: no-repeat;
-// 		  -webkit-background-size: cover;
-// 		  -moz-background-size: cover;
-// 		  -o-background-size: cover;
-// 		  background-size: cover;
-// }
 .homeSection{
 	display: flex;
 	flex-direction: column;
@@ -22,7 +14,7 @@
 		line-height: 100%;
 		font-weight: 300;
 		position: fixed;
-  		top: 10%;
+  	top: 12%;
 	}
 	.ligatures{
 		font-variant-ligatures: common-ligatures;
@@ -43,7 +35,7 @@
 	}
 	.welcomeUnder{
 		display: none;
-		margin-top: 273px;
+		margin-top: 263px;
 		flex-direction: row;
 		align-items: center;
 		.bracket1, .bracket2{
@@ -89,6 +81,9 @@
 		.homeText {
 			padding: 0 140px;
 		}
+		.owFollowing {
+			margin-left: -11px;
+		}
 	}
 	@media screen and (max-width: 1366px) {
 		h1{
@@ -114,6 +109,9 @@
 		}
 		.homeText {
 			padding: 0 175px;
+		}
+		.owFollowing {
+			margin-left: -8px;
 		}
 	}
 	@media screen and (max-width: 1024px) {
@@ -146,16 +144,15 @@
 		.homeText {
 			flex-direction: column;
 			gap: 16px;
-			margin: 0;
-			padding: 0;
-			top: unset;
+		}
+		.welcomeUnder{
+			margin-top: 393px;
 		}
 	}
 	@media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
 		h1{
 			font-size: 96px;
 			line-height: 80px;
-			margin-top: 80px;
 		}
 		.owFollowing {
 			margin-left: -10px;
@@ -167,10 +164,10 @@
 			letter-spacing: -8px;
 		}
 		.welcomeUnder{
-			padding:48px 0 0 0;
+			margin-top: 300px;
 		}
 		.homeText {
-			margin-top:890px;
+			padding: 0;
 		}
 	}
 }

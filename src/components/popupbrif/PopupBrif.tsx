@@ -1,15 +1,15 @@
-import { useOutsideClick } from '../popupbrif/outsideClick/useOutsideClick';
-import { useForm } from '@mantine/form';
+import { useForm } from '@mantine/form'
+import { useOutsideClick } from '../popupbrif/outsideClick/useOutsideClick'
 
-import { sendMessage } from '../../api/telegram';
-import useTimer from '../hooks/useTimer';
+import { sendMessage } from '../../api/telegram'
+import useTimer from '../hooks/useTimer'
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react'
 
 
-import './popupbrif.scss';
-import SuccessContent from './successContent/SuccessContent';
-import TimerContent from './timerContent/TimerContent';
+import './popupbrif.scss'
+import SuccessContent from './successContent/SuccessContent'
+import TimerContent from './timerContent/TimerContent'
 
 interface Props {
   onClose: () => void;
@@ -139,7 +139,7 @@ const form = useForm({
     <section className='overlay'>
       {showDefaultContent ? (
         <>
-          <article className='drawer' ref={ref}>
+          <section className='drawer' ref={ref}>
             <header>
               <hgroup>
                 <h5 className='startText'>Начнём<br />Сотрудничество!</h5>
@@ -167,7 +167,7 @@ const form = useForm({
               </fieldset>
               <fieldset className='horizontalGround'>
                 <p className='popupText'>Тип проекта</p>
-                <div className='buttonsMainT'>
+                <section className='buttonsMainT'>
                   {projectButtons.map((project) => (
                     <button
                       key={project.id}
@@ -180,7 +180,7 @@ const form = useForm({
                       {project.title}
                     </button>
                   ))}
-                </div>
+                </section>
               </fieldset>
               <fieldset className='horizontalGround'>
                   <p className='popupText'>Бюджет проекта (₽)*</p>
@@ -210,7 +210,7 @@ const form = useForm({
               </fieldset>
               <button type='submit' className='submitButton'>Отправить</button>
             </form>
-          </article>
+          </section>
         </>
       ) : showSuccessContent ? (
         <SuccessContent ref={ref} handleDrawerClose={handleDrawerClose} />

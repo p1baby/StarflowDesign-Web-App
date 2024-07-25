@@ -22,7 +22,7 @@
 				display: flex;
 				flex-direction: column;
 				position: fixed;
-				width: 834px;
+				width: 840px;
 				height: 100%;
 				right: 0;
 				background: $main-color-text;
@@ -242,7 +242,7 @@
 				}
 				.drawer form .horizontalGround .buttonsMainT {
 					justify-content: start;
-				  }
+				}
 			}
 			@media screen and (max-width: 768px) {
 				.drawer header .startText{
@@ -257,9 +257,6 @@
 				.drawer {
 					padding: 84px 24px 32px 24px;
 				}
-				.overlay .drawer form {
-					overflow-y: unset;
-				  }
 				.drawer header .startText{
 					display: block;
 					font-size: 48px;
@@ -275,9 +272,6 @@
 				.drawer .popupText , .drawer .ownInput , .drawer .mainButtonB, .drawer .mainButtonT, .drawer .ownInputSpecial, .drawer form .verticalGroundLast .ownTextarea , .drawer form .submitButton{
 					font-size: 14px;
 				}
-				.drawer form .verticalGroundLast .ownTextarea {
-					height: 286px;
-				}
 				.drawer form .horizontalGround .inputContact{
 					flex-direction: column;
 				}
@@ -286,11 +280,10 @@
 				}
 				.drawer form .horizontalGround .buttonsMainB{
 					flex-direction: revert;
-    				flex-wrap: wrap;
+    			flex-wrap: wrap;
 				}
-				.drawer form .verticalGroundLast .ownTextarea {
-					height: 124px;
+				.drawer form .horizontalGround .inputContact {
+					gap: 18px;
 				}
 			}
-			
 }

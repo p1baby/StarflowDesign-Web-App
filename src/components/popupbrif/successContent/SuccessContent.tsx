@@ -1,7 +1,7 @@
-import arrowLeft from '/arrowBlackL.svg';
-import arrowRight from '/arrowBlackR.svg';
-import './successcontent.scss';
-import { RefObject } from 'react';
+import { RefObject } from 'react'
+import './successcontent.scss'
+import arrowLeft from '/arrowBlackL.svg'
+import arrowRight from '/arrowBlackR.svg'
 
 interface SuccessContentProps {
     ref: RefObject<HTMLElement>; // Specify the type for 'ref'
