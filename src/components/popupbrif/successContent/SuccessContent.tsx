@@ -6,7 +6,7 @@ interface SuccessContentProps {
     handleDrawerClose: () => void; // Specify the type for 'handleDrawerClose'
   }
 
-  function SuccessContent({ handleDrawerClose }: SuccessContentProps) {
+  function SuccessContent({handleDrawerClose }: SuccessContentProps) {
 
 	return (
       <article className='drawerSecond'>
