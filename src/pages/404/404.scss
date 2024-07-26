@@ -1,41 +1,26 @@
 @import "../../styles/variables";
 
-@mixin transform($property) {
-	-webkit-transform: $property;
-	-ms-transform: $property;
-	transform: $property;
-}
-
-@mixin flex-center {
+.undefSection{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-@mixin text-style($font-family, $font-size, $line-height, $letter-spacing, $font-weight: 400, $text-decoration: none, $color: white,) {
-	font-family: $font-family;
-	font-size: $font-size;
-	line-height: $line-height;
-	letter-spacing: $letter-spacing;
-	font-weight: $font-weight;
-	text-decoration: $text-decoration;
-	color: $color;
-}
-
-.undefSection{
-	@include flex-center;
 	flex-direction: column;
 	text-align: center;
 	color: $main-color-text;
 	box-sizing: border-box;
 	padding: 0 32px;
 	h1{
-		@include text-style('Playfair Display', 264px, 100%, 0, 400);
+		font-family: 'Playfair Display';
+		font-size: 264px;
+		line-height: 100%;
+		font-weight: 400;
+		text-decoration: none;
+		color: white;
 		display: flex;
 		gap: 24px;
 		position: fixed;
 		font-style: italic;
-  	top: 8%;
+  	top: 12%;
 	}
 	.undefText{
 		display: flex;
@@ -47,38 +32,49 @@
 		margin: 0 auto;
 		text-decoration: none !important;
 		p{
-			@include text-style('Inter', 48px, 90%, -3px);
+			font-size: 48px;
+			line-height: 90%;
+			letter-spacing: -3px;
+			font-weight: 400;
+			text-decoration: none;
+			color: white;
 		}
 	}
-		.undefFooterLink{
-			@include text-style('Inter', 16px, 16px, 0);
-			color: $main-color-text;
-			transition: 0.5s ease-in-out;
-			text-transform: uppercase;
-			margin: 16px 0 0 0;
-		}
-		img.leftArrow {
-			margin-right: 14px;
-			transition: transform 0.3s ease;
-		}
-		img.rightArrow {
-			margin-left: 14px;
-			transition: transform 0.3s ease;
-		}
-		img.leftArrow,
-		img.rightArrow {
-			transition: transform 0.3s ease;
-		}
-		.undefText:hover img.leftArrow {
-			@include transform(translateX(4px));
-		}
-		.undefText:hover img.rightArrow {
-			@include transform(translateX(-4px));
-		}
+	.undefFooterLink{
+		line-height: 16px;
+		letter-spacing: 0;
+		font-weight: 400;
+		text-decoration: none;
+		color: $main-color-text;
+		transition: 0.5s ease-in-out;
+		text-transform: uppercase;
+		margin: 16px 0 0 0;
+	}
+	img.leftArrow {
+		margin-right: 8px;
+		transition: transform 0.3s ease;
+	}
+	img.rightArrow {
+		margin-left: 8px;
+		transition: transform 0.3s ease;
+	}
+	img.leftArrow,
+	img.rightArrow {
+		transition: transform 0.3s ease;
+	}
+	.undefText:hover img.leftArrow {
+		-webkit-transform: translateX(4px);
+		-ms-transform: translateX(4px);
+		transform: translateX(4px);
+	}
+	.undefText:hover img.rightArrow {
+		-webkit-transform: translateX(-4px);
+		-ms-transform: translateX(-4px);
+		transform: translateX(-4px);
+	}
 		@media screen and (max-width: 1440px){
 			h1{
 				font-size: 200px;
-				top: 12%;
 			}
 			.undefText p{
 				font-size: 40px;
@@ -88,20 +84,15 @@
 		@media screen and (max-width: 1366px){
 			h1{
 				font-size: 184px;
-				top: 12%;
 			}
 			.undefText p{
 				font-size: 32px;
 				letter-spacing: 0;
 			}
-			.undefFooterLink{
-				font-size: 14px;
-			}
 		}
 		@media screen and (max-width: 1280px){
 			h1{
 				font-size: 160px;
-				top: 15%;
 			}
 		}
 		@media screen and (max-width: 1024px) {

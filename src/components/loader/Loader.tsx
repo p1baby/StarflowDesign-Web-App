@@ -1,13 +1,13 @@
-import './loader.scss'
 import NumberTicker from '../magicui/number-ticker.tsx'
+import './loader.scss'
 
 const Loader = () => {
     return (
         <section className='loader'>
-            <h3>
+            <h4>
                 <NumberTicker value={100} />
                 <span className='procent'>%</span>
-            </h3>
+            </h4>
         </section>
     )
 }

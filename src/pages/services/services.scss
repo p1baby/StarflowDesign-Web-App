@@ -20,12 +20,11 @@
 		width: 100%;
 		p{
 			text-transform: uppercase;
-			font-size: 16px;
 			line-height: 19.2px;
 			font-weight: 400;
 			margin-bottom: 36px;
 		}
-		h2{
+		h1{
 			font-size: 160px;
 			line-height: 100%;
 			font-weight: 300;
@@ -86,7 +85,6 @@
 			}
 			.top{
 				.number{
-					font-size: 16px;
 					line-height: 19.2px;
 					font-weight: 400;
 					color: #686868;
@@ -112,17 +110,16 @@
 				// top: 55%;
 				position: inherit;
 				.insideButton{
-					font-size: 16px;
 					color: $main-color-text;
 					text-transform: uppercase;
 				}
 			}
 			img.leftArrow {
-				margin-right: 14px;
+				margin-right: 8px;
 				transition: transform 0.3s ease;
 			}
 			img.rightArrow {
-				margin-left: 14px;
+				margin-left: 8px;
 				transition: transform 0.3s ease;
 			}
 			img.leftArrow,
@@ -137,18 +134,16 @@
 			}
 			.bottom{
 				.description{
-					font-size: 16px;
 					line-height: 19.2px;
 					font-weight: 400;
 					color: #686868;
 					transition: 0.3s ease-in-out;
 				}
-				div{
+				.timeValues{
 					display: flex;
 					flex-direction: row;
 					justify-content: space-between;
 					.price , .deadlines{
-						font-size: 16px;
 						line-height: 19.2px;
 						font-weight: 400;
 						color: #686868;
@@ -176,7 +171,6 @@
   	margin: 160px 0 160px 0;
   	padding: 0 32px;
   	p{
-  		font-size: 16px;
   		line-height: 19.2px;
   		font-weight: 400;
   		color: #686868;

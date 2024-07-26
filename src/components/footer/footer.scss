@@ -41,7 +41,6 @@
 		}
 	}
 	.nextPageLink, .mainFooterP {
-		font-size: 16px;
 		line-height: 16px;
 		color: $main-color-text;
 		text-transform: uppercase;
@@ -104,19 +103,19 @@
 			font-weight: 300;
 		}
 		  .showLink {
-			  display:flex;
-			  gap: 32px;
-			  display: -webkit-box;
-			  display: -webkit-flex;
-			  display: -ms-flexbox;
-			  display: inline-flex;
-			  -webkit-box-pack: center;
-			  -webkit-justify-content: center;
-			  -ms-flex-pack: center;
+			  display: flex;
+				gap: 32px;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: inline-flex;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				-ms-flex-pack: center;
+				justify-content: center; /* Standard Property */
 			  //			transform: translate(-50%, -50%);
 			  .ul_link {
 				  position: relative;
-				  font-size: 16px;
 				  font-weight: 300;
 				  line-height: 16px;
 			  }
@@ -187,14 +186,10 @@
 			letter-spacing: -2px;
 		}
 		.nextPageLink{
-			font-size: 14px;
 			margin-top: 12px;
 		}
 		.goConversation {
 			margin: 151px 0 auto 0;
-		}
-		.undefFooterBottom , .ul_link , .mainFooterP {
-			font-size: 14px !important;
 		}
 	}
 	  @media screen and (max-width: 1280px) {
@@ -211,9 +206,6 @@
 		}
 		.mainFooterTop , .difText{
 			font-size: 72px;
-		}
-		.nextPageLink{
-			font-size: 14px;
 		}
 		.nextPage{
 			margin: auto 0 160px 0;
@@ -265,7 +257,6 @@
 				display: flex;
 				justify-content: space-between;
 				width: 100%;
-				font-size: 14px;
 				.footerLinkFirst{
 					text-align: start;
 				}
@@ -287,7 +278,6 @@
 				-ms-flex-pack: center;
 				.ul_link {
 					position: relative;
-					font-size: 14px;
 					font-weight: 300;
 					line-height: 16px;
 				}
@@ -339,9 +329,6 @@
 		.mainFooterP {
 			margin-top: 16px;
 		}
-		.nextPage p {
-			font-size: 40px;
-		}
 		.mainFooterBottomSecond{
 			margin: 160px 0 0 0;
 		}
@@ -351,5 +338,10 @@
 		.nextPageLink{
 			margin-top: 0;
 		}
+	}
+}
+@media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+	.mainFooter{
+		padding: 0 24px 24px;
 	}
 }

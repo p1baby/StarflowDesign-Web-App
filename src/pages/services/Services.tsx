@@ -58,7 +58,7 @@ const Services = () => {
 		<section className='servicesSection'>
 			<article className='servicesText'>
 				<p>создаю продуманный дизайн,<br></br>сочетающий в себе эмоцию,<br></br>эстетику и удобство</p>
-				<h2><span className='firText'>Мои</span><span className='secText'> Услуги</span></h2>
+				<h1><span className='firText'>Мои</span><span className='secText'> Услуги</span></h1>
 				<p>К каждому проекту подхожу<br></br>как к собственному, всегда<br></br>выкладываюсь на  максимум</p>
 			</article>
 			<NavigationButtonsActive />
@@ -67,17 +67,17 @@ const Services = () => {
 				<section className='service service-hover'>
 							<section className='top'>
 								<p className='number'>({services.number})</p>
-								<h3 className='title'>{services.title}</h3>
+								<h2 className='title'>{services.title}</h2>
 							</section>
 							<button onClick={() => handleOpenPopup(services.id)}  className='serviceButton'>
 								<section className='insideButton'><img className='leftArrow' src={arrowLeft} alt='arrow' />заказать<img className='rightArrow' src={arrowRight} alt='arrow' /></section>
 							</button>
 							<section className='bottom'>
 								<p className='description'>{services.description}</p>
-								<div>
+								<section className='timeValues'>
 									<p className='price'>от {services.price} ₽</p>
 									<p className='deadlines'>от {services.deadlines}-ти дней</p>
-								</div>
+								</section>
 							</section>
 				</section>
 			))}

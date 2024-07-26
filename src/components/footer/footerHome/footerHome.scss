@@ -21,7 +21,6 @@
       display: none;
     }
     .mainFooterP{
-      font-size: 16px;
       line-height: 16px;
       color: $main-color-text;
       text-transform: uppercase;
@@ -31,11 +30,11 @@
       justify-content: center;
   }
     img.leftArrow {
-        margin-right: 14px;
+        margin-right: 8px;
         transition: transform 0.3s ease;
     }
     img.rightArrow {
-        margin-left: 14px;
+        margin-left: 8px;
         transition: transform 0.3s ease;
     }
   img.leftArrow,
@@ -73,7 +72,7 @@
         }
     }
     .showLink{
-        display:flex;
+        display: flex;
         gap: 32px;
         display: -webkit-box;
         display: -webkit-flex;
@@ -82,9 +81,9 @@
         -webkit-box-pack: center;
         -webkit-justify-content: center;
         -ms-flex-pack: center;
+        justify-content: center; /* Standard Property */
         .ul_link {
             position: relative;
-            font-size: 16px;
             font-weight: 300;
             line-height: 16px;
         }
@@ -120,11 +119,6 @@
             transition: transform 0.55s;
             transition: transform 0.55s, -webkit-transform 0.55s;
         }
-    }
-    @media screen and (max-width: 1366px) {
-      .undefFooterBottom , .ul_link , .mainFooterP {
-          font-size: 14px !important;
-      }
     }
     @media screen and (max-width: 1024px) {
       .contactMeMain{

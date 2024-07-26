@@ -10,7 +10,6 @@
 	padding: 0 32px;
 	line-height: 1;
 	.mainFooterP{
-	  font-size: 16px;
 	  line-height: 16px;
 	  color: $main-color-text;
 	  text-transform: uppercase;
@@ -42,7 +41,7 @@
 		}
 	}
 	.showLink{
-		display:flex;
+		display: flex;
 		gap: 32px;
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -51,9 +50,9 @@
 		-webkit-box-pack: center;
 		-webkit-justify-content: center;
 		-ms-flex-pack: center;
+		justify-content: center; /* Standard Property */
 		.ul_link {
 			position: relative;
-			font-size: 16px;
 			font-weight: 300;
 			line-height: 16px;
 		}
@@ -103,9 +102,9 @@
 			display: none;
 		}
 		.lowerSection{
-            display: flex;
-            flex-direction: column;
-            gap: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
 			padding: 0 0 32px 0;
 			height: 100%;
 			article{
@@ -126,7 +125,6 @@
 						filter: blur(40px);
 					}
 					p{
-						font-family: 'Inter', sans-serif;
 						font-size: 32px;
 						letter-spacing: -2px;
 						font-weight: 400;
@@ -138,7 +136,6 @@
 						font-family: 'Playfair Display', sans-serif;
 						font-weight: 200;
 						font-style: italic;
-						font-size: 16px;
 						z-index: 1000;
 						cursor: pointer;
 						color: $main-color-text;
@@ -162,7 +159,6 @@
 				-ms-flex-pack: center;
 				.portfolioLink{
 					position: relative;
-					font-size: 16px;
 					font-weight: 300;
 					line-height: 16px;
 				}
@@ -224,9 +220,6 @@
 		}
 		.lowerSection article .contactLight {
 			top: -160%;
-		}
-		.lowerSection .ulPortfolio .portfolioLink , footer .footerLinkFirst , .footerLinkSecond {
-			font-size: 14px;
 		}
 	}
 }

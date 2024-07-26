@@ -22,7 +22,7 @@
 				display: flex;
 				flex-direction: column;
 				position: fixed;
-				width: 840px;
+				width: 789px;
 				height: 100%;
 				right: 0;
 				background: $main-color-text;
@@ -31,8 +31,6 @@
 				gap: 40px;
 				.popupText{
 					color: $black-text;
-					font-family: 'Inter', sans-serif;
-					font-size: 16px;
 					line-height: 100%;
 					font-weight: 450;
 				}
@@ -49,8 +47,6 @@
 					color: $black-text;
 					border: $pop-text 1px solid;
 					border-radius: 8px;
-					font-family: 'Inter', sans-serif;
-					font-size: 16px;
 					line-height: 100%;
 					font-weight: 450;
 					width: 100%;
@@ -63,8 +59,6 @@
 					color: $black-text;
 					border: $pop-text 1px solid;
 					border-radius: 8px;
-					font-family: 'Inter', sans-serif;
-					font-size: 16px;
 					line-height: 100%;
 					font-weight: 450;
 					width: 100%;
@@ -80,8 +74,6 @@
 					color: $black-text;
 					border: $pop-text 1px solid;
 					border-radius: 8px;
-					font-family: 'Inter', sans-serif;
-					font-size: 16px;
 					line-height: 100%;
 					font-weight: 450;
 					cursor: pointer;
@@ -98,7 +90,6 @@
 				.mainButtonB.selected, .mainButtonT.selected {
 					border: 1px solid $black-text;
 				}
-				
 				header {
 					display: flex;
 					position: relative;
@@ -182,14 +173,13 @@
 						text-align: start;
 						height: 100%;
 						.ownTextarea{
+							font-family: 'Inter', sans-serif;
 							background: transparent;
 							outline: none;
 							padding: 16px;
 							color: $black-text;
 							border: $pop-text 1px solid;
 							border-radius: 8px;
-							font-family: 'Inter', sans-serif;
-							font-size: 16px;
 							line-height: 100%;
 							font-weight: 450;
 							width: 100%;
@@ -204,8 +194,6 @@
 						color: $black-text;
 						border: $black-text 1px solid;
 						border-radius: 8px;
-						font-family: 'Inter', sans-serif;
-						font-size: 16px;
 						line-height: 100%;
 						font-weight: 450;
 						cursor: pointer;
@@ -222,8 +210,7 @@
 			}
 			@media screen and (max-width: 1366px) {
 				.drawer{
-					width: 758px;
-					top: 0;
+					width: 723px;
 				}
 				.drawer header .startText{
 					display: none;
@@ -232,13 +219,11 @@
 					display: block;
 					font-size: 56px;
 				}
-				.drawer .popupText , .drawer .ownInput , .drawer .mainButtonB, .drawer .mainButtonT, .drawer .ownInputSpecial, .drawer form .verticalGroundLast .ownTextarea , .drawer form .submitButton{
-					font-size: 14px;
-				}
 			}
 			@media screen and (max-width: 1024px) {
-				.drawer, .drawerSecond, .drawerThird{
+				.drawer{
 					width: 100%;
+					top: 0;
 				}
 				.drawer form .horizontalGround .buttonsMainT {
 					justify-content: start;
@@ -268,9 +253,6 @@
 					padding: 48px 0 0 0;
 					flex-direction: column;
 					gap: 16px;
-				}
-				.drawer .popupText , .drawer .ownInput , .drawer .mainButtonB, .drawer .mainButtonT, .drawer .ownInputSpecial, .drawer form .verticalGroundLast .ownTextarea , .drawer form .submitButton{
-					font-size: 14px;
 				}
 				.drawer form .horizontalGround .inputContact{
 					flex-direction: column;

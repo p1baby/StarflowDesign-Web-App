@@ -21,7 +21,6 @@ $negative-margin-bottom: -20px;
 		align-items: flex-start;
 	}
 	.upperText{
-		font-family: 'Inter', sans-serif;
 		font-weight: 400;
 		font-size: $font-size-small;
 		line-height: $line-height-small;
@@ -47,10 +46,5 @@ $negative-margin-bottom: -20px;
 		letter-spacing: 0;
 		position: relative;
 		margin-bottom: $negative-margin-bottom;
-	}
-	@media screen and (max-width: 1366px) {
-		.navigationLink{
-			font-size: 14px;
-	  }
 	}
 }

@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    width: 783px;
+    width: 789px;
     height: 100%;
     right: 0;
     background: $main-color-text;
@@ -14,8 +14,6 @@
     header{
         .popupTextSecond{
             color: $black-text;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
             line-height: 100%;
             font-weight: 400;
             text-align: center;
@@ -38,8 +36,6 @@
         justify-content: space-between;
     .footerFormText{
         color: $black-text;
-        font-family: 'Inter', sans-serif;
-        font-size: 16px;
         line-height: 100%;
         font-weight: 400;
         text-align: start;
@@ -50,7 +46,6 @@
         cursor: pointer;
         text-transform: uppercase;
         color: $black-text;
-        font-size: 16px;
         line-height: 16px;
         text-decoration: none;
         display: flex;
@@ -81,18 +76,16 @@
 }
 @media screen and (max-width: 1366px) {
     .drawerSecond{
-        width: 714px;
+        width: 723px;
     }
     .drawerSecond main .successMessage{
         font-size: 56px;
-    }
-    .drawerSecond header .popupTextSecond,  .drawerSecond footer .footerFormText,  .drawerSecond footer .closeButton2 {
-        font-size: 14px;
     }
 }
 @media screen and (max-width: 1024px) {
     .drawerSecond{
         width: 100%;
+        top: 0;
     }
 }
 @media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {

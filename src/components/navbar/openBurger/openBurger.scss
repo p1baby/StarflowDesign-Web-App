@@ -14,7 +14,7 @@
 	text-decoration: none;
 	padding: 0 32px 32px 32px;
     .headerMenu{
-        padding: 36px 0px 0 0px;
+        padding: 32px 0px 0 0px;
     }
     .headerBtn{
 		display: flex;
@@ -41,9 +41,11 @@
                 letter-spacing: -7px;
             }
             .italicText{
+                font-family: 'Playfair Display', sans-serif;
+                line-height: 90%;
                 font-size: 88px;
                 font-weight: 400;
-                letter-spacing: -7px;
+                letter-spacing: -8px;
                 font-style: italic;
             }
         }
@@ -57,6 +59,7 @@
                 flex-direction: column;
                 text-decoration: none;
                 text-align: center;
+                height: 86px;
                 .contactLight{
                     z-index: 0;
                     position: relative;
@@ -209,9 +212,6 @@
             }
         }
         @media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
-            .openBurger {
-                padding: 0 24px 32px 24px;
-            }
             nav{
                 gap: 8px;
             }
@@ -221,6 +221,7 @@
             }
             article .contactButtons{
                 width: 148px;
+                height: 66px;
             }
             article .contactButtons p{
                 font-size: 24px;
@@ -239,5 +240,14 @@
             }
         }
     }
-    
+    @media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+        .headerMenu{
+            padding: 48px 0px 0 0;
+        }
+    }
+}
+@media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+    .openBurger {
+        padding: 0 24px 32px 24px;
+    }
 }

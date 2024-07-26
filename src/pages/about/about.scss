@@ -76,7 +76,6 @@
             position: absolute;
             width: 100%;
             p{
-                font-size: 16px;
                 line-height: 120%;
                 letter-spacing: -4%;
                 font-weight: 300;
@@ -170,9 +169,6 @@
         .trump .textMain h2{
             font-size: 88px;
         }
-        .aboutIntro .homeText p , .trump .textBottom .textBfirst, .trump .textBottom .textBsecond , .textMain p{
-			font-size: 14px;
-		}
     }
     @media screen and (max-width: 1024px) {
         .navigationSection{
