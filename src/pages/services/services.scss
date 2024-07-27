@@ -7,7 +7,6 @@
 	color: $main-color-text;
 	background-color: #070707;
 	box-sizing: border-box;
-	margin: 120px 0 0 0;
 	.servicesText{
 		display: flex;
 		flex-direction: row;
@@ -38,6 +37,40 @@
 		.secText{
 			letter-spacing: -16px;
 			-webkit-text-stroke: 1px  #FAFAFA;
+		}
+	}
+	.servicesTextMobile{
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		gap: 80px;
+		top: 17%;
+		position: absolute;
+		width: 100%;
+		h1{
+			font-size: 88px;
+			line-height: 100%;
+			font-weight: 300;
+		}
+		.firText{
+			font-family: 'Playfair Display', sans-serif;
+			font-weight: 400;
+			font-style: italic;
+			letter-spacing: -8px;
+		}
+		.secText{
+			letter-spacing: -8px;
+			-webkit-text-stroke: 1px  #FAFAFA;
+		}
+		.mobileText{
+			display: flex;
+			justify-content: center;
+  		gap: 240px;
+			p{
+				text-transform: uppercase;
+				line-height: 19.2px;
+				font-weight: 400;
+			}
 		}
 	}
 	.mainServices{
@@ -76,7 +109,7 @@
 			width: 446px;
 			height: 720px;
 			text-align: left;
-			margin: 580px 0 160px 0;
+			margin: 680px 0 160px 0;
 			transition: 0.3s ease-in-out;
 			.top , .bottom{
 				display: flex;
@@ -153,7 +186,7 @@
 			}
 		}
 		.service:hover{
-			.number, .description , div .deadlines , div .price  {
+			.number, .description , .timeValues .deadlines , .timeValues .price  {
 				color: $main-color-text;
 			}
 			.serviceButton{
@@ -174,6 +207,8 @@
   		line-height: 19.2px;
   		font-weight: 400;
   		color: #686868;
+			font-size: 16px;
+			transition: 0.8s ease-in-out;
   	}
 	.accordion{
 		width: 100%;
@@ -186,7 +221,7 @@
 		flex-direction: column;
 		align-items: center;
 		border-bottom: 1px solid transparent;
-  		transition: border-bottom 0.8s ease;
+    transition: border-bottom 0.8s ease-in-out;
 	}
 	
 	.accordion li label{
@@ -221,9 +256,135 @@
 	.accordion input[type='radio']:checked + label + .content{
 	 	max-height: 200px;
 	 	padding: 32px 0 32px 0;
+	}
+	.accordion input[type='radio']:checked + label{
+		p{
+			color: $main-color-text;
 		}
-  }
+ }
+}
 	@media screen and (max-width: 1440px) {
+		.servicesText h1{
+			font-size: 120px;
+		}
+		.servicesText {
+			gap: 80px;
+		}
+		.mainServices .service{
+			width: 326px;
+			height: 600px;
+			margin: 620px 0 160px 0;
+		}
+		.mainServices .service .top .title ,  .serviceStages .accordion li label {
+			font-size: 40px;
+			word-break: inherit;
+		}
+	}
+	@media screen and (max-width: 1366px) {
+		.servicesText h1{
+			font-size: 104px;
+		}
+		.servicesText .firText , .servicesText .secText {
+			letter-spacing: -8px;
+		}
+		.servicesText {
+			align-items: center;
+		}
+		.servicesText p {
+			margin-bottom: -12px;
+		}
+		.mainServices .service{
+			width: 308px;
+			height: 560px;
+			margin: 545px 0 160px 0;
+		}
+		.mainServices .service .top .title ,  .serviceStages .accordion li label {
+			font-size: 32px;
+			word-break: inherit;
+			letter-spacing: -0.5px;
+		}
+		.serviceStages p {
+			font-size: 14px;
+		}
+	}
+	@media screen and (max-width: 1280px) {
+		.mainServices .service{
+			width: 286px;
+			height: 520px;
+			margin: 520px 0 160px 0;
+		}
+		.serviceStages .accordion .content {
+			padding: 24px 0 0 0;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		.servicesText , .navigationSection{
+			display: none;
+		}
+		.servicesTextMobile{
+			display: flex;
+		}
+		.mainServices .service{
+			width: 468px;
+			height: 520px;
+			margin: 0;
+			border-left: 1px solid $main-color-text;
+		}
+		.mainServices .service .bottom .description, .mainServices .service .top .number, .mainServices .service .bottom .timeValues .price, .mainServices .service .bottom .timeValues .deadlines {
+			color: $main-color-text;
+		}
+		.mainServices .service .serviceButton {
+			opacity: 1;
+			visibility: visible;
+		}
 		
+		.mainServices{
+			flex-wrap: wrap;
+			margin: 490px 0 160px 0;
+		}
+		.mainServices .service:nth-last-child(1),
+		.mainServices .service:nth-last-child(2) {
+			margin-top: 48px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.mainServices .service{
+			width: 340px;
+		}
+	}
+	@media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+		.servicesTextMobile {
+			gap: 64px;
+		}
+		.servicesTextMobile h1{
+			font-size: 56px;
+		}
+		.servicesTextMobile .firText , .servicesTextMobile .secText {
+			letter-spacing: -4px;
+		}
+		.servicesTextMobile .mobileText {
+			gap: 16px;
+			flex-direction: column;
+		}
+		.mainServices {
+			gap: 48px;
+			padding: 0 24px;
+		}
+		.serviceStages {
+			margin: 100px 0 100px 0;
+			padding: 0 24px;
+		}
+		.serviceStages .accordion li label {
+			font-size: 24px;
+			gap: 12px;
+		}
+		// .serviceStages .accordion li label:nth-of-type(5){
+		// 	gap: 32px;
+		// }
+		.serviceStages .accordion input[type="radio"]:checked + label + .content {
+			max-height: 226px;
+    	white-space: nowrap;
+    	overflow-wrap: break-word;
+		}
 	}
 }

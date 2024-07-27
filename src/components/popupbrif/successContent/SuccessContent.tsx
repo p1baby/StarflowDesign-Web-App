@@ -1,20 +1,20 @@
+import { forwardRef } from 'react'
 import './successcontent.scss'
 import arrowLeft from '/arrowBlackL.svg'
 import arrowRight from '/arrowBlackR.svg'
 
 interface SuccessContentProps {
     handleDrawerClose: () => void; // Specify the type for 'handleDrawerClose'
-  }
+}
 
-  function SuccessContent({handleDrawerClose }: SuccessContentProps) {
-
+const SuccessContent = forwardRef<HTMLElement, SuccessContentProps>(({ handleDrawerClose }, ref) => {
 	return (
-      <article className='drawerSecond'>
+      <article className='drawerSecond' ref={ref}>
           <header>
             <p className='popupTextSecond'>Вместе мы сделаем что-то<br />по истине крутое</p>
           </header>
           <main>
-            <h6 className='successMessage'>Спасибо! Ваша заявка<br />получена!</h6>
+            <h4 className='successMessage'>Спасибо! Ваша заявка<br />получена!</h4>
           </main>
           <footer>
             <p className='footerFormText'>Я изучу бриф и свяжусь с Вами<br />в ближайшее время</p>
@@ -22,6 +22,6 @@ interface SuccessContentProps {
           </footer>
         </article>
 	);
-}
+})
 
 export default SuccessContent;

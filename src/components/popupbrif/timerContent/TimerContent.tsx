@@ -1,16 +1,14 @@
-import React from 'react';
-import arrowLeft from '/arrowBlackL.svg';
-import arrowRight from '/arrowBlackR.svg';
-import useTimer from '../../hooks/useTimer';
-import { RefObject } from 'react';
+import { forwardRef } from 'react'
+import useTimer from '../../hooks/useTimer'
 import './timercontent.scss'
+import arrowLeft from '/arrowBlackL.svg'
+import arrowRight from '/arrowBlackR.svg'
 
 interface TimerContentProps {
-  ref: RefObject<HTMLElement>;
   handleDrawerClose: () => void;
 }
 
-const TimerContent: React.FC<TimerContentProps> = ({ ref, handleDrawerClose }) => {
+const TimerContent = forwardRef<HTMLElement, TimerContentProps>(({ handleDrawerClose }, ref) => {
   const { elapsedTime, timerActive } = useTimer(0);
 
   return (
@@ -37,6 +35,6 @@ const TimerContent: React.FC<TimerContentProps> = ({ ref, handleDrawerClose }) =
       </footer>
     </article>
   );
-};
+});
 
 export default TimerContent;

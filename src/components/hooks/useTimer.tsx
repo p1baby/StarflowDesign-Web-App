@@ -1,9 +1,8 @@
-// hook for countdown in popupbrif
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react'
 
 const useTimer = (initialTime: number) => {
   const [elapsedTime, setElapsedTime] = useState(initialTime);
-  const timerActive = useRef(false);
+  const [timerActive, setTimerActive] = useState(false); // Используйте useState вместо useRef
 
   useEffect(() => {
     const storedElapsedTime = localStorage.getItem('elapsedTime');
@@ -12,7 +11,7 @@ const useTimer = (initialTime: number) => {
     }
 
     const interval = setInterval(() => {
-      if (timerActive.current) {
+      if (timerActive) { // Используйте timerActive напрямую
         setElapsedTime((prevElapsedTime) => {
           const newElapsedTime = prevElapsedTime + 1000;
           localStorage.setItem('elapsedTime', newElapsedTime.toString());
@@ -22,14 +21,14 @@ const useTimer = (initialTime: number) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [timerActive]); // Добавьте timerActive в зависимости useEffect
 
   const startTimer = () => {
-    timerActive.current = true;
+    setTimerActive(true); // Используйте setTimerActive для изменения состояния
   };
 
   const stopTimer = () => {
-    timerActive.current = false;
+    setTimerActive(false); // Используйте setTimerActive для изменения состояния
   };
 
   useEffect(() => {
@@ -40,7 +39,7 @@ const useTimer = (initialTime: number) => {
     }
   }, [elapsedTime]);
 
-  return { elapsedTime, startTimer, stopTimer, timerActive: timerActive.current };
+  return { elapsedTime, startTimer, stopTimer, timerActive };
 };
 
 export default useTimer;

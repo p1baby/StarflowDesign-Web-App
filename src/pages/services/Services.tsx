@@ -33,7 +33,7 @@ const Services = () => {
 	  
 	const myServices = [
 		{ id: '1', number: '01', title: 'Одностраничный сайт', description: 'Сайт для компаний, которым нужно протестировать гипотезу, продукт или создать сайт-визитку. ', price: '50 000', deadlines: '5' },
-		{ id: '2', number: '02', title: 'Корпоротивный сайт', description: 'Сайт для бизнесов, которым нужно более подробно рассказать о себе, продукте, услугах, команде.', price: '65 000', deadlines: '14' },
+		{ id: '2', number: '02', title: 'Корпоративный сайт', description: 'Сайт для бизнесов, которым нужно более подробно рассказать о себе, продукте, услугах, команде.', price: '65 000', deadlines: '14' },
 		{ id: '3', number: '03', title: 'Интернет-магазин', description: 'Сайт для продажи товаров с онлайн-оплатой, доставкой и управлением каталогами.', price: '65 000', deadlines: '14' },
 		{ id: '4', number: '04', title: 'Дизайн в Figma', description: 'Полноценный дизайн-макет сайта с адаптивами, подготовленный к верстке + дизайнерский контроль.', price: '30 000', deadlines: '5' }
 	];
@@ -56,15 +56,22 @@ const Services = () => {
 		<>
 		{brifOpened && <PopupBrif selectedService={selectedService} onClose={() => setBrifOpened(false)} />}
 		<section className='servicesSection'>
-			<article className='servicesText'>
+			<section className='servicesText'>
 				<p>создаю продуманный дизайн,<br></br>сочетающий в себе эмоцию,<br></br>эстетику и удобство</p>
 				<h1><span className='firText'>Мои</span><span className='secText'> Услуги</span></h1>
 				<p>К каждому проекту подхожу<br></br>как к собственному, всегда<br></br>выкладываюсь на  максимум</p>
-			</article>
+			</section>
+			<section className='servicesTextMobile'>
+				<h1><span className='firText'>Мои</span><span className='secText'> Услуги</span></h1>
+				<section className='mobileText'>
+					<p>создаю продуманный дизайн,<br></br>сочетающий в себе эмоцию,<br></br>эстетику и удобство</p>
+					<p>К каждому проекту подхожу<br></br>как к собственному, всегда<br></br>выкладываюсь на  максимум</p>
+				</section>
+			</section>
 			<NavigationButtonsActive />
 			<main className='mainServices'>
 			{myServices.map((services) => (
-				<section className='service service-hover'>
+				<section key={services.id} className='service service-hover'>
 							<section className='top'>
 								<p className='number'>({services.number})</p>
 								<h2 className='title'>{services.title}</h2>
