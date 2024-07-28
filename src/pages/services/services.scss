@@ -107,7 +107,7 @@
 			padding: 0 24px 0 24px;
 			border-left: 1px solid #383838;
 			width: 446px;
-			height: 720px;
+			height: 784px;
 			text-align: left;
 			margin: 680px 0 160px 0;
 			transition: 0.3s ease-in-out;
@@ -126,7 +126,7 @@
 				.title{
 					font-size: 48px;
 					line-height: 100%;
-					font-weight: 400;
+					font-weight: 350;
 					letter-spacing: -3px;
 					height: 78px;
 				}
@@ -142,21 +142,16 @@
 				cursor: pointer;
 				// top: 55%;
 				position: inherit;
+				font-family: 'Inter', sans-serif;
 				.insideButton{
 					color: $main-color-text;
 					text-transform: uppercase;
+					display: flex;
+					align-items: end;
 				}
 			}
-			img.leftArrow {
-				margin-right: 8px;
-				transition: transform 0.3s ease;
-			}
-			img.rightArrow {
-				margin-left: 8px;
-				transition: transform 0.3s ease;
-			}
-			img.leftArrow,
-			img.rightArrow {
+			img.leftArrow, img.rightArrow {
+				margin: 0 8px;
 				transition: transform 0.3s ease;
 			}
 			.serviceButton:hover img.leftArrow {
@@ -168,7 +163,6 @@
 			.bottom{
 				.description{
 					line-height: 19.2px;
-					font-weight: 400;
 					color: #686868;
 					transition: 0.3s ease-in-out;
 				}
@@ -178,7 +172,6 @@
 					justify-content: space-between;
 					.price , .deadlines{
 						line-height: 19.2px;
-						font-weight: 400;
 						color: #686868;
 						transition: 0.3s ease-in-out;
 					}
@@ -205,7 +198,6 @@
   	padding: 0 32px;
   	p{
   		line-height: 19.2px;
-  		font-weight: 400;
   		color: #686868;
 			font-size: 16px;
 			transition: 0.8s ease-in-out;
@@ -231,7 +223,6 @@
 		cursor: pointer;
 		font-size: 48px;
 		line-height: 100%;
-		font-weight: 400;
 		letter-spacing: -3px;
 		width: 100%;
 		margin-top: 32px;
@@ -302,6 +293,13 @@
 			font-size: 32px;
 			word-break: inherit;
 			letter-spacing: -0.5px;
+			margin-top: 24px;
+		}
+		.aboutMeSection .textMain p{
+			padding-bottom: 16px;
+		}
+		.serviceStages .accordion .content{
+			padding: 24px 0 0 0;
 		}
 		.serviceStages p {
 			font-size: 14px;
@@ -326,7 +324,7 @@
 		}
 		.mainServices .service{
 			width: 468px;
-			height: 520px;
+			height: 600px;
 			margin: 0;
 			border-left: 1px solid $main-color-text;
 		}
@@ -337,7 +335,12 @@
 			opacity: 1;
 			visibility: visible;
 		}
-		
+		.mainServices .service .top .title {
+			height: auto;
+		}
+		img.leftArrow, img.rightArrow {
+			margin: 0 4px !important;
+		}
 		.mainServices{
 			flex-wrap: wrap;
 			margin: 490px 0 160px 0;
@@ -345,6 +348,9 @@
 		.mainServices .service:nth-last-child(1),
 		.mainServices .service:nth-last-child(2) {
 			margin-top: 48px;
+		}
+		.mainServices .service .top .title{
+			letter-spacing: -2px;
 		}
 	}
 	@media screen and (max-width: 768px) {
@@ -370,21 +376,31 @@
 			gap: 48px;
 			padding: 0 24px;
 		}
+		.mainServices .service {
+			padding: 0 0 0 24px;
+		}
 		.serviceStages {
 			margin: 100px 0 100px 0;
 			padding: 0 24px;
 		}
+		.serviceStages .accordion li label p{
+			display: none;
+		}
 		.serviceStages .accordion li label {
 			font-size: 24px;
-			gap: 12px;
+			text-align: left;
+			letter-spacing: -1px;
 		}
-		// .serviceStages .accordion li label:nth-of-type(5){
-		// 	gap: 32px;
-		// }
+		.serviceStages .accordion .content{
+			text-align: start;
+		}
 		.serviceStages .accordion input[type="radio"]:checked + label + .content {
 			max-height: 226px;
     	white-space: nowrap;
     	overflow-wrap: break-word;
+		}
+		.mainServices .service:nth-last-child(2), .mainServices .service:nth-last-child(1) {
+			margin-top: 0;
 		}
 	}
 }

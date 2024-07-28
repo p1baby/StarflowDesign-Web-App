@@ -1,20 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import AboutMe from '../../components/aboutMe/AboutMe'
+import Principles from '../../components/principles/Principles'
 import './about.scss'
 
 import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive'
-import PopupBrif from '../../components/popupbrif/PopupBrif'
 
 const About = () => {
-	const [brifOpened, setBrifOpened] = React.useState(false);
-	
-	const handleOpenPopup = () => {
-		setBrifOpened(true);
-	};
-	return(
-		<>
-		{brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} selectedService={null} /> }
+    const [principlesShow, setPrinciplesShow] = React.useState(false);
+    
+    const handlePrinciplesShow = () => {
+        setPrinciplesShow(!principlesShow);
+    };
+    
+    return(
+        <>
+        {principlesShow && <Principles handlePrinciplesShow={handlePrinciplesShow}/> }
 		<section className='aboutSection'>
 			<section className='aboutIntro'>
 				<h1><span className='firText'>Привет,</span><span className='secText'>Я Игорь</span></h1>
@@ -25,7 +26,7 @@ const About = () => {
 				<NavigationButtonsActive />
 				<section className='aboutFooter'>
 					<Link to='https://dprofile.ru/starflowdesign/cv' target="_blank" rel="noopener noreferrer">Резюме CV</Link>
-					<a onClick={handleOpenPopup}>Принципы</a>
+					<a onClick={handlePrinciplesShow}>Принципы</a>
 				</section>
 			</section>
 			<AboutMe/>
@@ -43,7 +44,7 @@ const About = () => {
 				</section>
 			</section>
 		</section>
-		</>
+			</>
 	)
 }
 

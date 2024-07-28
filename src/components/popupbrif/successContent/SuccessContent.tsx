@@ -4,7 +4,7 @@ import arrowLeft from '/arrowBlackL.svg'
 import arrowRight from '/arrowBlackR.svg'
 
 interface SuccessContentProps {
-    handleDrawerClose: () => void; // Specify the type for 'handleDrawerClose'
+    handleDrawerClose: () => void;
 }
 
 const SuccessContent = forwardRef<HTMLElement, SuccessContentProps>(({ handleDrawerClose }, ref) => {

@@ -112,7 +112,7 @@
             font-family: 'Playfair Display', sans-serif;
             font-weight: 400;
             font-style: italic;
-            letter-spacing: -4px;
+            letter-spacing: -8px;
             font-size: 120px;
             line-height: 90%;
           }
@@ -185,6 +185,7 @@
         }
         .trump .textMain h2{
             font-size: 72px;
+            letter-spacing: -4px;
         }
     }
     @media screen and (max-width: 768px) {
@@ -202,6 +203,7 @@
         }
         .trump .textMain h2{
             padding: 0 72px;
+            line-height: 52px;
         }
     }
     @media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
@@ -227,6 +229,7 @@
         }
         .trump .textMain h2{
             font-size: 48px;
+            line-height: 40px;
         }
         .trump .textMain h2 {
             padding: 0 32px;

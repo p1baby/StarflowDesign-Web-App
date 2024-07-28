@@ -1,0 +1,13 @@
+@import "../../../styles/variables.scss";
+
+.principlesFooter{
+	display: flex;
+	color: $main-color-text;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 0 32px;
+	line-height: 1;
+	flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}

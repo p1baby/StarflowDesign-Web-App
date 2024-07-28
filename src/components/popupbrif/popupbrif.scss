@@ -48,7 +48,7 @@
 					border: $pop-text 1px solid;
 					border-radius: 8px;
 					line-height: 100%;
-					font-weight: 450;
+					// font-weight: 450;
 					width: 100%;
 					transition: 0.5s;
 				}
@@ -60,7 +60,7 @@
 					border: $pop-text 1px solid;
 					border-radius: 8px;
 					line-height: 100%;
-					font-weight: 450;
+					// font-weight: 450;
 					width: 100%;
 					margin: 8px 0 0 0;
 					transition: 0.5s;
@@ -75,7 +75,7 @@
 					border: $pop-text 1px solid;
 					border-radius: 8px;
 					line-height: 100%;
-					font-weight: 450;
+					// font-weight: 450;
 					cursor: pointer;
 					transition: 0.5s;
 				}
@@ -114,6 +114,7 @@
 						right: 0;
 						top: 0;
 						cursor: pointer;
+						margin-top: 8px;
 					}
 					.horizontalText{
 						display: flex;
@@ -136,10 +137,10 @@
 						width: 100%;
 					}
 					.error {
-						border: 1px solid red !important;;
+						border: 1px solid #C94747 !important;;
 					}
 					.errorText, .errorText2{
-						color: red;
+						color: #C94747;
 						font-size: 14px;
 						height: 0px;
 						font-weight: 400;
@@ -181,7 +182,7 @@
 							border: $pop-text 1px solid;
 							border-radius: 8px;
 							line-height: 100%;
-							font-weight: 450;
+							// font-weight: 450;
 							width: 100%;
 							resize: vertical;
 							height: 100%;
@@ -195,7 +196,7 @@
 						border: $black-text 1px solid;
 						border-radius: 8px;
 						line-height: 100%;
-						font-weight: 450;
+						// font-weight: 450;
 						cursor: pointer;
 						transition: 0.5s;
 						margin: auto 0 0 0;
@@ -240,11 +241,16 @@
 			}
 			@media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
 				.drawer {
-					padding: 84px 24px 32px 24px;
+					padding: 48px 24px 32px 24px;
 				}
 				.drawer header .startText{
 					display: block;
 					font-size: 48px;
+					letter-spacing: -3px;
+					line-height: 42px;
+				}
+				.drawer form .errorText, .overlay .drawer form .errorText2 {
+					padding: 4px 0 12px 0;
 				}
 				.drawer header .startTextSecond{
 					display: none;
@@ -258,14 +264,16 @@
 					flex-direction: column;
 				}
 				.drawer form .horizontalGround .buttonsMainT{
-					flex-direction: column;
+					flex-wrap: wrap;
+					justify-content: flex-start;
 				}
 				.drawer form .horizontalGround .buttonsMainB{
 					flex-direction: revert;
     			flex-wrap: wrap;
+	
 				}
-				.drawer form .horizontalGround .inputContact {
-					gap: 18px;
+				.drawer .ownInputSpecial{
+					font-weight: 400;
 				}
 			}
 }

@@ -38,7 +38,7 @@ function NavigationButtonsActive() {
           <Link className='navigationLink' to={`${link.link}`}>{link.title}</Link>
         </article>
       ))}
-      <p className='navigationText'>2024</p>
+      <p className='navigationText'>©2024</p>
     </section>
   );
 }

@@ -91,7 +91,7 @@ const Services = () => {
 			</main>
 			<AboutMe/>
 			<section className='serviceStages'>
-			<p style={{ marginBottom: '32px' }}>( Этапы сотрудничества )</p>
+			<p>( Этапы сотрудничества )</p>
 				<ul className='accordion'>
 					{stages.map((stage, index) => (
 					<li key={stage.id} style={{ borderBottom: accordionStates[index] ? '1px solid white' : '1px solid #1F1F1F' }}>
