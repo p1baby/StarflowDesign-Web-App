@@ -43,8 +43,12 @@
                 font-family: 'Playfair Display', sans-serif;
                 line-height: 90%;
                 font-size: 88px;
-                letter-spacing: -8px;
+                letter-spacing: -6px;
                 font-style: italic;
+            }
+            .linkContent{
+                display: flex;
+                align-items: center;
             }
         }
         article{

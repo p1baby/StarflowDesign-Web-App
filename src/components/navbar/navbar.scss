@@ -67,6 +67,11 @@
 	.closeBurger {
 		display: none;
 	}
+	@media screen and (max-width: 1366px) {
+		.welcome .bracket1 , .welcome .bracket2 {
+			font-size: 24px;
+		}
+	}
 	@media screen and (max-width: 1024px) {
 		.burger{
 			display: flex;

@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import logo from '/logoSV.svg';
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './openBurger.scss'
+import logo from '/logoSV.svg'
 
-import { useContext } from 'react';
-import { BurgerContext } from '../Navbar';
+import { useContext } from 'react'
+import { BurgerContext } from '../Navbar'
 
-import PopupBrif from '../../popupbrif/PopupBrif';
+import PopupBrif from '../../popupbrif/PopupBrif'
 
 const openBurger = () => {
     const setIsBurgerOpen = useContext(BurgerContext);
@@ -34,26 +34,24 @@ const openBurger = () => {
 		<>
         {brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} selectedService={null} /> }
         <header className='headerMenu'>
-            <Link to='/' className='headerBtn'> <img src={logo} alt='logo' />Starflow<br></br>Design</Link>
+            <Link to='/' onClick={contextClick} className='headerBtn'> <img src={logo} alt='logo' />Starflow<br></br>Design</Link>
         </header>
         <section className='burgerContent'>
             <nav>
-                    {Object.entries(pageText).map(([path, text]) => (
-                        <Link
-                            key={path}
-                            onClick={contextClick}
-                            className={`navLink ${location.pathname === path ? 'italicText' : ''}`}
-                            to={path}
-                        >
+                {Object.entries(pageText).map(([path, text]) => (
+                    <Link
+                        key={path}
+                        onClick={contextClick}
+                        className={`navLink ${location.pathname === path ? 'italicText' : ''}`}
+                        to={path}
+                    >
+                        <section className="linkContent">
+                            {location.pathname === path && <img src={`/arrowLeft.svg`} alt='Left Image' />}
                             {text}
-                            {location.pathname === path && (
-                                <>
-                                    <img src={`/arrowLeft.svg`} alt='Left Image' />
-                                    <img src={`/arrowRight.svg`} alt='Right Image' />
-                                </>
-                            )}
-                        </Link>
-                    ))}
+                            {location.pathname === path && <img src={`/arrowRight.svg`} alt='Right Image' />}
+                        </section>
+                    </Link>
+                ))}
                 </nav>
             <section className='lowerSection'>
                 <article>

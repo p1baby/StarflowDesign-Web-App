@@ -9,7 +9,12 @@ function NavigationButtonsActive() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > prevScrollY) {
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      if (currentScrollY + windowHeight >= docHeight) {
+        setIsHidden(false);
+      } else if (currentScrollY > prevScrollY) {
         setIsHidden(true);
       } else {
         setIsHidden(false);
@@ -35,7 +40,7 @@ function NavigationButtonsActive() {
       {linksMain.map((link) => (
         <article key={link.id}>
           <p className='upperText'>{link.number}</p>
-          <Link className='navigationLink' to={`${link.link}`}>{link.title}</Link>
+          <Link className='navigationLink' to={`${link.link}`} onClick={() => window.scrollTo(0, 0)}>{link.title}</Link>
         </article>
       ))}
       <p className='navigationText'>©2024</p>
