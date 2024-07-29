@@ -1,18 +1,36 @@
-import { useState, createContext } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '/logoSV.svg';
-import './navbar.scss';
+import { createContext, useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import './navbar.scss'
+import logo from '/logoSV.svg'
 
-import OpenBurger from './openBurger/openBurger';
+import OpenBurger from './openBurger/openBurger'
 
 export const BurgerContext = createContext<React.Dispatch<React.SetStateAction<boolean>> | undefined>(undefined);
 
 const Navbar = () => {
 	const [isBrugerOpen, setIsBurgerOpen] = useState(false);
-	
+	const logoRef = useRef<HTMLImageElement>(null);
+
+	useEffect(() => {
+        const handleScroll = () => {
+          const rotationSpeed = 0.1;
+          if (logoRef.current) {
+            logoRef.current.style.transform = `rotate(${window.scrollY * rotationSpeed}deg)`;
+          }
+        };
+      
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+
 	return (
 		<nav className='navbarSection'>
-            <Link className='navbarBtn' to='/'> <img src={logo} alt='logo' /> Starflow<br></br>Design</Link>
+            <Link className='navbarBtn' to='/'> 
+                <img src={logo} alt='logo' ref={logoRef} /> 
+                Starflow<br></br>Design
+            </Link>
             <section className='burger' 
                 onClick={() => {
                     setIsBurgerOpen(!isBrugerOpen);

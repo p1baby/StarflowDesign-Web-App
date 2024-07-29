@@ -38,10 +38,12 @@ function NavigationButtonsActive() {
   return (
     <section className={`navigationSection ${isHidden? 'hidden' : ''}`}>
       {linksMain.map((link) => (
-        <article key={link.id}>
+        <Link  to={`${link.link}`} onClick={() => window.scrollTo(0, 0)} key={link.id}>
           <p className='upperText'>{link.number}</p>
-          <Link className='navigationLink' to={`${link.link}`} onClick={() => window.scrollTo(0, 0)}>{link.title}</Link>
-        </article>
+          <p className='navigationLink'>
+            {link.title}
+          </p>
+        </Link>
       ))}
       <p className='navigationText'>©2024</p>
     </section>

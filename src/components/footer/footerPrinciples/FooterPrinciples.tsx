@@ -9,8 +9,12 @@ const FooterPrinciples: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) =
     return (
       <footer className='principlesFooter'>
             <Link to='https://dprofile.ru/starflowdesign/cv' target="_blank" rel="noopener noreferrer">Резюме CV</Link>
+              <p className='navbarText'>
+                Для того, чтобы сделать что-то <br></br>интересное, нужно это полюбить.
+              </p>
             <button onClick={handlePrinciplesShow}>Закрыть</button>
       </footer>
+      
     );
 }
 

@@ -1,6 +1,12 @@
-import React from 'react'
 import FooterPriciples from '../footer/footerPrinciples/FooterPrinciples'
 import Navbar from '../navbar/Navbar'
+import './principles.scss'
+
+const words = [
+  ['Современность', 'Удобство', 'Понятность', 'Эстетика'],
+  ['Новизна', 'Эффективность', 'Эмпатия', 'Качество'],
+  ['Результат', 'Чистота', 'Эмоция', 'Функциональность']
+];
 
 interface PrinciplesProps {
   handlePrinciplesShow: () => void;
@@ -8,10 +14,18 @@ interface PrinciplesProps {
 
 const Principles: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) => {
   return (
-    <section className='overlay'>
-        <Navbar/>
-        <FooterPriciples handlePrinciplesShow={handlePrinciplesShow}/>
-        {/* <img className='leftArrow' src={arrowLeft} alt='arrow' />Закрыть<img className='rightArrow' src={arrowRight} alt='arrow' /> */}
+    <section className='principlesSection'>
+      <Navbar/>
+      <section className='principlesShow'>
+        {words.map((line, i) => (
+          <div key={i} className='marquee'>
+            <div className='marquee-content'>
+              {line.join(' ')} {line.join(' ')}
+            </div>
+          </div>
+        ))}
+      </section>
+      <FooterPriciples handlePrinciplesShow={handlePrinciplesShow} />
     </section>
   );
 }
