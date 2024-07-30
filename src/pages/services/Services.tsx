@@ -91,28 +91,29 @@ const Services = () => {
 			</main>
 			<AboutMe/>
 			<section className='serviceStages'>
-			<p>( Этапы сотрудничества )</p>
-				<ul className='accordion'>
-					{stages.map((stage, index) => (
-					<li key={stage.id} style={{ borderBottom: accordionStates[index] ? '1px solid white' : '1px solid #1F1F1F' }}>
-						<input type='radio' name='accordion' id={stage.id} onChange={() => handleToggleAccordion(index)}/>
-						<label htmlFor={stage.id}>
-							<p>({stage.number})</p>
-							{stage.title}
-							<img src={accordionStates[index] ? accordionMinus : accordionPlus} alt='toggle'/>
-							</label>
-						<section className='content'>
-						{stage.description.map((line, index) => (
-							<p key={index} className='description'>
-							{line}
-							</p>
-						))}
-							<p className='time'>{stage.time}</p>
-						</section>
-					</li>
-					))}
-				</ul>
+	<p>( Этапы сотрудничества )</p>
+	<ul className='accordion'>
+		{stages.map((stage, index) => (
+		<li key={stage.id} style={{ borderBottom: accordionStates[index] ? '1px solid white' : '1px solid #1F1F1F' }}>
+			<input type='checkbox' name='accordion' id={stage.id} onChange={() => handleToggleAccordion(index)}/>
+			<label htmlFor={stage.id}>
+				<p>({stage.number})</p>
+				{stage.title}
+				<img src={accordionStates[index] ? accordionMinus : accordionPlus} alt='toggle'/>
+				</label>
+			<section className='content'>
+			{stage.description.map((line, index) => (
+				<p key={index} className='description'>
+				{line}
+				</p>
+			))}
+				<p className='time'>{stage.time}</p>
 			</section>
+		</li>
+		))}
+	</ul>
+</section>
+
 		</section>
 		</>
 	)
