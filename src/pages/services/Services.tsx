@@ -1,7 +1,5 @@
 import { useState } from 'react'
 
-import accordionMinus from '/accordionMinus.svg'
-import accordionPlus from '/accordionPlus.svg'
 import arrowLeft from '/arrowLeft.svg'
 import arrowRight from '/arrowRight.svg'
 
@@ -22,14 +20,21 @@ const Services = () => {
 	};
 
 	const handleToggleAccordion = (index: number) => {
-		const updatedStates = [...accordionStates];
-		updatedStates[index] = !updatedStates[index];
-		setAccordionStates(updatedStates);
-		setTimeout(() => {
-		  updatedStates[index] = false;
-		  setAccordionStates(updatedStates);
-		}, 100);
-	  };
+    setAccordionStates(prevState => {
+        const newState = [...prevState];
+        newState[index] = !newState[index];
+        return newState;
+    });
+
+    const liElement = document.querySelectorAll('.accordion li')[index];
+    if (liElement) {
+        if (accordionStates[index]) {
+            liElement.classList.remove('open');
+        } else {
+            liElement.classList.add('open');
+        }
+    }
+};
 	  
 	const myServices = [
 		{ id: '1', number: '01', title: 'Одностраничный сайт', description: 'Сайт для компаний, которым нужно протестировать гипотезу, продукт или создать сайт-визитку. ', price: '50 000', deadlines: '5' },
@@ -91,29 +96,28 @@ const Services = () => {
 			</main>
 			<AboutMe/>
 			<section className='serviceStages'>
-	<p>( Этапы сотрудничества )</p>
-	<ul className='accordion'>
-		{stages.map((stage, index) => (
-		<li key={stage.id} style={{ borderBottom: accordionStates[index] ? '1px solid white' : '1px solid #1F1F1F' }}>
-			<input type='checkbox' name='accordion' id={stage.id} onChange={() => handleToggleAccordion(index)}/>
-			<label htmlFor={stage.id}>
-				<p>({stage.number})</p>
-				{stage.title}
-				<img src={accordionStates[index] ? accordionMinus : accordionPlus} alt='toggle'/>
-				</label>
-			<section className='content'>
-			{stage.description.map((line, index) => (
-				<p key={index} className='description'>
-				{line}
-				</p>
-			))}
-				<p className='time'>{stage.time}</p>
+				<p>( Этапы сотрудничества )</p>
+				<ul className='accordion'>
+						{stages.map((stage, index) => (
+								<li key={stage.id} className={accordionStates[index] ? 'open' : ''} style={{ borderBottom: accordionStates[index] ? '' : '1px solid #1F1F1F' }}>
+										<input type='checkbox' name='accordion' id={stage.id} checked={accordionStates[index]} onChange={() => handleToggleAccordion(index)} />
+										<label htmlFor={stage.id}>
+												<p>({stage.number})</p>
+												{stage.title}
+												<img src={accordionStates[index] ? 'accordionMinus.svg' : 'accordionPlus.svg'} alt='toggle' />
+										</label>
+										<section className='content'>
+												{stage.description.map((line, index) => (
+														<p key={index} className='description'>
+																{line}
+														</p>
+												))}
+												<p className='time'>{stage.time}</p>
+										</section>
+								</li>
+						))}
+				</ul>
 			</section>
-		</li>
-		))}
-	</ul>
-</section>
-
 		</section>
 		</>
 	)
