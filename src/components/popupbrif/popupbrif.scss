@@ -225,6 +225,10 @@
 				.drawer{
 					width: 100%;
 					top: 0;
+					overflow-y: auto;
+				}
+				.drawer form {
+					overflow-y: initial;
 				}
 				.drawer form .horizontalGround .buttonsMainT {
 					justify-content: start;

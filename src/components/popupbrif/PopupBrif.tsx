@@ -25,9 +25,21 @@ function PopupBrif(props: Props) {
   const [showThirdContent, setShowThirdContent] = useState(false);
   const { elapsedTime, startTimer, stopTimer, timerActive } = useTimer(0);
 
-  useEffect(() => {
+  useEffect(() => { //функция для опредления типа проекта в модальном окне
     setSelectedProjectType(projectButtons.find(button => button.id === props.selectedService)?.value || null);
 }, [props.selectedService]);
+
+useEffect(() => { //функция для отключения overflow во время того как открыто то или иное модальное окно
+  if (showDefaultContent || showSuccessContent || showThirdContent) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+
+  return () => {
+    document.body.style.overflow = '';
+  };
+}, [showDefaultContent, showSuccessContent, showThirdContent]);
 
   useEffect(() => {
     const storedShowThirdContent = localStorage.getItem('showThirdContent');

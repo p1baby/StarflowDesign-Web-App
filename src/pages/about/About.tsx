@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import AboutMe from '../../components/aboutMe/AboutMe'
 import Principles from '../../components/principles/Principles'
@@ -12,6 +12,18 @@ const About = () => {
     const handlePrinciplesShow = () => {
         setPrinciplesShow(!principlesShow);
     };
+
+		useEffect(() => { //функция для отключения overflow во время того как открыто то или иное модальное окно
+			if (principlesShow) {
+				document.body.style.overflow = 'hidden';
+			} else {
+				document.body.style.overflow = '';
+			}
+		
+			return () => {
+				document.body.style.overflow = '';
+			};
+		}, [principlesShow]);
     
     return(
         <>
