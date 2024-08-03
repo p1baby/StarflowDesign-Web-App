@@ -85,6 +85,7 @@ body {
 .navbar {
 	flex: 0 0 auto; /* Make the navbar take up only the space it needs */
 	z-index: 1000;
+	mix-blend-mode: difference;
 }
 .content {
 	flex: 1 1 auto; /* Make the content take up the remaining space */

@@ -18,6 +18,7 @@
 	color: $main-color-text;
 	opacity: 1;
   transition: opacity 0.3s ease;
+	mix-blend-mode: difference;
 	a{
 		display: flex;
   	flex-direction: column;
