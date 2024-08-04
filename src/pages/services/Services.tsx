@@ -6,7 +6,7 @@ import arrowRight from '/arrowRight.svg'
 import './services.scss'
 
 import AboutMe from '../../components/aboutMe/AboutMe'
-import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive'
+import NavigationButtons from '../../components/navigationButtons/NavigationButtons'
 import PopupBrif from '../../components/popupbrif/PopupBrif'
 
 const Services = () => {
@@ -73,7 +73,7 @@ const Services = () => {
 					<p>К каждому проекту подхожу<br></br>как к собственному, всегда<br></br>выкладываюсь на  максимум</p>
 				</section>
 			</section>
-			<NavigationButtonsActive />
+			<NavigationButtons />
 			<main className='mainServices'>
 			{myServices.map((services) => (
 				<section key={services.id} className='service service-hover'>

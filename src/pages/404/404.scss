@@ -10,17 +10,29 @@
 	box-sizing: border-box;
 	padding: 0 32px;
 	h1{
-		font-family: 'Playfair Display';
-		font-size: 264px;
+		font-size: 160px;
 		line-height: 100%;
-		font-weight: 400;
-		text-decoration: none;
-		color: white;
-		display: flex;
-		gap: 24px;
+		font-weight: 300;
 		position: fixed;
+  	top: 17%;
+	}
+	.second{
+		display: none;
+		font-size: 160px;
+		line-height: 100%;
+		font-weight: 300;
+		position: fixed;
+  	top: 31%;	
+	}
+	.firText{
+		font-family: 'Playfair Display', sans-serif;
+		font-weight: 400;
 		font-style: italic;
-  	top: 12%;
+		letter-spacing: -16px;
+	}
+	.secText{
+		letter-spacing: -4px;
+		-webkit-text-stroke: 1px  #FAFAFA;
 	}
 	.undefText{
 		display: flex;
@@ -35,9 +47,8 @@
 			font-size: 48px;
 			line-height: 90%;
 			letter-spacing: -3px;
-			font-weight: 400;
 			text-decoration: none;
-			color: white;
+			color: #FFFFFF;
 		}
 	}
 	.undefFooterLink{
@@ -74,53 +85,73 @@
 	}
 		@media screen and (max-width: 1440px){
 			h1{
-				font-size: 200px;
+				font-size: 120px;
+				top: 20%;
+			}
+			.firText{
+				letter-spacing: -8px;
+			}
+			.secText {
+				letter-spacing: -2px;
 			}
 			.undefText p{
 				font-size: 40px;
 				letter-spacing: -2px;
 			}
 		}
-		@media screen and (max-width: 1366px){
+		@media screen and (max-width: 1366px),(max-width: 1280px){
 			h1{
-				font-size: 184px;
+				font-size: 104px;
 			}
 			.undefText p{
 				font-size: 32px;
 				letter-spacing: 0;
 			}
 		}
-		@media screen and (max-width: 1280px){
-			h1{
-				font-size: 160px;
-			}
-		}
 		@media screen and (max-width: 1024px) {
-			.navigationSection{
+			h1, .navigationSection{
 				display: none;
 			}
-			h1{
-				font-size: 144px;
+			.second{
+				display: block;
+				font-size: 88px;
+				line-height: 72px;
+				letter-spacing: -4px;
 			}
 			.undefText{
-				top: 47%;
+				top: 56%;
 			}
 		}
 		@media screen and (max-width: 768px) {
 			.lowerSection article{
 				display: none;
 			}
+			.second {
+				top: 36%;
+			}
 			.undefText {
-				top: 35%;
+				top: 53%;
+			}
+			.secText {
+				letter-spacing: -3px;
 			}
 		}
 		@media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
-			h1{
-				font-size: 120px;
-				top: 25%;
+			.second{
+				font-size: 56px;
+				line-height: 50px;
+			}
+			.firText {
+				letter-spacing: -4px;
+			}
+			.secText {
+				letter-spacing: -2px;
+			}
+			.secText{
+				-webkit-text-stroke: 0.5px  #FAFAFA;
 			}
 			.undefText {
-				top: 45%;
+				top: 51%;
 			}
 		}
 }

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import './navigationbuttonsactive.scss'
+import './navigationbuttons.scss'
 
-function NavigationButtonsActive() {
+function NavigationButtons() {
   const [isHidden, setIsHidden] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
 
@@ -35,6 +35,34 @@ function NavigationButtonsActive() {
     { id: '4', number: '00-4', title: 'Контакты', link: '/contacts' },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const navElement = document.querySelector('.navigationSection') as HTMLElement;
+        if (navElement) {
+          if (entry.isIntersecting) {
+            navElement.style.mixBlendMode = 'normal';
+          } else {
+            navElement.style.mixBlendMode = 'difference';
+          }
+        }
+      },
+      { threshold: 0.5 }
+    );
+  
+    const targetElement = document.querySelector('.aboutIntro');
+    if (targetElement) {
+      observer.observe(targetElement);
+    }
+  
+    return () => {
+      if (targetElement) {
+        observer.unobserve(targetElement);
+      }
+    };
+  }, []);
+  
+  
   return (
     <section className={`navigationSection ${isHidden? 'hidden' : ''}`}>
       {linksMain.map((link) => (
@@ -50,4 +78,4 @@ function NavigationButtonsActive() {
   );
 }
 
-export default NavigationButtonsActive;
+export default NavigationButtons;

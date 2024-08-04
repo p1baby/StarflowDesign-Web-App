@@ -1,23 +1,21 @@
-import { FC, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import About from './pages/about/About';
-import Contacts from './pages/contacts/Contacts';
-import Home from './pages/home/Home';
-import Projects from './pages/projects/Projects';
-import Services from './pages/services/Services';
-import Page404 from './pages/404/404';
-import './styles/variables.scss';
-import './styles/default.scss';
+import { FC, useEffect, useState } from 'react'
+import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom'
+import Page404 from './pages/404/404'
+import About from './pages/about/About'
+import Contacts from './pages/contacts/Contacts'
+import Home from './pages/home/Home'
+import Projects from './pages/projects/Projects'
+import Services from './pages/services/Services'
+import './styles/default.scss'
+import './styles/variables.scss'
 
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { useGSAP } from '@gsap/react';
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import { TransitionProvider } from './components/contextGsap/TransitionContext';
-{/*import Transition from './components/transitionGsap/TransitionComponent'; */} 
-
-import { Navbar, Footer, Loader } from './components';
+import { Footer, Loader, Navbar } from './components'
+import { TransitionProvider } from './components/contextGsap/TransitionContext'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, useGSAP);
 
@@ -31,39 +29,41 @@ const App: FC = () => {
 
 const AppContent: FC = () => {
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 10);
-  }, [])
+    }, 700); //change time here, now 7 seconds (ms)
+
+    return () => clearTimeout(timer);
+  }, [location]);
 
   return (
     <TransitionProvider>
-        <>
-        {loading ? <Loader/> : <section className='wrapper'>
-          <section className="navbar">
-            <Navbar />
+      <>
+        {loading ? <Loader /> : (
+          <section className='wrapper'>
+            <section className="navbar">
+              <Navbar />
+            </section>
+            <section className="content">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contacts" element={<Contacts />} />
+                <Route path="/404" element={<Page404 />} />
+              </Routes>
+            </section>
+            <section className="footer">
+              <Footer />
+            </section>
           </section>
-          <section className="content">
-          {/* <Transition> */} 
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="/404" element={<Page404/>} />
-            </Routes>
-          {/*</Transition>*/} 
-          </section>
-          <section className="footer">
-            <Footer />
-          </section>
-          </section>
-        }
-        </>
+        )}
+      </>
     </TransitionProvider>
   );
 }

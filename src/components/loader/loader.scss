@@ -8,18 +8,17 @@
     text-align: center;
     flex-direction: column;
     background-color: $background-light-black;
-    h4{
-    font-family: 'Playfair Display', sans-serif;
-	  font-weight: 400;
-	  font-style: italic;
-	  font-size: 120px;
+    p{
+	  font-size: 32px;
       color: $main-color-text;
     .procent{
-        font-family: 'Playfair Display', sans-serif;
-        font-weight: 400;
-        font-style: italic;
-        font-size: 24px;
+        font-size: 14px;
         vertical-align: super;
      }
+    }
+    @media screen and (max-width: 1366px) {
+        p{
+            font-size: 24px;
+        }
     }
 }

@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import AboutMe from '../../components/aboutMe/AboutMe'
 import Principles from '../../components/principles/Principles'
 import './about.scss'
 
-import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive'
+import NavigationButtons from '../../components/navigationButtons/NavigationButtons'
 
 const About = () => {
     const [principlesShow, setPrinciplesShow] = React.useState(false);
+    const imageRef = useRef<HTMLDivElement>(null);
     
     const handlePrinciplesShow = () => {
         setPrinciplesShow(!principlesShow);
@@ -24,18 +25,44 @@ const About = () => {
 				document.body.style.overflow = '';
 			};
 		}, [principlesShow]);
-    
+
+		useEffect(() => { // if we see aboutInro we add mix-blend-mode:normal to .navbar and if we dont see use difference
+			const observer = new IntersectionObserver(
+					([entry]) => {
+							const navbar = document.querySelector('.navbar') as HTMLElement;
+							if (navbar) {
+									if (entry.isIntersecting) {
+											navbar.style.mixBlendMode = 'normal';
+									} else {
+											navbar.style.mixBlendMode = 'difference';
+									}
+							}
+					},
+					{ threshold: 0.06 }
+			);
+
+			if (imageRef.current) {
+					observer.observe(imageRef.current);
+			}
+
+			return () => {
+					if (imageRef.current) {
+							observer.unobserve(imageRef.current);
+					}
+			};
+	}, []);
+	
     return(
         <>
         {principlesShow && <Principles handlePrinciplesShow={handlePrinciplesShow}/> }
 		<section className='aboutSection'>
-			<section className='aboutIntro'>
+			<section className='aboutIntro' ref={imageRef}>
 				<h1><span className='firText'>Привет,</span><span className='secText'>Я Игорь</span></h1>
 				<article className='homeText'>
 					<p>Эмпатичный дизайнер с искренним<br></br>подходом, страстно увлеченный<br></br>своим любимым делом</p>
 					<p>Моя цель — объединить эстетику,<br></br>функциональность и значимость<br></br>в единое целое</p>
 				</article>
-				<NavigationButtonsActive />
+				<NavigationButtons />
 				<section className='aboutFooter'>
 					<Link to='https://dprofile.ru/starflowdesign/cv' target="_blank" rel="noopener noreferrer">Резюме CV</Link>
 					<a onClick={handlePrinciplesShow}>Принципы</a>

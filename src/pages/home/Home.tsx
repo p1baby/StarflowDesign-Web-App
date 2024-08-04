@@ -1,4 +1,4 @@
-import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx'
+import NavigationButtons from '../../components/navigationButtons/NavigationButtons.tsx'
 import './home.scss'
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
           </p>
         <span className='bracket2'>)</span>
       </section>
-			<NavigationButtonsActive/>
+			<NavigationButtons/>
 			<article className='homeText'>
 				<p>Эмпатичный дизайнер, стремлюсь<br></br>сделать ваш бренд понятным<br></br>и выделяющимся</p>
 				<p>Моя цель —  создание эффектных,<br></br>и эффективных решений<br></br>для вашего бизнеса</p>

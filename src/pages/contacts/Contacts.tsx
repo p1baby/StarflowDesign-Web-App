@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import NavigationButtonsActive from '../../components/navigationButtonsActive/NavigationButtonsActive.tsx'
+import NavigationButtons from '../../components/navigationButtons/NavigationButtons.tsx'
 import PopupBrif from '../../components/popupbrif/PopupBrif.tsx'
 import './contacts.scss'
 
@@ -16,7 +16,7 @@ function Contacts() {
 			{brifOpened && <PopupBrif onClose={() => setBrifOpened(false)} selectedService={null} /> }
 			<h1><span className='firText'>Давайте</span><span className='secText'> Сотрудничать</span></h1>
 			<h1 className='second'><span className='firText'>Давайте</span><br></br><span className='secText'>Сотрудничать</span></h1>
-			<NavigationButtonsActive />
+			<NavigationButtons />
 			<article className='contactText'>
 				<Link to='https://t.me/StarflowDesign' target='_blank' rel='noopener noreferrer' className='contactButtons'>
 					<p>СВЯЗАТЬСЯ<br></br>СО МНОЙ</p>
