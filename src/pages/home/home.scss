@@ -74,8 +74,11 @@
 			font-size: 200px;
 			top: 15%;
 		}
-		.firText , .secText {
+		.firText {
 			letter-spacing: -20px;
+		}
+		.secText {
+			letter-spacing: -8px;
 		}
 		.homeText {
 			padding: 0 140px;
@@ -88,7 +91,7 @@
 		h1{
 			font-size: 184px;
 		}
-		.firText , .secText {
+		.firText {
 			letter-spacing: -17px;
 		}
 		.homeText {
@@ -102,7 +105,7 @@
 		h1{
 			font-size: 160px;
 		}
-		.firText, .secText {
+		.firText {
 			letter-spacing: -15px;
 		}
 		.homeText {
@@ -119,10 +122,10 @@
 		h1{
 			font-size: 144px;
 		}
-		.firText, .secText {
+		.firText {
 			letter-spacing: -13px;
 		}
-		.secText{
+		.secText {
 			-webkit-text-stroke: 2px  #FAFAFA;
 		}
 		.homeText {
@@ -142,6 +145,9 @@
 		h1 {
 			line-height: 116px;
 		}
+		.secText{
+			letter-spacing: -6px;
+		}
 		.homeText {
 			flex-direction: column;
 			gap: 16px;
@@ -159,7 +165,7 @@
 			-webkit-text-stroke: 1px  #FAFAFA;
 		}
 		.firText, .secText {
-			letter-spacing: -8px;
+			letter-spacing: -6px;
 		}
 		.homeText {
 			padding: 0;

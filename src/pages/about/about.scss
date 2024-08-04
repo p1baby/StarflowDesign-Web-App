@@ -180,8 +180,11 @@
         .aboutIntro .firText,.aboutIntro .secText {
         padding: 0 40px;
         }
-        .aboutIntro .firText , .aboutIntro .secText {
+        .aboutIntro .firText {
             letter-spacing: -7px;
+        }
+        .aboutIntro .secText {
+            letter-spacing: -4px;
         }
         .trump .textMain h2{
             font-size: 72px;
@@ -215,8 +218,11 @@
             font-weight: 150;
             top: 45%;
         }
-        .aboutIntro .secText , .aboutIntro .firText{
+        .aboutIntro .firText {
             letter-spacing: -4px;
+        }
+        .aboutIntro .secText {
+            letter-spacing: -2px;
         }
 		.trump .textBottom {
             display: none;
