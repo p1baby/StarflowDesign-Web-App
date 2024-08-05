@@ -28,22 +28,22 @@ const App: FC = () => {
 }
 
 const AppContent: FC = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const location = useLocation();
 
   useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 700); //change time here, now 7 seconds (ms)
+      setLoading(true);
+      const timer = setTimeout(() => {
+          setLoading(false);
+      }, 7000); // Загрузка длится 7 секунд
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
   }, [location]);
 
   return (
     <TransitionProvider>
       <>
-        {loading ? <Loader /> : (
+        {loading ? <Loader isLoading={loading} /> : (
           <section className='wrapper'>
             <section className="navbar">
               <Navbar />

@@ -61,8 +61,7 @@ function NavigationButtons() {
       }
     };
   }, []);
-  
-  
+
   return (
     <section className={`navigationSection ${isHidden? 'hidden' : ''}`}>
       {linksMain.map((link) => (

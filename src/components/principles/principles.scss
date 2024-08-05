@@ -1,5 +1,24 @@
 @import "../../styles/variables";
 
+.parallax {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.parallax .scroller {
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 80px;
+  color: $main-color-text;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.parallax span {
+  display: block;
+  margin-right: 30px;
+}
 .principlesSection {
   position: absolute;
   left: 0;
@@ -7,6 +26,7 @@
   width: 100%;
   height: 100%;
   backdrop-filter: blur(40px);
+  background: rgba(0, 0, 0, 0.1);
   z-index: 2000;
   flex-direction: column;
   align-items: center;
@@ -20,21 +40,37 @@
       white-space: nowrap;
       overflow: hidden;
       position: relative;
-      .marquee-content {
-        display: inline-block;
-        padding-left: 100%;
-        animation: marquee 60s linear infinite;
-        font-family: 'Playfair Display', sans-serif;
-        font-weight: 400;
-        font-style: italic;
-        font-size: 80px;
-        color: $main-color-text;
+      gap: 80px;
+      display: flex;
+      flex-direction: column;
+      .principlesLine{
+        border: 1px solid #FFFFFF;
+        display: flex;
       }
     }
-
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
+  }
+  @media screen and (max-width: 1440px) {
+    .parallax .scroller {
+      font-size: 64px;
+    }
+    .principlesShow .marquee {
+      gap: 64px;
+    }
+  }
+  @media screen and (max-width: 1366px) {
+    .parallax .scroller {
+      font-size: 56px;
+    }
+    .principlesShow .marquee {
+      gap: 56px;
+    }
+  }
+  @media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+    .parallax .scroller {
+      font-size: 40px;
+    }
+    .principlesShow .marquee {
+      gap: 40px;
     }
   }
 }
