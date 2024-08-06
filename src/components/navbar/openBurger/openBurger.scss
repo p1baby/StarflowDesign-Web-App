@@ -98,6 +98,14 @@
                 .footerLinkFirst{
                     text-align: start;
                 }
+                .links{
+                    opacity: 0;
+                    transition: opacity 0.5s ease-in-out;
+                  }
+                  
+                  .links.visible {
+                    opacity: 1;
+                  }
                 ul{
                     display: flex;
                     flex-direction: row;

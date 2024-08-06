@@ -1,12 +1,17 @@
 @import "../../styles/variables";
 
+.navigationSection.visible {
+  opacity: 1;
+  transform: scale(1);
+}
 .navigationSection.hidden {
-	opacity: 0;
+  opacity: 0;
+  transform: scale(1);
 }
 .navigationSection{
 	position: fixed !important;
 	top: 50%;
-	left: 50%;
+	// left: 50%;
 	transform: translate(-50%, -50%) translateZ(0px);
 	width: 100%;
 	z-index: 1001;
@@ -16,9 +21,10 @@
 	align-items: center;
 	padding: 0 32px;
 	color: $main-color-text;
-	opacity: 1;
-  transition: opacity 0.3s ease;
 	mix-blend-mode: difference;
+	opacity: 0;
+  transform: scale(1);
+  transition: opacity 0.3s ease-in-out 0.2s;
 	a{
 		display: flex;
   	flex-direction: column;

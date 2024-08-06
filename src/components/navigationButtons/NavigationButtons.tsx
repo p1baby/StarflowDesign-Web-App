@@ -5,6 +5,7 @@ import './navigationbuttons.scss'
 function NavigationButtons() {
   const [isHidden, setIsHidden] = useState(false);
   const [prevScrollY, setPrevScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,21 +41,17 @@ function NavigationButtons() {
       ([entry]) => {
         const navElement = document.querySelector('.navigationSection') as HTMLElement;
         if (navElement) {
-          if (entry.isIntersecting) {
-            navElement.style.mixBlendMode = 'normal';
-          } else {
-            navElement.style.mixBlendMode = 'difference';
-          }
+          navElement.style.mixBlendMode = entry.isIntersecting ? 'normal' : 'difference';
         }
       },
       { threshold: 0.5 }
     );
-  
+
     const targetElement = document.querySelector('.aboutIntro');
     if (targetElement) {
       observer.observe(targetElement);
     }
-  
+
     return () => {
       if (targetElement) {
         observer.unobserve(targetElement);
@@ -62,10 +59,16 @@ function NavigationButtons() {
     };
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 1000); // задержка
+  }, []);
+
   return (
-    <section className={`navigationSection ${isHidden? 'hidden' : ''}`}>
+    <section className={`navigationSection ${isHidden ? 'hidden' : ''} ${isVisible ? 'visible' : ''}`}>
       {linksMain.map((link) => (
-        <Link  to={`${link.link}`} onClick={() => window.scrollTo(0, 0)} key={link.id}>
+        <Link to={`${link.link}`} onClick={() => window.scrollTo(0, 0)} key={link.id}>
           <p className='upperText'>{link.number}</p>
           <p className='navigationLink'>
             {link.title}

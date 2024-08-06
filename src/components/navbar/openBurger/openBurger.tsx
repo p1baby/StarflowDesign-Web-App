@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './openBurger.scss'
 import logo from '/logoSV.svg'
@@ -11,6 +11,7 @@ import PopupBrif from '../../popupbrif/PopupBrif'
 const openBurger = () => {
     const setIsBurgerOpen = useContext(BurgerContext);
     const [brifOpened, setBrifOpened] = React.useState(false);
+    const [isVisible, setIsVisible] = useState(false);
     const location = useLocation();
 
     const contextClick = () => {
@@ -29,6 +30,12 @@ const openBurger = () => {
         '/about': 'Обо мне',
         '/contacts': 'Контакты',
     };
+
+    useEffect(() => {
+        setTimeout(() => {
+          setIsVisible(true);
+        }, 500); // задержка
+      }, []);
 
 	return(
 		<>
@@ -73,7 +80,7 @@ const openBurger = () => {
                 </ul>
                 <footer>
                     <Link className='footerLinkFirst' to='mailto:starflowdesign@gmail.com' target="_blank" rel="noopener noreferrer">Рабочая почта<br />starflowdesign@gmail.com</Link>
-                    <ul>
+                    <ul className={`links ${isVisible ? 'visible' : ''}`}>
                         <Link className='portfolioLink' to='https://www.behance.net/StarflowDesign' target="_blank" rel="noopener noreferrer">BEHANCE</Link>
                         <Link className='portfolioLink' to='https://dprofile.ru/starflowdesign' target="_blank" rel="noopener noreferrer">DPROFILE</Link>
                         <Link className='portfolioLink' to='https://dribbble.com/StarflowDesign' target="_blank" rel="noopener noreferrer">DRIBBLE</Link>
