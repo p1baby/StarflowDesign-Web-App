@@ -1,4 +1,5 @@
 // import NumberTicker from '../magicui/number-ticker.tsx'
+{/* <NumberTicker value={100} /> */}
 import './loader.scss'
 
 const Loader = () => {
@@ -6,8 +7,7 @@ const Loader = () => {
         <section className='loader'>
             <p>
                 Staflow Design
-                {/* <NumberTicker value={100} /> */}
-                <span className='procent'> ©</span>
+                <span className='labelc'>©</span>
             </p>
         </section>
     )

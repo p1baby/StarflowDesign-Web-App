@@ -8,13 +8,46 @@
     text-align: center;
     flex-direction: column;
     background-color: $background-light-black;
-    p{
-	  font-size: 32px;
-      color: $main-color-text;
-    .procent{
+    .labelc{
         font-size: 14px;
         vertical-align: super;
+        color: #3E3E3E;
+        position: relative;
+        -webkit-text-stroke: 0.1px #3E3E3E;
+        &::after {
+            content: '©';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: $main-color-text; 
+            clip-path: inset(100% 0 0 0);
+            -webkit-text-stroke: 0.1px $main-color-text;
+            animation: fillAnimation 7s linear infinite;
+        }
      }
+    p{
+	  font-size: 32px;
+      color: #3E3E3E;
+      position: relative;
+      -webkit-text-stroke: 0.1px #3E3E3E;
+      &::after {
+        content: 'Staflow Design';
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: $main-color-text; 
+        clip-path: inset(100% 0 0 0);
+        -webkit-text-stroke: 0.1px $main-color-text;
+        animation: fillAnimation 7s linear infinite;
+    }
+    }
+    @keyframes fillAnimation {
+        0%, 50% {
+            clip-path: inset(100% 0 0 0);
+        }
+        100% {
+            clip-path: inset(0 0 0 0);
+        }
     }
     @media screen and (max-width: 1366px) {
         p{
