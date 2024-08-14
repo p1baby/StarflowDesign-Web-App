@@ -44,7 +44,7 @@ const Navbar = () => {
             document.removeEventListener('click', checkOpenBurger); // Remove click event listener
         };
     }, []); // Empty dependency array to run the effect only once when the component mounts
-
+	
 	return (
 		<nav className='navbarSection'>
 			<Link className='navbarBtn' to='/'>

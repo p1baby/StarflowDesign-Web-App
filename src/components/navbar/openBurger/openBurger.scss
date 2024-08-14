@@ -31,10 +31,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            top: 15%;
+            margin: auto;
             position: relative;
             .navLink{
                 font-size: 88px;
+                font-weight: 350;
                 letter-spacing: -5px;
             }
             .italicText{
@@ -47,6 +48,9 @@
             .linkContent{
                 display: flex;
                 align-items: center;
+                img{
+                    transition: opacity 0 0.5s ease-in-out, opacity 1 0.5s ease-in-out, 
+                }
             }
         }
         article{
@@ -101,11 +105,10 @@
                 .links{
                     opacity: 0;
                     transition: opacity 0.5s ease-in-out;
-                  }
-                  
-                  .links.visible {
+                }
+                .links.visible {
                     opacity: 1;
-                  }
+                }
                 ul{
                     display: flex;
                     flex-direction: row;
@@ -169,53 +172,22 @@
             .lowerSection footer ul{
                 display: none;
             }
+            .ulPortfolio {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+            .ulPortfolio.visible {
+                opacity: 1;
+            }
             .ulPortfolio{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                display: -webkit-box;
-                display: -webkit-flex;
-                display: -ms-flexbox;
-                display: inline-flex;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
                 .portfolioLink{
                     position: relative;
                     font-size: 16px;
                     font-weight: 300;
                     line-height: 16px;
-                }
-                .portfolioLink:hover:before {
-                    -webkit-transform: scaleX(1);
-                    -ms-transform: scaleX(1);
-                    transform: scaleX(1);
-                    -webkit-transform-origin: left;
-                    -ms-transform-origin: left;
-                    transform-origin: left;
-                    -webkit-transition: -webkit-transform 0.55s;
-                    transition: -webkit-transform 0.55s;
-                    -o-transition: transform 0.55s;
-                    transition: transform 0.55s;
-                    transition: transform 0.55s, -webkit-transform 0.55s;
-                }
-                .portfolioLink:before {
-                    content: '';
-                    width: 100%;
-                    height: 1px;
-                    background-color: $main-color-text;
-                    position: absolute;
-                    left: 0; bottom: -2px;
-                    -webkit-transform: scaleX(0);
-                    -ms-transform: scaleX(0);
-                    transform: scaleX(0);
-                    -webkit-transform-origin: right;
-                    -ms-transform-origin: right;
-                    transform-origin: right;
-                    -webkit-transition: -webkit-transform 0.55s;
-                    transition: -webkit-transform 0.55s;
-                    -o-transition: transform 0.55s;
-                    transition: transform 0.55s;
-                    transition: transform 0.55s, -webkit-transform 0.55s;
                 }
             }
         }
