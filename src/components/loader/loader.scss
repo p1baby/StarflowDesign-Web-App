@@ -22,7 +22,7 @@
             color: $main-color-text; 
             clip-path: inset(100% 0 0 0);
             -webkit-text-stroke: 0.1px $main-color-text;
-            animation: fillAnimation 7s linear infinite;
+            animation: labelAniation 7s linear infinite;
         }
      }
     p{
@@ -42,6 +42,14 @@
     }
     }
     @keyframes fillAnimation {
+        0%, 30% {
+            clip-path: inset(100% 0 0 0);
+        }
+        100% {
+            clip-path: inset(0 0 0 0);
+        }
+    }
+    @keyframes labelAniation {
         0%, 50% {
             clip-path: inset(100% 0 0 0);
         }
