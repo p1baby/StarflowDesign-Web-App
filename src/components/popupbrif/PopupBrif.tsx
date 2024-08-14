@@ -23,7 +23,7 @@ function PopupBrif(props: Props) {
   const [showDefaultContent, setShowDefaultContent] = useState(true);
   const [showSuccessContent, setShowSuccessContent] = useState(false);
   const [showThirdContent, setShowThirdContent] = useState(false);
-  const { elapsedTime, startTimer, stopTimer, timerActive } = useTimer(0);
+  const { startTimer, stopTimer, timerActive } = useTimer(0);
 
   useEffect(() => { //функция для опредления типа проекта в модальном окне
     setSelectedProjectType(projectButtons.find(button => button.id === props.selectedService)?.value || null);
@@ -41,23 +41,23 @@ useEffect(() => { //функция для отключения overflow во в�
   };
 }, [showDefaultContent, showSuccessContent, showThirdContent]);
 
-  useEffect(() => {
-    const storedShowThirdContent = localStorage.getItem('showThirdContent');
-    if (storedShowThirdContent === 'true') {
-      setShowThirdContent(true);
-      setShowDefaultContent(false);
-      setShowSuccessContent(false);
-      startTimer();
-    }
-  }, [startTimer]);
+useEffect(() => {
+  const storedShowThirdContent = localStorage.getItem('showThirdContent');
+  if (storedShowThirdContent === 'true') {
+    setShowThirdContent(true);
+    setShowDefaultContent(false);
+    setShowSuccessContent(false);
+    startTimer();
+  }
+}, [startTimer]);
 
-  useEffect(() => {
-    if (showThirdContent) {
-      startTimer();
-    } else {
-      stopTimer();
-    }
-  }, [showThirdContent, startTimer, stopTimer]);
+useEffect(() => {
+  if (showThirdContent) {
+    startTimer();
+  } else {
+    stopTimer();
+  }
+}, [showThirdContent, startTimer, stopTimer]);
 
 const form = useForm({
 		mode: 'uncontrolled',
@@ -137,7 +137,7 @@ const form = useForm({
   const handleDrawerClose = () => {
     if (showSuccessContent) {
       setShowSuccessContent(false);
-      setShowThirdContent(false);
+      setShowThirdContent(true);
       localStorage.setItem('showThirdContent', 'true');
       startTimer();
     } else if (showThirdContent) {
@@ -151,7 +151,7 @@ const form = useForm({
     <section className='overlay'>
       {showDefaultContent ? (
         <>
-          <section className='drawer' ref={ref}>
+           <section className='drawer' ref={ref}>
             <header>
               <hgroup>
                 <h5 className='startText'>Начнём<br />Сотрудничество!</h5>

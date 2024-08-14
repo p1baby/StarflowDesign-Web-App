@@ -19,12 +19,12 @@
 	}
 			// form
 			.drawer {
+				right: 0;
 				display: flex;
 				flex-direction: column;
 				position: fixed;
 				width: 789px;
 				height: 100%;
-				right: 0;
 				background: $main-color-text;
 				z-index: 1000;
 				padding: 64px 32px 32px 32px;
