@@ -1,76 +1,91 @@
 @import "../../styles/variables";
 
+.principlesSection {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(40px);
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    &.fadeIn {
+        opacity: 1;
+    }
+    &.fadeOut {
+        opacity: 0;
+    }
+    .principlesShow {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        .marquee {
+            width: 100vw;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+            gap: 64px;
+            display: flex;
+            flex-direction: column;
+            .principlesLine {
+                border: 1px solid #FFFFFF;
+                display: flex;
+            }
+        }
+    }
+}
+
 .parallax {
-  display: flex;
-  flex-wrap: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
 }
 .parallax .scroller {
-  font-family: 'Playfair Display', sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 80px;
-  color: $main-color-text;
-  display: flex;
-  white-space: nowrap;
-  display: flex;
-  flex-wrap: nowrap;
-}
-.parallax span {
-  display: block;
-  margin-right: 30px;
-}
-.principlesSection {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(40px);
-  background: rgba(0, 0, 0, 0.1);
-  z-index: 2000;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-  .principlesShow {
-    margin: auto;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 400;
+    letter-spacing: -4px;
+    font-style: italic;
+    font-size: 80px;
+    color: $main-color-text;
     display: flex;
-    flex-direction: column;
-    .marquee {
-      width: 100vw;
-      white-space: nowrap;
-      overflow: hidden;
-      position: relative;
-      gap: 80px;
-      display: flex;
-      flex-direction: column;
-      .principlesLine{
-        border: 1px solid #FFFFFF;
-        display: flex;
-      }
+    white-space: nowrap;
+    opacity: 0;
+    animation: textFadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes textFadeIn {
+    to {
+        opacity: 1;
     }
-  }
-  @media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1440px) {
     .parallax .scroller {
-      font-size: 64px;
+        font-size: 64px;
     }
     .principlesShow .marquee {
-      gap: 64px;
+        gap: 64px;
     }
-  }
-  @media screen and (max-width: 1366px) {
+}
+
+@media screen and (max-width: 1366px) {
     .parallax .scroller {
-      font-size: 56px;
+        font-size: 56px;
     }
     .principlesShow .marquee {
-      gap: 56px;
+        gap: 56px;
     }
-  }
-  @media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
+}
+
+@media screen and (max-width: 390px), (max-width: 375px), (max-width: 428px) {
     .parallax .scroller {
-      font-size: 40px;
+        font-size: 40px;
     }
     .principlesShow .marquee {
-      gap: 40px;
+        gap: 40px;
     }
-  }
 }
