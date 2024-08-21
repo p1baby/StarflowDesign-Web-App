@@ -20,6 +20,7 @@
 		align-items: center;
 		gap: 8px;
         font-size: 14px;
+        width: fit-content;
 	}
     .burgerContent{
         display: flex;
@@ -45,11 +46,20 @@
                 letter-spacing: -3px;
                 font-style: italic;
             }
-            .linkContent{
+            .linkContent {
                 display: flex;
                 align-items: center;
-                img{
-                    transition: opacity 0 0.5s ease-in-out, opacity 1 0.5s ease-in-out, 
+                overflow: hidden;
+                .char {
+                    display: inline-block;
+                    transform: translateY(100%);
+                    transition: transform 0.3s ease;
+                }
+                &.visible .char {
+                    transform: translateY(0);
+                }
+                img {
+                    transition: opacity 0 0.3s ease-in-out, opacity 1 0.3s ease-in-out;
                 }
             }
         }
@@ -221,7 +231,7 @@
     }
     @media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
         .headerMenu{
-            padding: 48px 0px 0 0;
+            padding: 24px 0px 0 0;
         }
     }
 }
