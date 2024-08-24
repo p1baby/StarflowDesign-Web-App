@@ -5,44 +5,44 @@ import './navbar.scss'
 import logo from '/logoSV.svg'
 
 import { burgerAnimation } from '../animations/modals'
-import useSplittingAnimation from '../hooks/useSplittingAnimation'
+import useSplittingHover from '../hooks/useSplittingHover'
 import OpenBurger from './openBurger/openBurger'
 
 export const BurgerContext = createContext<React.Dispatch<React.SetStateAction<boolean>> | undefined>(undefined);
 
 const Navbar = () => {
-	const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-	const logoRef = useRef<HTMLImageElement>(null);
-	const [shouldHideNavbar, setShouldHideNavbar] = useState(false);
+    const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+    const logoRef = useRef<HTMLImageElement>(null);
+    const [shouldHideNavbar, setShouldHideNavbar] = useState(false);
 
-	useEffect(() => {
-		const checkVisibility = () => {
-			const isDrawerVisible = document.querySelector('.drawer, .drawerSecond, .drawerThird');
-			setShouldHideNavbar(!!isDrawerVisible);
-		};
-		checkVisibility();
+    useEffect(() => {
+        const checkVisibility = () => {
+            const isDrawerVisible = document.querySelector('.drawer, .drawerSecond, .drawerThird');
+            setShouldHideNavbar(!!isDrawerVisible);
+        };
+        checkVisibility();
 
-		const observer = new MutationObserver(checkVisibility);
-		observer.observe(document.body, { childList: true, subtree: true });
+        const observer = new MutationObserver(checkVisibility);
+        observer.observe(document.body, { childList: true, subtree: true });
 
-		return () => observer.disconnect();
-	}, []);
+        return () => observer.disconnect();
+    }, []);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			const rotationSpeed = 0.1;
-			if (logoRef.current) {
-				logoRef.current.style.transform = `rotate(${window.scrollY * rotationSpeed}deg)`;
-			}
-		};
+    useEffect(() => {
+        const handleScroll = () => {
+            const rotationSpeed = 0.1;
+            if (logoRef.current) {
+                logoRef.current.style.transform = `rotate(${window.scrollY * rotationSpeed}deg)`;
+            }
+        };
 
-		window.addEventListener('scroll', handleScroll);
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
-	useEffect(() => { // Hook to run the effect when the component mounts
+    useEffect(() => { // Hook to run the effect when the component mounts
         const checkOpenBurger = () => { // Function to check if the navbar has the 'openBurger' class
             const navbar = document.querySelector('.navbar') as HTMLElement; // Select the navbar element
             if (navbar) { // If the navbar element exists
@@ -62,50 +62,57 @@ const Navbar = () => {
         };
     }, []); // Empty dependency array to run the effect only once when the component mounts
 
-	useSplittingAnimation('.slide-vertical');
-
-	return (
-		<nav className={`navbarSection ${shouldHideNavbar ? 'hidden' : ''}`}>
-			<Link className='navbarBtn' to='/' onClick={() => setIsBurgerOpen(false)}>
-				<img src={logo} alt='logo' ref={logoRef} />
-				Starflow<br></br>Design
-			</Link>
-			<section 
-				className={`burger ${isBurgerOpen ? 'burgerActive' : ''}`} 
-				onClick={() => setIsBurgerOpen(!isBurgerOpen)}>
-				<span></span>
-				<span></span>
-			</section>
-			<AnimatePresence mode="wait">
-				{isBurgerOpen && (
-				<motion.section 
-					variants={burgerAnimation}
-					initial="initial"
-					animate="enter"
-					exit="exit"
-					className='openBurger'>
-					<BurgerContext.Provider value={setIsBurgerOpen}>
-						<OpenBurger />
-					</BurgerContext.Provider>
-				</motion.section>
-				)}
-      		</AnimatePresence>
-			<section className='welcome'>
-				<span className='bracket1'>(</span>
-				<p className='navbarText'>Открыт для любого<br></br>сотрудничества и предложений</p>
-				<span className='bracket2'>)</span>
-			</section>
-			<Link
-			data-splitting
-			className="navbarTelegram slide-vertical"
-			to="https://t.me/StarflowDesign"
-			target="_blank"
-			rel="noopener noreferrer">
-			<span>Написать в</span><br />
-			<span>телеграм</span>
-		</Link>
-		</nav>
-	);
+    useSplittingHover();
+    
+    return (
+        <nav className={`navbarSection ${shouldHideNavbar ? 'hidden' : ''}`}>
+            <Link
+            data-splitting
+            className='navbarBtn' 
+            to='/' onClick={() => setIsBurgerOpen(false)}
+            >
+                <img src={logo} alt='logo' ref={logoRef} />
+                <section>
+                    Starflow<br />Design
+                </section>
+            </Link>
+            <section 
+                className={`burger ${isBurgerOpen ? 'burgerActive' : ''}`} 
+                onClick={() => setIsBurgerOpen(!isBurgerOpen)}>
+                <span></span>
+                <span></span>
+            </section>
+            <AnimatePresence mode="wait">
+                {isBurgerOpen && (
+                <motion.section 
+                    variants={burgerAnimation}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
+                    className='openBurger'>
+                    <BurgerContext.Provider value={setIsBurgerOpen}>
+                        <OpenBurger />
+                    </BurgerContext.Provider>
+                </motion.section>
+                )}
+            </AnimatePresence>
+            <section className='welcome'>
+                <span className='bracket1'>(</span>
+                <p className='navbarText'>Открыт для любого<br></br>сотрудничества и предложений</p>
+                <span className='bracket2'>)</span>
+            </section>
+            <Link
+                data-splitting
+                className="navbarTelegram"
+                to="https://t.me/StarflowDesign"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+            	Написать в<br />телеграм
+            </Link>
+        </nav>
+    );
 };
 
 export default Navbar;
+
