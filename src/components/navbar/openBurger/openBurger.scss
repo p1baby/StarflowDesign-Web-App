@@ -37,7 +37,8 @@
             .navLink{
                 font-size: 88px;
                 font-weight: 350;
-                letter-spacing: -5px;
+                letter-spacing: -3px;
+                line-height: -40px;
             }
             .italicText{
                 font-family: 'Playfair Display', sans-serif;
@@ -50,16 +51,40 @@
                 display: flex;
                 align-items: center;
                 overflow: hidden;
+                height: 60.5px;
                 .char {
                     display: inline-block;
+                    height: 60.5px;
                     transform: translateY(100%);
-                    transition: transform 0.3s ease;
+                    transition: transform 0.5s ease-in-out;
+                }
+                .char[data-char="У"] {
+                    width: 24px;
+                }
+                .whitespace{
+                    width: 8px;
                 }
                 &.visible .char {
                     transform: translateY(0);
                 }
+                // img {
+                //     transition: opacity 0 0.3s ease-in-out, opacity 1 0.3s ease-in-out;
+                // }
                 img {
-                    transition: opacity 0 0.3s ease-in-out, opacity 1 0.3s ease-in-out;
+                    opacity: 0;
+                    transform: translateX(-20px);
+                    transition: opacity .3s ease, transform .3s ease;
+
+                    &.visible {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+                img:last-child {
+                    transform: translateX(20px);
+                    &.visible {
+                        transform: translateX(0);
+                    }
                 }
             }
         }
@@ -133,7 +158,7 @@
                     .portfolioLink{
                         position: relative;
                         font-size: 16px;
-                        font-weight: 300;
+                        font-weight: 350;
                         line-height: 16px;
                     }
                     .portfolioLink:hover:before {
@@ -196,7 +221,7 @@
                 .portfolioLink{
                     position: relative;
                     font-size: 16px;
-                    font-weight: 300;
+                    font-weight: 350;
                     line-height: 16px;
                 }
             }

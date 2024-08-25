@@ -30,18 +30,18 @@ const openBurger = () => {
     const pageText = {
         '/projects': 'Проекты',
         '/services': 'Услуги',
-        '/about': 'Обо мне',
+        '/about': 'Обо  мне',
         '/contacts': 'Контакты',
     };
 
     useEffect(() => {
-        // Initialize Splitting.js
-        const results = Splitting();
-        console.log(results); // Debug: See what elements are affected by Splitting.js
+        // const results = 
+        Splitting();
+        // console.log(results); // Debug: See what elements are affected by Splitting.js
 
         setTimeout(() => {
             setIsVisible(true);
-        }, 1000); // delay
+        }, 700); // delay
     }, []);
 
     return (
@@ -57,11 +57,23 @@ const openBurger = () => {
                             onClick={contextClick}
                             className={`navLink ${location.pathname === path ? 'italicText' : ''}`}
                             to={path}
-                        >
+                            >
                             <section className={`linkContent ${isVisible ? 'visible' : ''}`} data-splitting>
-                                {location.pathname === path && <img src={`/arrowLeft.svg`} alt='Left Image' />}
+                                {location.pathname === path && (
+                                    <img
+                                        src={`/arrowLeft.svg`}
+                                        alt='Left Image'
+                                        className={isVisible ? 'visible' : ''}
+                                    />
+                                )}
                                 {text}
-                                {location.pathname === path && <img src={`/arrowRight.svg`} alt='Right Image' />}
+                                {location.pathname === path && (
+                                    <img
+                                        src={`/arrowRight.svg`}
+                                        alt='Right Image'
+                                        className={isVisible ? 'visible' : ''}
+                                    />
+                                )}
                             </section>
                         </Link>
                     ))}

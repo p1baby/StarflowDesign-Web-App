@@ -24,9 +24,9 @@ function FooterHome() {
                     </section>
                 </Link>
                 <ul className='showLink'>
-                    <Link className='ul_link' to='https://www.behance.net/StarflowDesign' target="_blank" rel="noopener noreferrer">BEHANCE</Link>
-                    <Link className='ul_link' to='https://dprofile.ru/starflowdesign' target="_blank" rel="noopener noreferrer">DPROFILE</Link>
-                    <Link className='ul_link' to='https://dribbble.com/StarflowDesign' target="_blank" rel="noopener noreferrer">DRIBBBLE</Link>
+                    <Link data-splitting className='ul_link' to='https://www.behance.net/StarflowDesign' target="_blank" rel="noopener noreferrer">BEHANCE</Link>
+                    <Link data-splitting className='ul_link' to='https://dprofile.ru/starflowdesign' target="_blank" rel="noopener noreferrer">DPROFILE</Link>
+                    <Link data-splitting className='ul_link' to='https://dribbble.com/StarflowDesign' target="_blank" rel="noopener noreferrer">DRIBBBLE</Link>
                 </ul>
                 <Link 
                     data-splitting
@@ -35,7 +35,7 @@ function FooterHome() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     >
-                    Верстка сайта<br />p1baby
+                    Верстка сайта<br />@p1baby
                 </Link>
             </section>
         </footer>
