@@ -1,7 +1,7 @@
 @import "../../../styles/variables.scss";
 
 // footer /contacts
-  .undefFooterContacts{
+  .underFooterContacts{
 	display: flex;
 	color: $main-color-text;
 	flex-direction: column;
@@ -10,15 +10,15 @@
 	padding: 0 32px;
 	line-height: 1;
 	.mainFooterP{
-	  line-height: 16px;
-	  color: $main-color-text;
-	  text-transform: uppercase;
-	  text-decoration: none;
-	  display: flex;
-	  align-items: baseline;
-	  justify-content: center;
+		line-height: 16px;
+	  	color: $main-color-text;
+	  	text-transform: uppercase;
+	  	text-decoration: none;
+	  	display: flex;
+	  	align-items: baseline;
+	  	justify-content: center;
   }
-	.undefFooterBottomContacts{
+	.underFooterBottomContacts{
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -32,12 +32,12 @@
 			text-decoration: none;
 			text-align: end;
 		}
-		.undefLinkFirst{
-				text-align: start;
-		}
-		.undefLinkSecond{
-				text-align: end;
-				width: 177px;
+		.underLinkFirst{
+            text-align: start;
+        }
+		.underLinkSecond{
+            text-align: end;
+            width: 177px;
 		}
 	}
 	.showLink{
@@ -50,10 +50,10 @@
 		-webkit-box-pack: center;
 		-webkit-justify-content: center;
 		-ms-flex-pack: center;
-		justify-content: center; /* Standard Property */
+		justify-content: center;
 		.ul_link {
 			position: relative;
-			font-weight: 300;
+			font-weight: 350;
 			line-height: 16px;
 		}
 		.ul_link:hover:before {
@@ -93,18 +93,18 @@
 		display: none;
 	}
 	@media screen and (max-width: 1366px) {
-	  .undefFooterBottom , .ul_link {
+	  .underFooterBottom , .ul_link {
 		  font-size: 14px !important;
 	  }
 	}
 	@media screen and (max-width: 768px) {
-		.undefFooterBottomContacts{
+		.underFooterBottomContacts{
 			display: none;
 		}
 		.lowerSection{
-      display: flex;
-      flex-direction: column;
-      gap: 64px;
+      		display: flex;
+     		flex-direction: column;
+      		gap: 64px;
 			padding: 0 0 32px 0;
 			height: 100%;
 			article{
@@ -159,7 +159,7 @@
 				-ms-flex-pack: center;
 				.portfolioLink{
 					position: relative;
-					font-weight: 300;
+					font-weight: 350;
 					line-height: 16px;
 				}
 				.portfolioLink:hover:before {
