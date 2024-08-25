@@ -6,25 +6,25 @@ import './navigationbuttons.scss'
 function NavigationButtons() {
     const [isHidden, setIsHidden] = useState(false);
     const [prevScrollY, setPrevScrollY] = useState(0);
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(false); // for smooth delay after loading
 
     useEffect(() => {
         const handleScroll = () => {
-        const currentScrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const docHeight = document.documentElement.scrollHeight;
+            const currentScrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
 
-    if (currentScrollY + windowHeight >= docHeight) {
-        setIsHidden(false);
-    } else if (currentScrollY > prevScrollY) {
-        setIsHidden(true);
-    } else {
-        setIsHidden(false);
-    }
-        setPrevScrollY(currentScrollY);
-    };
+            if (currentScrollY + windowHeight >= docHeight) {
+                setIsHidden(false);
+            } else if (currentScrollY > prevScrollY) {
+                setIsHidden(true);
+            } else {
+                setIsHidden(false);
+            }
+            setPrevScrollY(currentScrollY);
+        };
 
-    window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -41,35 +41,35 @@ function NavigationButtons() {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 const navElement = document.querySelector('.navigationSection') as HTMLElement;
-            if (navElement) {
-                navElement.style.mixBlendMode = entry.isIntersecting ? 'normal' : 'difference';
-            }
-        },
-    { threshold: 0.5 }
-    );
+                if (navElement) {
+                    navElement.style.mixBlendMode = entry.isIntersecting ? 'normal' : 'difference';
+                }
+            },
+            { threshold: 0.5 }
+        );
 
-    const targetElement = document.querySelector('.aboutIntro');
-    if (targetElement) {
-        observer.observe(targetElement);
-    }
-
-    return () => {
+        const targetElement = document.querySelector('.aboutIntro');
         if (targetElement) {
-            observer.unobserve(targetElement);
+            observer.observe(targetElement);
         }
-    };
+
+        return () => {
+            if (targetElement) {
+                observer.unobserve(targetElement);
+            }
+        };
     }, []);
 
     useEffect(() => {
         setTimeout(() => {
-        setIsVisible(true);
+            setIsVisible(true);
         }, 3800); // delay
     }, []);
 
     useSplittingHover();
 
     return (
-        <section className={`navigationSection ${isHidden ? 'hidden' : ''} ${isVisible ? 'visible' : ''}`}>
+        <section className={`navigationSection ${isVisible ? (isHidden ? 'fadeOut' : 'fadeIn') : ''}`}>
             {linksMain.map((link) => (
                 <Link data-splitting to={`${link.link}`} onClick={() => window.scrollTo(0, 0)} key={link.id}>
                     <p className='upperText'>{link.number}</p>
