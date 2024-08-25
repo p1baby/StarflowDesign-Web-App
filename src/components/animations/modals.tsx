@@ -5,15 +5,15 @@ export const popupAnimation = {
 	enter: {
 		x: '0%',
 		transition: {
-			duration: .5,
-			easy: [0.83, 0, 0.17, 1]
+			duration: .6,
+			easyInOut: [0.63, 0, 0.36, 0.99]
 		}
 	},
 	exit: {
 		x: '100%',
 		transition: {
-			duration: .5,
-			easy: [0.83, 0, 0.17, 1]
+			duration: .6,
+			easyInOut: [0.63, 0, 0.36, 0.99]
 		}
 	}
 }
@@ -25,15 +25,15 @@ export const burgerAnimation = {
 	enter: {
 		y: '0%',
 		transition: {
-			duration: .5,
-			easy: [0.76, 0, 0.24, 1]
+			duration: .6,
+			easyInOut: [0.63, 0, 0.36, 0.99]
 		}
 	},
 	exit: {
 		y: '-100%',
 		transition: {
-			duration: .5,
-			easy: [0.76, 0, 0.24, 1]
+			duration: .6,
+			easyInOut: [0.63, 0, 0.36, 0.99]
 		}
 	}
 }
