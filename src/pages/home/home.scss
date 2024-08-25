@@ -9,17 +9,31 @@
 	color: $main-color-text;
 	box-sizing: border-box;
 	padding: 0 32px;
-	position: relative;
-	top: 40%;
 	h1{
 		font-size: 264px;
 		line-height: 100%;
 		font-weight: 300;
 		position: fixed;
-  	top: 12%;
+		overflow: hidden;
+  		top: 12%;
+			  .char {
+				display: inline-block;
+				height: 300px;
+				transform: translateY(100%);
+				transition: transform .8s cubic-bezier(.42,0,.58,1);
+				transition-delay: calc(.02s * var(--char-index)); // For staggered animation
+				&:before,
+				&:after {
+					visibility: visible;
+					transition: transform .8s cubic-bezier(.42,0,.58,1);
+				}
+			}
+			&.animate-on-load .char {
+				transform: translateY(0%);
+			}
 	}
 	.ligatures{
-		font-variant-ligatures: common-ligatures;
+		font-variant-ligatures: common-ligatures !important;
 		letter-spacing: 0;
 	}
 	.owFollowing{
@@ -29,10 +43,10 @@
 		font-family: 'Playfair Display', sans-serif;
 		font-weight: 400;
 		font-style: italic;
-		letter-spacing: -28px;
+		letter-spacing: -26px; // when use splitting, -28 working strange, too much space between
 	}
 	.secText{
-		letter-spacing: -14px;
+		letter-spacing: -16px;
 		-webkit-text-stroke: 3px  #FAFAFA;
 	}
 	.welcomeUnder{
@@ -54,7 +68,7 @@
 			margin: 0 0 0 12px;
 		}
 	}
-	.homeText{
+	.homeText {
 		display: flex;
 		justify-content: space-between;
 		padding: 0 288px;
@@ -62,13 +76,32 @@
 		top: 70%;
 		position: fixed;
 		width: 100%;
-		p{
+		p {
 			line-height: 120%;
 			text-transform: uppercase;
 			letter-spacing: -4%;
 			font-weight: 300;
+			overflow: hidden;
+			margin: 0; // Ensure no extra margin interferes
+	
+			.char {
+				display: inline-block;
+				transform: translateY(100%);
+				opacity: 0;
+				transition: transform 0.6s ease, opacity 0.6s ease;
+			}
+	
+			&.visible .char {
+				transform: translateY(0);
+				opacity: 1;
+			}
 		}
 	}
+	
+	
+	
+	
+	
 	@media screen and (max-width: 1440px) {
 		h1{
 			font-size: 200px;
@@ -131,9 +164,9 @@
 		.homeText {
 			padding: 0 95px;
 		}
-		.welcomeUnder{
-			display: flex;
-		}
+		// .welcomeUnder{ пееделать
+		// 	display: flex;
+		// }
 		.welcomeUnder .bracket1 , .welcomeUnder .bracket2 {
 			font-size: 24px;
 		}
