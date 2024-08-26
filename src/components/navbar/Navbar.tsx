@@ -54,11 +54,9 @@ const Navbar = () => {
             }
         };
         document.addEventListener('DOMContentLoaded', checkOpenBurger); // Add event listener for DOMContentLoaded to run checkOpenBurger
-        document.addEventListener('click', checkOpenBurger); // Add event listener for click to run checkOpenBurger
     
         return () => { // Cleanup function to remove event listeners when the component unmounts
             document.removeEventListener('DOMContentLoaded', checkOpenBurger); // Remove DOMContentLoaded event listener
-            document.removeEventListener('click', checkOpenBurger); // Remove click event listener
         };
     }, []); // Empty dependency array to run the effect only once when the component mounts
 
