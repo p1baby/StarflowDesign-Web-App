@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom'
 import Page404 from './pages/404/404'
 import About from './pages/about/About'
@@ -9,62 +9,48 @@ import Services from './pages/services/Services'
 import './styles/default.scss'
 import './styles/variables.scss'
 
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { AnimatePresence } from 'framer-motion'
 
-import { Footer, Loader, Navbar } from './components'
-import { TransitionProvider } from './components/contextGsap/TransitionContext'
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, useGSAP);
+import { Footer, Navbar } from './components'
 
 const App: FC = () => {
   return (
     <Router>
-      <AppContent />
+        <AppContent />
     </Router>
   );
 }
 
 const AppContent: FC = () => {
-  const [loading, setLoading] = useState(true);
-  const location = useLocation();
-
-  useEffect(() => {
-      setLoading(true);
-      const timer = setTimeout(() => {
-          setLoading(false);
-      }, 7000); // Загрузка длится 7 секунд
-
-      return () => clearTimeout(timer);
-  }, [location]);
+    const location = useLocation();
 
   return (
-    <TransitionProvider>
-      <>
-        {loading ? <Loader isLoading={loading} /> : (
-          <section className='wrapper'>
+    <>
+        <section className='wrapper'>
+                {/* <video autoPlay muted loop id='background-video'>
+                    <source src='back.mp4' type='video/mp4' />
+                    Your browser does not support the video tag.
+                </video> */}
             <section className="navbar">
-              <Navbar />
+                <Navbar />
             </section>
             <section className="content">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contacts" element={<Contacts />} />
-                <Route path="/404" element={<Page404 />} />
-              </Routes>
+                <AnimatePresence mode='wait'>
+                    <Routes location={location} key={location.pathname}>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/projects" element={<Projects />} />
+                        <Route path="/services" element={<Services />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contacts" element={<Contacts />} />
+                        <Route path="/404" element={<Page404 />} />
+                    </Routes>
+                </AnimatePresence>
             </section>
             <section className="footer">
-              <Footer />
+                <Footer />
             </section>
-          </section>
-        )}
-      </>
-    </TransitionProvider>
+        </section>
+    </>
   );
 }
 

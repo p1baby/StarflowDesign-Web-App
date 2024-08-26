@@ -1,0 +1,77 @@
+@import "../../styles/variables";
+
+.SectionPage {
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	svg, .background {
+		width: 100vw;
+		height: calc(100vh + 600px);
+		overflow-y: hidden;
+		top: -300px;
+		left: 0;
+		position: fixed;
+	}
+	.loadingText {
+		font-size: 32px;
+		letter-spacing: -1px;
+		font-weight: 400;
+		color: #3e3e3e;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%);
+		-webkit-text-stroke: 0.1px #3e3e3e;
+		z-index: 52;
+		pointer-events: auto;
+		&::after {
+			content: 'Starflow Design';
+			position: absolute;
+			left: 0;
+			top: 0;
+			color: $main-color-text; 
+			clip-path: inset(100% 0 0 0);
+			-webkit-text-stroke: 0.1px $main-color-text;
+			animation: fillAnimation 3s ease forwards;
+		}
+	}
+	.labelc {
+		font-size: 14px;
+		vertical-align: super;
+		color: #3e3e3e;
+		position: relative;
+		-webkit-text-stroke: 0.1px #3e3e3e;
+
+		&::after {
+			content: '©';
+			position: absolute;
+			left: 0;
+			top: 0;
+			color: $main-color-text; 
+			clip-path: inset(100% 0 0 0);
+			-webkit-text-stroke: 0.1px $main-color-text;
+			animation: labelAnimation 3s ease forwards;
+		}
+	}
+	@keyframes fillAnimation {
+		0%, 30% {
+			clip-path: inset(100% 0 0 0);
+		}
+		100% {
+			clip-path: inset(0 0 0 0);
+		}
+	}
+	@keyframes labelAnimation {
+		0%, 40% {
+			clip-path: inset(100% 0 0 0);
+		}
+		100% {
+			clip-path: inset(0 0 0 0);
+		}
+	}
+	@media screen and (max-width: 1366px) {
+		.loadingText {
+			font-size: 24px;
+		}
+	}
+}
