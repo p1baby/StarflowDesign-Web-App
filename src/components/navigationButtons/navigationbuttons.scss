@@ -20,68 +20,56 @@
         opacity: 0;
     }
 	a {
-	  display: flex;
-	  flex-direction: column;
-	  text-align: start;
-	  text-decoration: none;
-	  color: #FFF;
-	  gap: 8px;
+	  	display: flex;
+	  	flex-direction: column;
+	  	text-align: start;
+	  	text-decoration: none;
+	  	color: #FFF;
+	  	gap: 8px;
+
+		.char:before { transform: translateY(100%); }
+		&:hover .char:before { transform: translateY(0%); }
+		&:hover .char:after { transform: translateY(-100%); }
 	}
 	.upperText {
-	  font-weight: 300;
-	  font-size: 12px;
-	  line-height: 100%;
-	  opacity: 0.4;
-	  letter-spacing: 0px;
+	  	font-weight: 300;
+	  	font-size: 12px;
+	  	line-height: 100%;
+	  	opacity: 0.4;
+	  	letter-spacing: 0px;
 	}
 	.navigationLink {
-	  background: transparent;
-	  color: $main-color-text;
-	  border: none;
-	  font-weight: 300;
-	  line-height: 120%;
-	  position: relative;
-	  text-decoration: none;
-	  text-transform: uppercase;
-	  .char {
-		overflow: hidden;
-		color: transparent;
-		&:before,
-		&:after {
-		  visibility: visible;
-		  color: $main-color-text;
-		  transition: transform 0.5s cubic-bezier(0.9, 0, .2, 1);
-		  transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
-		}
-		&:before {
-		  transition-delay: calc(0.02s * (var(--char-index)));
+		background: transparent;
+		color: $main-color-text;
+	  	border: none;
+	  	font-weight: 300;
+	  	line-height: 120%;
+	  	position: relative;
+	  	text-decoration: none;
+	  	text-transform: uppercase;
+	  	.char {
+			overflow: hidden;
+			color: transparent;
+			&:before,
+			&:after {
+		  	visibility: visible;
+		  	color: $main-color-text;
+		  	transition: transform 0.5s cubic-bezier(0.9, 0, .2, 1);
+		  	transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
 		}
 	  }
-	  &:hover .char:before {
-		transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
-	  }
-	  &:hover .char:after {
-		transition-delay: calc(0.02s * (var(--char-index)));
-	  }
-	}
-	.navigationLink {
-	  .char:before {
-		transform: translateY(100%);
-	  }
-  
-	  &:hover .char:before {
-		transform: translateY(0%);
-	  }
-  
-	  &:hover .char:after {
-		transform: translateY(-100%);
-	  }
+		&:hover .char:before {
+			transition-delay: calc(0.2s + (0.02s * (var(--char-index))));
+	  	}
+	  	&:hover .char:after {
+			transition-delay: calc(0.02s * (var(--char-index)));
+	  	}
 	}
 	.navigationText {
-	  font-weight: 300;
-	  line-height: 120%;
-	  letter-spacing: 0px;
-	  position: relative;
-	  margin-bottom: -20px;
+		font-weight: 300;
+		line-height: 120%;
+		letter-spacing: 0px;
+		position: relative;
+		margin-bottom: -20px;
 	}
 }  
