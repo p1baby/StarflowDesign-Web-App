@@ -9,46 +9,88 @@
     left: 0;
     position: absolute;
     background-color: $background-main;
-	flex-direction: column;
-	color: $main-color-text;
-	text-decoration: none;
-	padding: 0 32px 32px 32px;
+    flex-direction: column;
+    text-decoration: none;
+    padding: 0 32px 32px 32px;
     .headerMenu{
         padding: 32px 0px 0 0px;
     }
     .headerBtn{
-		display: flex;
-		align-items: center;
-		gap: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
         font-size: 14px;
-	}
+        width: fit-content;
+    }
     .burgerContent{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        color: $main-color-text;
         text-decoration: none;
         height: 100%;
         nav{
             display: flex;
             flex-direction: column;
             align-items: center;
-            top: 15%;
+            margin: auto;
             position: relative;
             .navLink{
                 font-size: 88px;
-                letter-spacing: -5px;
+                font-weight: 350;
+                letter-spacing: -8px;
+                line-height: -40px;
             }
             .italicText{
                 font-family: 'Playfair Display', sans-serif;
                 line-height: 90%;
                 font-size: 88px;
-                letter-spacing: -6px;
+                letter-spacing: -3px;
                 font-style: italic;
             }
-            .linkContent{
+            .linkContent {
                 display: flex;
                 align-items: center;
+                overflow: hidden;
+                height: 101.5px;
+                .char {
+                    display: inline-block;
+                    // height: 60.5px; 390
+                    height: 85.5px;
+                    transform: translateY(100%);
+                    transition: transform 0.5s ease-in-out;
+                }
+                .char[data-char="У"] {
+                    width: 38px;
+                }
+                .word{
+                    line-height: 75px;
+                    width: -moz-available;
+                }
+                .whitespace{
+                    width: 8px;
+                }
+                &.visible .char {
+                    transform: translateY(0);
+                }
+                // img {
+                //     transition: opacity 0 0.3s ease-in-out, opacity 1 0.3s ease-in-out;
+                // }
+                img {
+                    opacity: 0;
+                    transform: translateX(-20px);
+                    transition: opacity .3s ease, transform .3s ease;
+
+                    &.visible {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+                img:last-child {
+                    transform: translateX(20px);
+                    &.visible {
+                        transform: translateX(0);
+                    }
+                }
             }
         }
         article{
@@ -100,6 +142,13 @@
                 .footerLinkFirst{
                     text-align: start;
                 }
+                .links{
+                    opacity: 0;
+                    transition: opacity 0.5s ease-in-out;
+                }
+                .links.visible {
+                    opacity: 1;
+                }
                 ul{
                     display: flex;
                     flex-direction: row;
@@ -114,40 +163,8 @@
                     .portfolioLink{
                         position: relative;
                         font-size: 16px;
-                        font-weight: 300;
+                        font-weight: 350;
                         line-height: 16px;
-                    }
-                    .portfolioLink:hover:before {
-                        -webkit-transform: scaleX(1);
-                        -ms-transform: scaleX(1);
-                        transform: scaleX(1);
-                        -webkit-transform-origin: left;
-                        -ms-transform-origin: left;
-                        transform-origin: left;
-                        -webkit-transition: -webkit-transform 0.55s;
-                        transition: -webkit-transform 0.55s;
-                        -o-transition: transform 0.55s;
-                        transition: transform 0.55s;
-                        transition: transform 0.55s, -webkit-transform 0.55s;
-                    }
-                    .portfolioLink:before {
-                        content: '';
-                        width: 100%;
-                        height: 1px;
-                        background-color: $main-color-text;
-                        position: absolute;
-                        left: 0; bottom: -2px;
-                        -webkit-transform: scaleX(0);
-                        -ms-transform: scaleX(0);
-                        transform: scaleX(0);
-                        -webkit-transform-origin: right;
-                        -ms-transform-origin: right;
-                        transform-origin: right;
-                        -webkit-transition: -webkit-transform 0.55s;
-                        transition: -webkit-transform 0.55s;
-                        -o-transition: transform 0.55s;
-                        transition: transform 0.55s;
-                        transition: transform 0.55s, -webkit-transform 0.55s;
                     }
                 }
                 .footerLinkSecond{
@@ -163,59 +180,36 @@
             .lowerSection footer ul{
                 display: none;
             }
+            .ulPortfolio {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+            .ulPortfolio.visible {
+                opacity: 1;
+            }
             .ulPortfolio{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                display: -webkit-box;
-                display: -webkit-flex;
-                display: -ms-flexbox;
-                display: inline-flex;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
                 .portfolioLink{
                     position: relative;
-                    font-size: 16px;
-                    font-weight: 300;
+                    font-weight: 350;
                     line-height: 16px;
-                }
-                .portfolioLink:hover:before {
-                    -webkit-transform: scaleX(1);
-                    -ms-transform: scaleX(1);
-                    transform: scaleX(1);
-                    -webkit-transform-origin: left;
-                    -ms-transform-origin: left;
-                    transform-origin: left;
-                    -webkit-transition: -webkit-transform 0.55s;
-                    transition: -webkit-transform 0.55s;
-                    -o-transition: transform 0.55s;
-                    transition: transform 0.55s;
-                    transition: transform 0.55s, -webkit-transform 0.55s;
-                }
-                .portfolioLink:before {
-                    content: '';
-                    width: 100%;
-                    height: 1px;
-                    background-color: $main-color-text;
-                    position: absolute;
-                    left: 0; bottom: -2px;
-                    -webkit-transform: scaleX(0);
-                    -ms-transform: scaleX(0);
-                    transform: scaleX(0);
-                    -webkit-transform-origin: right;
-                    -ms-transform-origin: right;
-                    transform-origin: right;
-                    -webkit-transition: -webkit-transform 0.55s;
-                    transition: -webkit-transform 0.55s;
-                    -o-transition: transform 0.55s;
-                    transition: transform 0.55s;
-                    transition: transform 0.55s, -webkit-transform 0.55s;
                 }
             }
         }
         @media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
-            nav{
-                gap: 8px;
+            // nav{
+            //     gap: 8px; меньше расстояние между ними
+            // }
+            nav .linkContent {
+                height: 67.5px;
+            }
+            .linkContent .char {
+                height: 60.5px;
+            }
+            nav .linkContent .char[data-char="У"] {
+                width: 24px;
             }
             nav .navLink{
                 font-size: 56px;
@@ -243,7 +237,7 @@
     }
     @media screen and  (max-width: 390px), (max-width: 375px), (max-width: 428px) {
         .headerMenu{
-            padding: 48px 0px 0 0;
+            padding: 24px 0px 0 0;
         }
     }
 }
