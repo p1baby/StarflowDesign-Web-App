@@ -107,28 +107,33 @@ const SVG: FC<SVGProps> = ({ width, height }) => {
 
 	const curve = {
 		initial: {
-			d: initialPath,
-			zIndex: 51,
+		  d: initialPath,
+		  zIndex: 51,
 		},
 		enter: {
-			d: targetPath,
-			transition: {
-				duration: .1,
-				delay: 0,
-				ease: [0.76, 0, 0.24, 1]
-			},
+		  d: targetPath,
+		  zIndex: 51, // Убедитесь, что zIndex остается высоким до завершения анимации
+		  transition: {
+			duration: 0.1,
+			delay: 0,
+			ease: [0.76, 0, 0.24, 1],
+		  },
+		  transitionEnd: {
+			zIndex: 'auto', // Сброс zIndex после завершения анимации
+		  },
 		},
 		exit: {
-			d: initialPath,
-			transition: {
-				duration: .35,
-				ease: [0.76, 0, 0.24, 1]
-			},
-			transitionEnd: {
-				zIndex: 'auto'
-			}
-		}
-	}
+		  d: initialPath,
+		  zIndex: 51, // zIndex остается высоким до завершения анимации
+		  transition: {
+			duration: 0.35,
+			ease: [0.76, 0, 0.24, 1],
+		  },
+		  transitionEnd: {
+			zIndex: 'auto',
+		  },
+		},
+	  };
 
 	const slide = {
 		initial: {
@@ -144,17 +149,22 @@ const SVG: FC<SVGProps> = ({ width, height }) => {
 			},
 			transitionEnd: {
 				top: '100vh',
+				zIndex: 'auto',
 			}
 		},
 		exit: {
 			top: '0px',
-			zIndex: 'auto',
+			zIndex: 51,
 			transition: {
 				duration: 1,
 				ease: [0.76, 0, 0.24, 1]
 			}
+		},
+		transitionEnd: {
+			zIndex: 'auto', // Сброс zIndex после завершения анимации
 		}
 	}
+	
 
 	return (
 		<motion.svg {...anim(slide)}>
