@@ -47,6 +47,7 @@
 		letter-spacing: -26px; // when use splitting, -28 working strange, too much space between
 	}
 	.secText{
+		font-family: 'InterSpecial';
 		letter-spacing: -16px;
 		-webkit-text-stroke: 3px  #FAFAFA;
 	}
@@ -70,34 +71,40 @@
 		}
 	}
 	.homeText {
-		display: flex;
-		justify-content: space-between;
-		padding: 0 288px;
-		margin: 0 auto;
-		top: 70%;
-		position: fixed;
-		width: 100%;
-		p {
-			line-height: 120%;
-			text-transform: uppercase;
-			letter-spacing: -4%;
-			font-weight: 300;
-			overflow: hidden;
-			margin: 0; // Ensure no extra margin interferes
-	
-			.char {
-				display: inline-block;
-				transform: translateY(100%);
-				opacity: 0;
-				transition: transform 0.6s ease, opacity 0.6s ease;
-			}
-	
-			&.visible .char {
-				transform: translateY(0);
-				opacity: 1;
-			}
-		}
-	}
+        display: flex;
+        justify-content: space-between;
+        padding: 0 288px;
+        margin: 0 auto;
+        top: 70%;
+        position: fixed;
+        width: 100%;
+        p {
+            line-height: 120%;
+            text-transform: uppercase;
+            letter-spacing: -4%;
+            font-weight: 300;
+            overflow: hidden;
+            margin: 0;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+
+            &.visible {
+                opacity: 1;
+            }
+
+            .char {
+                display: inline-block;
+                transform: translateY(100%);
+                opacity: 0;
+                transition: transform 0.6s ease, opacity 0.6s ease;
+            }
+
+            &.visible .char {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    }
 	
 	
 	
