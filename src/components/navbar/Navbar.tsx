@@ -18,14 +18,26 @@ const Navbar = () => {
     useEffect(() => {
         const checkVisibility = () => {
             const isDrawerVisible = document.querySelector('.drawer, .drawerSecond, .drawerThird');
-            setShouldHideNavbar(!!isDrawerVisible);
+            const screenWidth = window.innerWidth;
+            
+            if (screenWidth <= 1024 && isDrawerVisible) {
+                setShouldHideNavbar(true);
+            } else {
+                setShouldHideNavbar(false);
+            }
         };
+        
         checkVisibility();
 
         const observer = new MutationObserver(checkVisibility);
         observer.observe(document.body, { childList: true, subtree: true });
 
-        return () => observer.disconnect();
+        window.addEventListener('resize', checkVisibility);
+        
+        return () => {
+            observer.disconnect();
+            window.removeEventListener('resize', checkVisibility);
+        };
     }, []);
 
     useEffect(() => {
@@ -47,16 +59,17 @@ const Navbar = () => {
             const navbar = document.querySelector('.navbar') as HTMLElement; // Select the navbar element
             if (navbar) { // If the navbar element exists
                 if (navbar.classList.contains('openBurger')) { // If the navbar has the 'openBurger' class
-                    navbar.style.mixBlendMode = 'difference'; // Set the mix-blend-mode to 'difference'
+                    navbar.style.mixBlendMode = 'normal'; // Set the mix-blend-mode to 'difference'
                 } else { // If the navbar does not have the 'openBurger' class
                     navbar.style.mixBlendMode = 'normal'; // Set the mix-blend-mode to 'normal'
                 }
             }
         };
         document.addEventListener('DOMContentLoaded', checkOpenBurger); // Add event listener for DOMContentLoaded to run checkOpenBurger
-    
+        document.addEventListener('click', checkOpenBurger);
         return () => { // Cleanup function to remove event listeners when the component unmounts
-            document.removeEventListener('DOMContentLoaded', checkOpenBurger); // Remove DOMContentLoaded event listener
+            document.removeEventListener('DOMContentLoaded', checkOpenBurger);
+            document.removeEventListener('click', checkOpenBurger); // Remove DOMContentLoaded event listener
         };
     }, []); // Empty dependency array to run the effect only once when the component mounts
 
