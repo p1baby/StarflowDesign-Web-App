@@ -13,8 +13,8 @@ function Home() {
     useEffect(() => {
         Splitting({ target: '.homeText p' });
         
-        const initialDelay = 3500; // Задержка перед появлением первой строки
-        const subsequentDelay = 500; // Задержка между последующими строками
+        const initialDelay = 3800; // delay for first string
+        const subsequentDelay = 100; // delay beetween strings
 
         const lines = document.querySelectorAll('.homeText p');
         lines.forEach((line, index) => {
