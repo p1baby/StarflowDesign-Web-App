@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import useSplittingHover from '../../hooks/useSplittingHover'
 import arrowLeft from '/arrowLeft.svg'
 import arrowRight from '/arrowRight.svg'
 
@@ -33,9 +34,10 @@ function NextPage() {
         }
     }
     
+    useSplittingHover();
     
 	return (
-        <Link to={getNextPage()} className='nextPage'>
+        <Link data-splitting to={getNextPage()} className='nextPage'>
             <p style={{ fontSize: '80px' }}>{getNextPageTitle()}</p>
             <section className='nextPageLink'><img className='leftArrow' src={arrowLeft} alt='arrow' />Следующая страница<img className='rightArrow' src={arrowRight} alt='arrow' /></section>
         </Link>
