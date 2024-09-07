@@ -12,14 +12,14 @@ const Principles: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        setIsVisible(true); // Запускаем анимацию появления при монтировании компонента
+        setIsVisible(true); // starting animation when component is mounted
     }, []);
 
     const handleClose = () => {
-        setIsVisible(false); // Запускаем анимацию исчезновения
+        setIsVisible(false); // starting animation disappear
         setTimeout(() => {
-            handlePrinciplesShow(); // Вызываем callback после завершения анимации
-        }, 500); // Время совпадает с длительностью анимации в CSS
+            handlePrinciplesShow(); // callback after the animation is complete
+        }, 700); // the time is the same as the duration of the animation in CSS
     };
 
     return (
