@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import useSplittingHover from '../../hooks/useSplittingHover'
 import './footerPrinciples.scss'
 
 interface PrinciplesProps {
@@ -6,10 +7,19 @@ interface PrinciplesProps {
 }
 
 const FooterPrinciples: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) => {
+    
+    useSplittingHover();
+
     return (
         <footer className='principlesFooter'>
             <section className='principlesDesktop'>
-                <Link to='https://dprofile.ru/starflowdesign/cv' target="_blank" rel="noopener noreferrer">Резюме CV</Link>
+                <Link
+                data-splitting 
+                to='https://dprofile.ru/starflowdesign/cv' 
+                target="_blank" rel="noopener noreferrer"
+                >
+                    Резюме CV
+                </Link>
                 <p className='navbarText'>
                     Для того, чтобы сделать что-то <br></br>интересное, нужно это полюбить.
                 </p>
@@ -21,7 +31,12 @@ const FooterPrinciples: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) =
                 </p>
                 <section className='principlesMobile'>
                     <Link to='https://dprofile.ru/starflowdesign/cv' target="_blank" rel="noopener noreferrer">Резюме CV</Link>
-                    <button onClick={handlePrinciplesShow}>Закрыть</button>
+                    <button
+                    data-splitting 
+                    onClick={handlePrinciplesShow}
+                    >
+                        Закрыть
+                    </button>
                 </section>
             </footer>
         </footer>
@@ -29,3 +44,7 @@ const FooterPrinciples: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) =
 }
 
 export default FooterPrinciples;
+
+function seSplittingHover() {
+    throw new Error('Function not implemented.')
+}

@@ -1,12 +1,17 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import AboutMe from '../../components/aboutMe/AboutMe'
 import Principles from '../../components/principles/Principles'
 import './about.scss'
 
+import Splitting from 'splitting'
+import useSplittingHover from '../../components/hooks/useSplittingHover'
+import useSplittingOnLoad from '../../components/hooks/useSplittingOnLoad'
+import Curve from '../../components/layoutTransition'
 import NavigationButtons from '../../components/navigationButtons/NavigationButtons'
 
 const About = () => {
+	const [visibleLines, setVisibleLines] = useState<number[]>([]);
     const [principlesShow, setPrinciplesShow] = React.useState(false);
     const imageRef = useRef<HTMLDivElement>(null);
     
@@ -14,7 +19,7 @@ const About = () => {
         setPrinciplesShow(!principlesShow);
     };
 
-		useEffect(() => { //функция для отключения overflow во время того как открыто то или иное модальное окно
+		useEffect(() => { // add to body oveflow: hidden whe we see modal's
 			if (principlesShow) {
 				document.body.style.overflow = 'hidden';
 			} else {
@@ -51,21 +56,73 @@ const About = () => {
 					}
 			};
 	}, []);
+
+	useSplittingOnLoad('.slide-vertical');
+
+	useSplittingHover();
+
+	useEffect(() => {
+        Splitting({ target: '.homeText p' });
+        
+        const initialDelay = 3800; // delay for first string
+        const subsequentDelay = 100; // delay beetween strings
+
+        const lines = document.querySelectorAll('.homeText p');
+        lines.forEach((line, index) => {
+            const delay = initialDelay + subsequentDelay * index;
+            setTimeout(() => {
+                setVisibleLines(prev => [...prev, index]);
+            }, delay);
+        });
+    }, []);
 	
     return(
-        <>
+        <Curve>
         {principlesShow && <Principles handlePrinciplesShow={handlePrinciplesShow}/> }
 		<section className='aboutSection'>
 			<section className='aboutIntro' ref={imageRef}>
-				<h1><span className='firText'>Привет,</span><span className='secText'>Я Игорь</span></h1>
+				<h1 data-splitting className='slide-vertical'><span className='firText'>Привет,</span><span className='secText'>Я Игорь</span></h1>
 				<article className='homeText'>
-					<p>Эмпатичный дизайнер с искренним<br></br>подходом, страстно увлеченный<br></br>своим любимым делом</p>
-					<p>Моя цель — объединить эстетику,<br></br>функциональность и значимость<br></br>в единое целое</p>
-				</article>
+					<section>
+						<p className={visibleLines.includes(0) ? 'visible' : ''} data-splitting>
+							<span className='char'>Эмпатичный дизайнер с искренним</span>
+						</p>
+						<p className={visibleLines.includes(1) ? 'visible' : ''} data-splitting>
+							<span className='char'>подходом, страстно увлеченный</span>
+						</p>
+						<p className={visibleLines.includes(2) ? 'visible' : ''} data-splitting>
+							<span className='char'>своим любимым делом</span>
+						</p>
+					</section>
+
+					<section>
+						<p className={visibleLines.includes(0) ? 'visible' : ''} data-splitting>
+							<span className='char'>Моя цель — объединить эстетику,</span>
+						</p>
+						<p className={visibleLines.includes(1) ? 'visible' : ''} data-splitting>
+							<span className='char'>функциональность и значимость</span>
+						</p>
+						<p className={visibleLines.includes(2) ? 'visible' : ''} data-splitting>
+							<span className='char'>в единое целое</span>
+						</p>
+					</section>
+                </article>
 				<NavigationButtons />
 				<section className='aboutFooter'>
-					<Link to='https://dprofile.ru/starflowdesign/cv' target="_blank" rel="noopener noreferrer">Резюме CV</Link>
-					<a onClick={handlePrinciplesShow}>Принципы</a>
+					<Link 
+					data-splitting 
+					to='https://dprofile.ru/starflowdesign/cv' 
+					target="_blank" 
+					rel="noopener noreferrer"
+					>
+						Резюме CV
+					</Link>
+					<a
+					data-splitting 
+					onClick={handlePrinciplesShow}
+					>
+						Принципы
+					</a>
 				</section>
 			</section>
 			<AboutMe/>
@@ -83,7 +140,7 @@ const About = () => {
 				</section>
 			</section>
 		</section>
-			</>
+			</Curve>
 	)
 }
 
