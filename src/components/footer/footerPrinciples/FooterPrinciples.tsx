@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Splitting from 'splitting'
 import useSplittingHover from '../../hooks/useSplittingHover'
 import './footerPrinciples.scss'
 
@@ -7,8 +9,24 @@ interface PrinciplesProps {
 }
 
 const FooterPrinciples: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) => {
+    const [visibleLines, setVisibleLines] = useState<number[]>([]);
     
     useSplittingHover();
+
+    useEffect(() => {
+        Splitting({ target: '.navbarText p' });
+        
+        const initialDelay = 150; // delay for first string
+        const subsequentDelay = 100; // delay beetween strings
+
+        const lines = document.querySelectorAll('.navbarText p');
+        lines.forEach((line, index) => {
+            const delay = initialDelay + subsequentDelay * index;
+            setTimeout(() => {
+                setVisibleLines(prev => [...prev, index]);
+            }, delay);
+        });
+    }, []);
 
     return (
         <footer className='principlesFooter'>
@@ -20,10 +38,22 @@ const FooterPrinciples: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) =
                 >
                     Резюме CV
                 </Link>
-                <p className='navbarText'>
-                    Для того, чтобы сделать что-то <br></br>интересное, нужно это полюбить.
-                </p>
-                <button onClick={handlePrinciplesShow}>Закрыть</button>
+                <section className='navbarText'>
+                    <section>
+						<p className={visibleLines.includes(0) ? 'visible' : ''} data-splitting>
+							<span className='char'>Эмпатичный дизайнер, стремлюсь</span>
+						</p>
+						<p className={visibleLines.includes(1) ? 'visible' : ''} data-splitting>
+							<span className='char'>сделать ваш бренд понятным</span>
+						</p>
+					</section>
+                </section>
+                <a
+                className='closeLink'
+                onClick={handlePrinciplesShow}
+                >
+                    Закрыть
+                </a>
             </section>
             <footer className='principlesMobile'>
                 <p className='navbarTextMobile'>
