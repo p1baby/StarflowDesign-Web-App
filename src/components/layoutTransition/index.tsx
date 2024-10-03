@@ -25,7 +25,7 @@ const Curve: FC<CurveProps> = ({ children }) => {
 		height: 0,
 		width: 0
 	});
-
+	
 	useEffect(() => {
 		const resize = () => {
 			setDimensions({
@@ -53,7 +53,7 @@ const Curve: FC<CurveProps> = ({ children }) => {
 				ease: [0.76, 0, 0.24, 1]
 			},
 			transitionEnd: {
-				top: '58%',
+				top: '50%',
 				pointerEvents: 'none'
 			}
 		},
@@ -112,19 +112,19 @@ const SVG: FC<SVGProps> = ({ width, height }) => {
 		},
 		enter: {
 		  d: targetPath,
-		  zIndex: 51, // Убедитесь, что zIndex остается высоким до завершения анимации
+		  zIndex: 51,
 		  transition: {
 			duration: 0.1,
 			delay: 0,
 			ease: [0.76, 0, 0.24, 1],
 		  },
 		  transitionEnd: {
-			zIndex: 'auto', // Сброс zIndex после завершения анимации
+			zIndex: 'auto',
 		  },
 		},
 		exit: {
 		  d: initialPath,
-		  zIndex: 51, // zIndex остается высоким до завершения анимации
+		  zIndex: 51,
 		  transition: {
 			duration: 0.35,
 			ease: [0.76, 0, 0.24, 1],
@@ -161,10 +161,9 @@ const SVG: FC<SVGProps> = ({ width, height }) => {
 			}
 		},
 		transitionEnd: {
-			zIndex: 'auto', // Сброс zIndex после завершения анимации
+			zIndex: 'auto',
 		}
 	}
-	
 
 	return (
 		<motion.svg {...anim(slide)}>

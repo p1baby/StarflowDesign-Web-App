@@ -74,19 +74,22 @@ const Navbar = () => {
     }, []); // Empty dependency array to run the effect only once when the component mounts
 
     useSplittingHover();
-    
+
     return (
         <nav className={`navbarSection ${shouldHideNavbar ? 'hidden' : ''}`}>
-            <Link
-            data-splitting
-            className='navbarBtn' 
-            to='/' onClick={() => setIsBurgerOpen(false)}
-            >
-                <img src={logo} alt='logo' ref={logoRef} />
-                <section>
-                    Starflow<br />Design
-                </section>
-            </Link>
+                <Link
+                data-splitting
+                className='navbarBtn' 
+                to='/' 
+                onClick={() => {
+                    setIsBurgerOpen(false);
+                }}
+                >
+                    <img src={logo} alt='logo' ref={logoRef} />
+                    <section>
+                        Starflow<br />Design
+                    </section>
+                </Link>
             <section 
                 className={`burger ${isBurgerOpen ? 'burgerActive' : ''}`} 
                 onClick={() => setIsBurgerOpen(!isBurgerOpen)}>
