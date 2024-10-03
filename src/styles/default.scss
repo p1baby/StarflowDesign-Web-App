@@ -1,92 +1,137 @@
+// BASE STYLE FILE
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-* {
-	scrollbar-width: none; /* For Firefox */
-	-ms-overflow-style: none; /* For Internet Explorer & Edge */
-	scroll-behavior: smooth;
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror HTML */
-	-moz-user-select: none; /* Old versions of Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
-	
-	margin: 0;
-	padding: 0;
-	
-	::-webkit-scrollbar {
-		display: none;
-	}
+@font-face {
+    font-family: "InterSpecial";
+    src: local("Inter-Light"),
+      url("../font/Inter-Light.otf") format("oft");
+  }
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE & Edge */
+    scroll-behavior: smooth; /* Make scroll smooth */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old Firefox */
+    -ms-user-select: none; /* IE & Edge */
+    user-select: none; /* Chrome, Opera, Firefox */
 }
-img {
-	pointer-events: none;
-	user-select: none;
+::-webkit-scrollbar {
+    display: none;
 }
-p , h1 , h2, h3, h4, h5, h6 {
-	margin: 0;
-	padding: 0;
-}
-p, a, button, textarea, input{
-	letter-spacing: -0.5px;
-}
-button, input, textarea{
-	font-size: 16px;
-}
-@media screen and (max-width: 1366px){
-	p, a, input, textarea{
-		font-size: 14px;
-	}
-}
-html{
-	box-sizing: border-box;
-}
-*,*::before, *::after{
-	box-sizing: border-box;
-}
-/* Chrome, Safari, Edge, Opera */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
-textarea {
-	resize: none;
-}
-/* Firefox */
-input[type="number"] {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+html {
+    box-sizing: border-box;
 }
 body {
-	font-family: 'Inter' , sans-serif;
-	font-weight: 350;
-	font-size: 16px;
-	font-variant-ligatures: common-ligatures discretionary-ligatures;
+    font-family: 'Inter', sans-serif;
+    font-weight: 350;
+    font-size: 16px;
+    font-variant-ligatures: common-ligatures discretionary-ligatures;
 }
-.wrapper{
-	display: flex;
-	flex-direction: column;
-	z-index: 1;
-	height: 100vh;
-	background-color: #070707;
-	background-image: url(/3dstar.svg);
-	background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	background-position: center;
+img {
+    pointer-events: none;
+    user-select: none;
 }
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+p, a, button, textarea, input {
+    letter-spacing: -0.5px;
+}
+button, input, textarea {
+    font-size: 16px;
+}
+textarea {
+    resize: none;
+}
+// Responsive typography adjustments
+@media screen and (max-width: 1366px) {
+    p, a, input, textarea {
+        font-size: 14px;
+    }
+}
+// Input field styling
+input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+// Wrapper section styling
+// .wrapper {
+//     display: flex;
+//     flex-direction: column;
+//     z-index: 3;
+//     height: 100vh;
+//     background-color: #070707;
+//     background-image: url(/3dstar.svg);
+// 	-webkit-background-size: cover;
+// 	-moz-background-size: cover;
+// 	-o-background-size: cover;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: center;
+// }
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #070707;
+    background-image: url(/3dstar.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+// /* Background Video Styling */
+// #background-video {
+//     position: absolute; /* Position video within the wrapper */
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: #070707;
+//     object-fit: cover; /* Cover the entire wrapper */
+//     // z-index: -1; /* Behind all other content */
+//     overflow: hidden;
+// }
+
+// /* Ensure wrapper is relative to position the video absolutely */
+// .wrapper {
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     height: 100vh;
+//     background-color: #070707;
+//     // background-image: url(/3dstar.svg);
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center;
+// }
+// Navbar styling
 .navbar {
-	flex: 0 0 auto; /* Make the navbar take up only the space it needs */
-	z-index: 1000;
-	mix-blend-mode: difference;
+    flex: 0 0 auto;
+    z-index: 50;
+    mix-blend-mode: difference;
 }
+// Content section styling
 .content {
-	flex: 1 1 auto; /* Make the content take up the remaining space */
+    flex: 1 1 auto;
 }
+// Footer styling
 .footer {
-	flex: 0 0 auto; /* Make the footer take up only the space it needs */
-	z-index: 1;
-	position: relative;
+    flex: 0 0 auto;
+    z-index: 1;
+    position: relative;
 }
