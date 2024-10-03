@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const useTimer = (initialTime: number) => {
   const [elapsedTime, setElapsedTime] = useState(initialTime);
-  const [timerActive, setTimerActive] = useState(false); // Используйте useState вместо useRef
+  const timerActive = useRef(false);
 
   useEffect(() => {
     const storedElapsedTime = localStorage.getItem('elapsedTime');
@@ -11,7 +11,7 @@ const useTimer = (initialTime: number) => {
     }
 
     const interval = setInterval(() => {
-      if (timerActive) { // Используйте timerActive напрямую
+      if (timerActive.current) {
         setElapsedTime((prevElapsedTime) => {
           const newElapsedTime = prevElapsedTime + 1000;
           localStorage.setItem('elapsedTime', newElapsedTime.toString());
@@ -21,25 +21,25 @@ const useTimer = (initialTime: number) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [timerActive]); // Добавьте timerActive в зависимости useEffect
+  }, []);
 
   const startTimer = () => {
-    setTimerActive(true); // Используйте setTimerActive для изменения состояния
+    timerActive.current = true;
   };
 
   const stopTimer = () => {
-    setTimerActive(false); // Используйте setTimerActive для изменения состояния
+    timerActive.current = false;
   };
 
   useEffect(() => {
-    if (elapsedTime >= 5 * 60 * 1) {  // 5 minutes timer
+    if (elapsedTime >= 5 * 60 * 1000) {  // 5 minutes timer
       stopTimer();
       localStorage.removeItem('elapsedTime');
       localStorage.removeItem('showThirdContent');
     }
   }, [elapsedTime]);
 
-  return { elapsedTime, startTimer, stopTimer, timerActive };
+  return { elapsedTime, startTimer, stopTimer, timerActive: timerActive.current };
 };
 
 export default useTimer;
