@@ -43,7 +43,8 @@ const Footer = () => {
             <Link
             data-splitting
             to='https://t.me/StarflowDesign'
-            className='goConversation'>
+            className='goConversation'
+            >
                 <p className='mainFooterTop'><span className='difText'>Обсудим </span> <span className='secText'>Ваш проект</span></p>
                 <p className='mainFooterTopSecond'><span className='difText'>Обсудим</span><br /><span className='secText'>Ваш проект</span></p>
                 <div className='mainFooterP'><img className='leftArrow' src={arrowLeft} alt='arrow' />написать в телеграм<img className='rightArrow' src={arrowRight} alt='arrow' /></div>
