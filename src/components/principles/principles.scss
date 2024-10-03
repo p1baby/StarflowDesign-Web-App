@@ -29,7 +29,7 @@
             white-space: nowrap;
             overflow: hidden;
             position: relative;
-            gap: 64px;
+            gap: 56px;
             display: flex;
             flex-direction: column;
             .principlesLine {
@@ -38,6 +38,9 @@
             }
             .parallax {
                 word-spacing: 64px;
+                .scroller{
+                    gap: 64px;
+                }
             }
         }
     }
@@ -72,7 +75,7 @@
     .principlesShow .marquee {
         gap: 64px;
     }
-    .principlesShow .marquee .parallax {
+    .principlesShow .marquee .parallax , .principlesShow .marquee .parallax .scroller {
         word-spacing: 40px;
     }
 }
@@ -93,7 +96,7 @@
     .principlesShow .marquee {
         gap: 40px;
     }
-    .principlesShow .marquee .parallax {
+    .principlesShow .marquee .parallax , .principlesShow .marquee .parallax .scroller{
         word-spacing: 24px;
     }
 }
