@@ -4,10 +4,8 @@
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	
 	justify-content: center;
 	align-items: center;
-	
 	color: $main-color-text;
 	box-sizing: border-box;
 	padding: 0 32px;
@@ -16,7 +14,25 @@
 		line-height: 100%;
 		font-weight: 300;
 		position: fixed;
-  	top: 17%;
+		overflow: hidden;
+  		top: 17%;
+		width: -moz-available;
+		width: -webkit-fill-available;
+		.char {
+			display: inline-block;
+			height: 180px;
+			transform: translateY(100%);
+			transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+			transition-delay: calc(.02s * var(--char-index)); // For staggered animation
+			&:before,
+			&:after {
+				visibility: visible;
+				transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+			}
+		}
+		&.animate-on-load .char {
+			transform: translateY(0%);
+		}
 	}
 	.second{
 		display: none;
@@ -24,16 +40,17 @@
 		line-height: 100%;
 		font-weight: 300;
 		position: fixed;
-  	top: 20%;	
+  		top: 20%;	
 	}
 	.firText{
 		font-family: 'Playfair Display', sans-serif;
 		font-weight: 400;
 		font-style: italic;
-		letter-spacing: -16px;
+		letter-spacing: -14px;
 	}
 	.secText{
-		letter-spacing: -4px;
+		font-family: 'InterSpecial';
+		letter-spacing: -16px;
 		-webkit-text-stroke: 1px  #FAFAFA;
 	}
 	.contactText{
@@ -51,6 +68,7 @@
 			flex-direction: column;
 			text-decoration: none;
 			height: 100px;
+			width: 288px;
 			.contactLight{
 				z-index: 0;
 				position: relative;
@@ -59,11 +77,71 @@
 			}
 			p{
 				font-size: 48px;
-				letter-spacing: -4px;
-				line-height: 48px;
+				line-height: 0;
 				z-index: 1000;
 				cursor: pointer;
 				color: $main-color-text;
+				opacity: 0;
+				margin: 0;
+				transition: opacity 1s ease;
+				&.visible {
+					opacity: 1;
+				}
+				.char {
+					display: inline-block;
+					transform: translateY(100%);
+					overflow: hidden;
+					color: transparent;
+					opacity: 0;
+					height: 44.5px;
+					transition: transform 1s ease, opacity 1s ease;
+					&:before,
+						&:after {
+							visibility: visible;
+							color: $main-color-text;
+							height: 54px;
+							transition: transform 0.5s cubic-bezier(0.9,0,.2,1);
+							transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
+						}
+						&:before {
+							transition-delay: calc( 0.02s * ( var(--char-index)) );
+						}
+				}
+				&.visible .char {
+					transform: translateY(0);
+					opacity: 1;
+				}
+				.word{
+					line-height: 52px;
+					height: 48px;
+				}
+				// .char {
+				// 	overflow: hidden;
+				// 	color: transparent;
+				// 	height: 44.5px;
+				// 	&:before,
+				// 	&:after {
+				// 		visibility: visible;
+				// 		color: $main-color-text;
+				// 		height: 54px;
+				// 		transition: transform 0.5s cubic-bezier(0.9,0,.2,1);
+				// 		transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
+				// 	}
+				// 	&:before {
+				// 		transition-delay: calc( 0.02s * ( var(--char-index)) );
+				// 	}
+				// }
+				&:hover .char:before { 
+					transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
+				}
+				&:hover .char:after {
+					transition-delay: calc( 0.02s * ( var(--char-index)) );
+				}
+			}
+			p {
+				.char:before { transform: translateY(100%); }
+				&:hover .char:before { transform: translateY(0%); }
+				&:hover .char:after { transform: translateY(-100%); }
 			}
 			.discription{
 				font-family: 'Playfair Display', sans-serif;
@@ -72,6 +150,9 @@
 				z-index: 1000;
 				cursor: pointer;
 				color: $main-color-text;
+				letter-spacing: 0;
+				&:hover ~ p .char:before { transform: translateY(0%); }
+				&:hover ~ p .char:after { transform: translateY(-100%); }
 			}
 		}
 	}
@@ -91,8 +172,11 @@
 		h1{
 			font-size: 104px;
 		}
-		.firText , .secText {
+		.firText {
 			letter-spacing: -8px;
+		}
+		.secText{
+			letter-spacing: -3px;
 		}
 		.contactText {
 			padding: 0 190px;
