@@ -50,6 +50,7 @@ const FooterPrinciples: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) =
                 </section>
                 <a
                 className='closeLink'
+                data-splitting
                 onClick={handlePrinciplesShow}
                 >
                     Закрыть

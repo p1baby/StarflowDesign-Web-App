@@ -12,8 +12,6 @@
 		display: flex;
 		line-height: 1;
 		width: 100%;
-		// overflow: hidden;
-        // margin: 0;
 		justify-content: space-between;
 		align-items: end;
 		.navbarText{
@@ -76,31 +74,31 @@
 			line-height: 10px;
 			height: 16px;
 			align-self: end;
-            // .word{
-            //     line-height: 12px;
-            // }
-            // .char {
-            //     overflow: hidden;
-            //     color: transparent;
-            //     height: 16.5px;
-            //     &:before,
-            //     &:after {
-            //         visibility: visible;
-            //         height: 22px;
-            //         color: $main-color-text;
-            //         transition: transform 0.5s cubic-bezier(0.9,0,.2,1);
-            //         transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
-            //     }
-            //     &:before {
-            //         transition-delay: calc( 0.02s * ( var(--char-index)) );
-            //     }
-            // }
-            // &:hover .char:before { 
-            //     transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
-            // }
-            // &:hover .char:after {
-            //     transition-delay: calc( 0.02s * ( var(--char-index)) );
-            // }
+            .word{
+                line-height: 12px;
+            }
+            .char {
+                overflow: hidden;
+                color: transparent;
+                height: 16.5px;
+                &:before,
+                &:after {
+                    visibility: visible;
+                    height: 22px;
+                    color: $main-color-text;
+                    transition: transform 0.5s cubic-bezier(0.9,0,.2,1);
+                    transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
+                }
+                &:before {
+                    transition-delay: calc( 0.02s * ( var(--char-index)) );
+                }
+            }
+            &:hover .char:before { 
+                transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
+            }
+            &:hover .char:after {
+                transition-delay: calc( 0.02s * ( var(--char-index)) );
+            }
 		}
 		a {
             .char:before { transform: translateY(100%); }
@@ -122,7 +120,7 @@
 			width: 100%;
 			align-items: center;
     		gap: 64px;
-			align-items: baseline;
+			align-items: end;
 			.navbarTextMobile{
 				margin-left: auto;
 				margin-right: auto;
@@ -135,6 +133,7 @@
 				a{
 					color: white;
 					text-decoration: none;
+					align-items: end;
 				}
 				button{
 					background: transparent;
@@ -142,6 +141,8 @@
 					color: $main-color-text;
 					cursor: pointer;
 					font-weight: 300;
+					align-self: end;
+					font-size: 14px;
 				}
 			}
 		}
