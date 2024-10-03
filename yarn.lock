@@ -193,6 +193,11 @@
     "@babel/helper-validator-identifier" "^7.24.7"
     to-fast-properties "^2.0.0"
 
+"@darkroom.engineering/tempus@^0.0.46":
+  version "0.0.46"
+  resolved "https://registry.npmjs.org/@darkroom.engineering/tempus/-/tempus-0.0.46.tgz"
+  integrity sha512-s5vav3KMHYezvUCl4ee5epg0oimF6M8C9gAaKxFnFaTvX2q3ywFDryIv6XLd0mRFUt3S1uHDJqKaiEcs2ZVSvw==
+
 "@esbuild/aix-ppc64@0.21.5":
   version "0.21.5"
   resolved "https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.21.5.tgz#c7184a326533fcdf1b8ee0733e21c713b975575f"
@@ -410,7 +415,7 @@
 
 "@mantine/hooks@^7.12.2":
   version "7.12.2"
-  resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-7.12.2.tgz#f8e6a8345bb0892d8d1f5d1dc544a568572b79f4"
+  resolved "https://registry.npmjs.org/@mantine/hooks/-/hooks-7.12.2.tgz"
   integrity sha512-dVMw8jpM0hAzc8e7/GNvzkk9N0RN/m+PKycETB3H6lJGuXJJSRR4wzzgQKpEhHwPccktDpvb4rkukKDq2jA8Fg==
 
 "@motionone/types@^10.17.1":
@@ -597,7 +602,7 @@
 
 "@types/react@*", "@types/react@^18.3.5":
   version "18.3.5"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.3.5.tgz#5f524c2ad2089c0ff372bbdabc77ca2c4dbadf8f"
+  resolved "https://registry.npmjs.org/@types/react/-/react-18.3.5.tgz"
   integrity sha512-WeqMfGJLGuLCqHGYRGHxnKrXcTitc6L/nBUWfWPcTarG3t9PsquqUMuVeXZeca+mglY4Vo5GZjCi0A3Or2lnxA==
   dependencies:
     "@types/prop-types" "*"
@@ -1080,6 +1085,13 @@ klona@^2.0.6:
   version "2.0.6"
   resolved "https://registry.npmjs.org/klona/-/klona-2.0.6.tgz"
   integrity sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==
+
+lenis@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.npmjs.org/lenis/-/lenis-1.1.13.tgz"
+  integrity sha512-iny+vWwUHcZGbJz+p2I75H1muLBRZqSG7t04jnhA+CWOQDFL1vt9bsZDwPPtYEmYVVvqAdo5MbXVFzNOlbgUkQ==
+  dependencies:
+    "@darkroom.engineering/tempus" "^0.0.46"
 
 lilconfig@^2.1.0:
   version "2.1.0"
