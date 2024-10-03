@@ -33,11 +33,11 @@ function PopupBrif(props: Props) {
       setDrawerIsOpen(true);
     }, []);
 
-    useEffect(() => { //функция для опредления типа проекта в модальном окне
+    useEffect(() => { // defining the project type
         setSelectedProjectType(projectButtons.find(button => button.id === props.selectedService)?.value || null);
     }, [props.selectedService]);
 
-    useEffect(() => { //функция для отключения overflow во время того как открыто то или иное модальное окно
+    useEffect(() => { // disable overflow when popupbrif open
     if (showDefaultContent || showSuccessContent || showThirdContent) {
         document.body.style.overflow = 'hidden';
     } else {
@@ -159,7 +159,13 @@ function PopupBrif(props: Props) {
     useSplittingHover();
 
   return (
-    <section className={`overlay ${drawerIsOpen ? 'visible' : ''}`}>
+    <motion.section
+    className="overlay"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.5 }}
+    >
       {showDefaultContent ? (
         <>
            <motion.section
@@ -245,7 +251,7 @@ function PopupBrif(props: Props) {
       ) : (
         <TimerContent ref={ref} handleDrawerClose={handleDrawerClose} />
       )}
-    </section>
+    </motion.section>
   );
 }
 
