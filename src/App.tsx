@@ -9,6 +9,8 @@ import Services from './pages/services/Services'
 import './styles/default.scss'
 import './styles/variables.scss'
 
+// import Lenis from 'lenis'
+
 import { AnimatePresence } from 'framer-motion'
 
 import { Footer, Navbar } from './components'
@@ -23,6 +25,16 @@ const App: FC = () => {
 
 const AppContent: FC = () => {
     const location = useLocation();
+
+    // useEffect( () => { // lenis smooth scrolling
+    //     const lenis = new Lenis()
+
+    //     function raf(time: number) {
+    //         lenis.raf(time)
+    //         requestAnimationFrame(raf)
+    //     }
+    //     requestAnimationFrame(raf)
+    // }, [])
 
   return (
     <>
