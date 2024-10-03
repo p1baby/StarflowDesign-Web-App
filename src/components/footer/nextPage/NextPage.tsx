@@ -10,7 +10,7 @@ function NextPage() {
 
     function getNextPage() {
         switch (currentPage) {
-            case '/projects':
+        case '/projects':
             return '/services';
         case '/services':
             return '/about';
@@ -23,7 +23,7 @@ function NextPage() {
 
     function getNextPageTitle() {
         switch (getNextPage()) {
-            case '/services':
+        case '/services':
             return 'Услуги';
         case '/about':
             return 'Обо мне';
