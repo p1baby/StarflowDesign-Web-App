@@ -6,7 +6,8 @@ import './navigationbuttons.scss'
 function NavigationButtons() {
     const [isHidden, setIsHidden] = useState(false);
     const [prevScrollY, setPrevScrollY] = useState(0);
-    const [isVisible, setIsVisible] = useState(false); // for smooth delay after loading
+    const [isVisible, setIsVisible] = useState(false); // fade first loading
+    const [isTransitioning, setIsTransitioning] = useState(false); // fades in and out when pressed
 
     useEffect(() => {
         const handleScroll = () => {
@@ -63,15 +64,24 @@ function NavigationButtons() {
     useEffect(() => {
         setTimeout(() => {
             setIsVisible(true);
-        }, 3800); // delay
+        }, 4800); // delay
     }, []);
 
     useSplittingHover();
 
+    const handleLinkClick = () => {
+        setIsTransitioning(true);
+    };
+
     return (
-        <section className={`navigationSection ${isVisible ? (isHidden ? 'fadeOut' : 'fadeIn') : ''}`}>
+        <section className={`navigationSection ${isVisible ? (isHidden ? 'fadeOut' : 'fadeIn') : ''} ${isTransitioning ? 'fadeOut' : ''}`}>
             {linksMain.map((link) => (
-                <Link data-splitting to={`${link.link}`} onClick={() => window.scrollTo(0, 0)} key={link.id}>
+                <Link
+                    data-splitting
+                    to={link.link}
+                    onClick={handleLinkClick}
+                    key={link.id}
+                >
                     <p className='upperText'>{link.number}</p>
                     <p className='navigationLink'>{link.title}</p>
                 </Link>
