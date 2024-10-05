@@ -21,13 +21,13 @@ interface Props {
 
 function PopupBrif(props: Props) {
     const { ref } = useOutsideClick(props.onClose);
-    const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+    const [, setDrawerIsOpen] = useState(false);
     const [selectedProjectType, setSelectedProjectType] = useState<string | null>(null);
     const [selectedProjectBudget, setSelectedProjectBudget] = useState<string | null>(null);
     const [showDefaultContent, setShowDefaultContent] = useState(true);
     const [showSuccessContent, setShowSuccessContent] = useState(false);
     const [showThirdContent, setShowThirdContent] = useState(false);
-    const { startTimer, stopTimer, timerActive } = useTimer(0);
+    const { startTimer, stopTimer } = useTimer(0);
 
     useEffect(() => {
       setDrawerIsOpen(true);

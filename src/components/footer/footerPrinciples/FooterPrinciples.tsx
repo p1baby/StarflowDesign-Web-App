@@ -20,7 +20,7 @@ const FooterPrinciples: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) =
         const subsequentDelay = 100; // delay beetween strings
 
         const lines = document.querySelectorAll('.navbarText p');
-        lines.forEach((line, index) => {
+        lines.forEach((_line, index) => {
             const delay = initialDelay + subsequentDelay * index;
             setTimeout(() => {
                 setVisibleLines(prev => [...prev, index]);
@@ -75,7 +75,3 @@ const FooterPrinciples: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) =
 }
 
 export default FooterPrinciples;
-
-function seSplittingHover() {
-    throw new Error('Function not implemented.')
-}

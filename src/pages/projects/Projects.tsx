@@ -1,19 +1,21 @@
-import {
-  MotionValue,
-  useScroll,
-  useTransform
-} from "framer-motion"
-import { useRef } from "react"
+// import {
+//   MotionValue,
+//   useScroll,
+//   useTransform
+// } from "framer-motion"
+// import { useRef } from "react"
+// import './projects.scss'
+
+// function useParallax(value: MotionValue<number>, distance: number) {
+//   return useTransform(value, [0, 1], [-distance, distance]);
+// }
+
 import './projects.scss'
 
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
-
 const Projects: React.FC = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 3);
+  // const ref = useRef(null);
+  // const { scrollYProgress } = useScroll({ target: ref });
+  // const y = useParallax(scrollYProgress, 3);
 
   return (
     <section className='projectSection'>

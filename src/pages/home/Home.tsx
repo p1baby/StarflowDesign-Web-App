@@ -17,7 +17,7 @@ function Home() {
         const subsequentDelay = 100; // delay beetween strings
 
         const lines = document.querySelectorAll('.homeText p');
-        lines.forEach((line, index) => {
+        lines.forEach((_line, index) => {
             const delay = initialDelay + subsequentDelay * index;
             setTimeout(() => {
                 setVisibleLines(prev => [...prev, index]);
