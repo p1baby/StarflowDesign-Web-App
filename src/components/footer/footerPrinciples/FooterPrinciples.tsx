@@ -41,10 +41,10 @@ const FooterPrinciples: React.FC<PrinciplesProps> = ({ handlePrinciplesShow }) =
                 <section className='navbarText'>
                     <section>
 						<p className={visibleLines.includes(0) ? 'visible' : ''} data-splitting>
-							<span className='char'>Эмпатичный дизайнер, стремлюсь</span>
+							<span className='char'>Для того, чтобы сделать что-то</span>
 						</p>
 						<p className={visibleLines.includes(1) ? 'visible' : ''} data-splitting>
-							<span className='char'>сделать ваш бренд понятным</span>
+							<span className='char'>интересное, нужно это полюбить.</span>
 						</p>
 					</section>
                 </section>
