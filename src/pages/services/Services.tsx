@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import arrowLeft from '/arrowLeft.svg'
 import arrowRight from '/arrowRight.svg'
@@ -7,6 +7,7 @@ import './services.scss'
 
 import { AnimatePresence } from 'framer-motion'
 import AboutMe from '../../components/aboutMe/AboutMe'
+import useSplittingHover from '../../components/hooks/useSplittingHover'
 import useSplittingOnLoad from '../../components/hooks/useSplittingOnLoad'
 import Curve from '../../components/layoutTransition'
 import NavigationButtons from '../../components/navigationButtons/NavigationButtons'
@@ -45,6 +46,15 @@ const Services = () => {
 		{ id: '4', number: '04', title: 'Дизайн в Figma', description: 'Полноценный дизайн-макет сайта, подготовленный к верстке + дизайнерский контроль.', price: '30 000', deadlines: '5' }
 	];
 
+	const topRefs = useRef<(HTMLDivElement | null)[]>([]); // To hold refs for all top sections
+    const [maxHeight, setMaxHeight] = useState<number>(0);
+
+    useEffect(() => {
+        const heights = topRefs.current.map(ref => ref?.offsetHeight || 0); // Get heights of all refs
+        const newMaxHeight = Math.max(...heights); // Find the maximum height
+        setMaxHeight(newMaxHeight); // Update state with the maximum height
+    }, [myServices]);
+
 	const stages = [
 		{ id: '1', number: '01', title: 'Знакомство и бриф', description: ['Созвонимся, познакомимся и обсудим детали проекта,', 'чтобы я мог оценить стоимость и сроки.'], time: 'Займет 20-30 минут' },
 		{ id: '2', number: '02', title: 'Анализ и структура', description: ['На этом этапе я изучаю целевую аудиторию, анализирую', 'рынок и конкурентов, составляю грамотную структуру,', 'чтобы предложить вам наиболее выигрышный вариант' , 'реализации сайта'], time: 'От 2-х дней' },
@@ -60,6 +70,8 @@ const Services = () => {
 	);
 
 	useSplittingOnLoad('.slide-vertical');
+
+	useSplittingHover();
 	  
 	return(
 		<Curve>
@@ -81,22 +93,29 @@ const Services = () => {
 			</section>
 			<NavigationButtons />
 			<main className='mainServices'>
-			{myServices.map((services) => (
+			{myServices.map((services, index) => (
 				<section key={services.id} className='service service-hover'>
-							<section className='top'>
-								<p className='number'>({services.number})</p>
-								<h2 data-splitting className='title slide-vertical'>{services.title}</h2>
-							</section>
-							<button onClick={() => handleOpenPopup(services.id)}  className='serviceButton'>
-								<section className='insideButton'><img className='leftArrow' src={arrowLeft} alt='arrow' />заказать<img className='rightArrow' src={arrowRight} alt='arrow' /></section>
-							</button>
-							<section className='bottom'>
-								<p className='description'>{services.description}</p>
-								<section className='timeValues'>
-									<p className='price'>от {services.price} ₽</p>
-									<p className='deadlines'>от {services.deadlines}-ти дней</p>
-								</section>
-							</section>
+					<section 
+					className='top'
+					ref={el => topRefs.current[index] = el as HTMLDivElement} // Type assertion
+					style={{ height: maxHeight ? `${maxHeight}px` : 'auto' }} // Set the height based on maxHeight
+					>
+						<p className='number'>({services.number})</p>
+						<h2 data-splitting className='title slide-vertical'>{services.title}</h2>
+					</section>
+					<button
+					data-splitting
+					onClick={() => handleOpenPopup(services.id)}  
+					className='serviceButton'>
+						<section className='insideButton'><img className='leftArrow' src={arrowLeft} alt='arrow' />заказать<img className='rightArrow' src={arrowRight} alt='arrow' /></section>
+					</button>
+					<section className='bottom'>
+						<p className='description'>{services.description}</p>
+						<section className='timeValues'>
+							<p className='price'>от {services.price} ₽</p>
+							<p className='deadlines'>от {services.deadlines}-ти дней</p>
+						</section>
+					</section>
 				</section>
 			))}
 			</main>
