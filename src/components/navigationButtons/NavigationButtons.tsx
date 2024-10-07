@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import useSplittingHover from '../hooks/useSplittingHover'
 import './navigationbuttons.scss'
 
@@ -8,6 +8,8 @@ function NavigationButtons() {
     const [prevScrollY, setPrevScrollY] = useState(0);
     const [isVisible, setIsVisible] = useState(false); // fade first loading
     const [isTransitioning, setIsTransitioning] = useState(false); // fades in and out when pressed
+
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -69,7 +71,10 @@ function NavigationButtons() {
 
     useSplittingHover();
 
-    const handleLinkClick = () => {
+    const handleLinkClick = (link: string) => { // If the current path matches the selected path, do nothing
+        if (location.pathname === link) {
+            return;
+        }
         setIsTransitioning(true);
     };
 
@@ -79,7 +84,7 @@ function NavigationButtons() {
                 <Link
                     data-splitting
                     to={link.link}
-                    onClick={handleLinkClick}
+                    onClick={() => handleLinkClick(link.link)} // cheking links
                     key={link.id}
                 >
                     <p className='upperText'>{link.number}</p>
