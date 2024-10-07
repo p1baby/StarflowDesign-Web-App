@@ -142,6 +142,7 @@
 				gap: 24px;
 			}
 			.top {
+				transition: height 0.3s ease;
 				.number {
 					line-height: 19.2px;
 					font-weight: 400;
@@ -198,6 +199,32 @@
 				cursor: pointer;
 				position: inherit;
 				font-family: 'Inter', sans-serif;
+				line-height: 10px;
+				.word{
+					line-height: 13px;
+				}
+				.char {
+					overflow: hidden;
+					color: transparent;
+					height: 16.5px;
+					&:before,
+					&:after {
+						visibility: visible;
+						height: 22px;
+						color: $main-color-text;
+						transition: transform 0.5s cubic-bezier(0.9,0,.2,1);
+						transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
+					}
+					&:before {
+						transition-delay: calc( 0.02s * ( var(--char-index)) );
+					}
+				}
+				&:hover .char:before { 
+					transition-delay: calc( 0.2s + ( 0.02s * ( var(--char-index)) ) );
+				}
+				&:hover .char:after {
+					transition-delay: calc( 0.02s * ( var(--char-index)) );
+				}
 				// z-index: 53;
 				.insideButton {
 					color: $main-color-text;
@@ -205,6 +232,11 @@
 					display: flex;
 					align-items: end;
 				}
+			}
+			.serviceButton {
+				.char:before { transform: translateY(100%); }
+				&:hover .char:before { transform: translateY(0%); }
+				&:hover .char:after { transform: translateY(-100%); }
 			}
 			img.leftArrow, img.rightArrow {
 				margin: 0 8px;
